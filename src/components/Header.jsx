@@ -38,8 +38,9 @@ const Header = () => {
     <>
       {/* Header */}
       <header
-        className={`sticky top-0 z-50 bg-white transition-all duration-300 ${isScrolled ? "shadow-lg" : "shadow-sm"
-          }`}
+        className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+          isScrolled ? "shadow-lg" : "shadow-sm"
+        }`}
       >
         <nav className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
@@ -62,25 +63,30 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative px-5 py-2 text-lg font-semibold transition-all duration-300 ${isActive(link.path)
-                      ? "text-green-600"
-                      : "text-gray-700 hover:text-green-600"
-                    }`}
+                  className={`relative px-5 py-2 text-lg font-semibold transition-all duration-300 ${
+                    isActive(link.path) ? "" : "text-gray-700"
+                  }`}
+                  style={isActive(link.path) ? { color: "#fcdb16" } : {}}
+                  onMouseEnter={(e) => {
+                    if (!isActive(link.path)) {
+                      e.target.style.color = "#fcdb16";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive(link.path)) {
+                      e.target.style.color = "";
+                    }
+                  }}
                 >
                   {link.label}
                   {isActive(link.path) && (
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-green-600 rounded-full"></span>
+                    <span
+                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 rounded-full"
+                      style={{ backgroundColor: "#fcdb16" }}
+                    ></span>
                   )}
                 </Link>
               ))}
-
-              {/* CTA Button */}
-              <Link
-                to="/quote"
-                className="ml-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                Get a Quote
-              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -91,16 +97,19 @@ const Header = () => {
             >
               <div className="relative w-6 h-5">
                 <span
-                  className={`absolute w-full h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? "top-2 rotate-45" : "top-0"
-                    }`}
+                  className={`absolute w-full h-0.5 bg-gray-800 transition-all duration-300 ${
+                    isMenuOpen ? "top-2 rotate-45" : "top-0"
+                  }`}
                 ></span>
                 <span
-                  className={`absolute top-2 w-full h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"
-                    }`}
+                  className={`absolute top-2 w-full h-0.5 bg-gray-800 transition-all duration-300 ${
+                    isMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
                 ></span>
                 <span
-                  className={`absolute w-full h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? "top-2 -rotate-45" : "top-4"
-                    }`}
+                  className={`absolute w-full h-0.5 bg-gray-800 transition-all duration-300 ${
+                    isMenuOpen ? "top-2 -rotate-45" : "top-4"
+                  }`}
                 ></span>
               </div>
             </button>
@@ -118,8 +127,9 @@ const Header = () => {
 
       {/* Mobile Menu Slide Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-full bg-white z-50 transform transition-transform duration-300 lg:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed top-0 right-0 h-full w-80 max-w-full bg-white z-50 transform transition-transform duration-300 lg:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between p-6 border-b">
@@ -157,14 +167,21 @@ const Header = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 ${isActive(link.path)
-                    ? "bg-green-50 text-green-600"
-                    : "text-gray-700 hover:bg-gray-50"
-                  }`}
+                className={`block px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                  isActive(link.path) ? "" : "text-gray-700 hover:bg-gray-50"
+                }`}
+                style={
+                  isActive(link.path)
+                    ? { backgroundColor: "#fef3c7", color: "#fcdb16" }
+                    : {}
+                }
               >
                 <span className="flex items-center">
                   {isActive(link.path) && (
-                    <span className="w-1 h-6 bg-green-600 rounded-full mr-3"></span>
+                    <span
+                      className="w-1 h-6 rounded-full mr-3"
+                      style={{ backgroundColor: "#fcdb16" }}
+                    ></span>
                   )}
                   {link.label}
                 </span>

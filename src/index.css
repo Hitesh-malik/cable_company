@@ -1,0 +1,336 @@
+@import "tailwindcss";
+/* Flaticon Font */
+@font-face {
+  font-family: "Flaticon";
+  src: url("/assets/fonts/Flaticon.eot");
+  src: url("/assets/fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/Flaticon.woff") format("woff"),
+    url("/assets/fonts/Flaticon.ttf") format("truetype"),
+    url("/assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+  font-family: Flaticon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+.flaticon-skyline-2:before {
+  content: "\f104";
+}
+
+.flaticon-maintenance:before {
+  content: "\f105";
+}
+
+.flaticon-house-sketch:before {
+  content: "\f107";
+}
+
+.flaticon-roof:before {
+  content: "\f111";
+}
+
+.flaticon-drill:before {
+  content: "\f113";
+}
+
+.flaticon-home:before {
+  content: "\f116";
+}
+
+/* Ensure Flaticon icons display correctly */
+i[class^="flaticon-"],
+i[class*=" flaticon-"] {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+}
+
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+@theme {
+  --color-primary: #fcdb16;
+  --color-dark: #2b2b35;
+  --color-heading: #0e0e0e;
+  --color-paragraph: #666666;
+  --color-bg-gray: #F7F7F7;
+
+  --font-family-default: 'Open Sans', sans-serif;
+  --font-family-heading: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--color-heading);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-heading);
+  }
+}
+
+/* Featured Services Hover Effect */
+.featured-service-card:not(.middle-card):hover .featured-service-icon {
+  background-color: white !important;
+}
+
+.featured-service-card:not(.middle-card):hover .featured-service-icon svg {
+  color: #0e0e0e !important;
+}
+
+/* Banner Area Styles */
+.banner-area {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.banner-area .box-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-area .box-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.banner-area.shadow-inner .content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner-area.shadow-inner .content::after {
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.banner-area .carousel-control {
+  font-size: 50px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  margin-top: -25px;
+  background: transparent;
+  opacity: 0;
+  z-index: 30;
+  transition: all 0.35s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.banner-area .carousel-control.left {
+  left: -50px;
+}
+
+.banner-area:hover .carousel-control.left {
+  left: 0;
+  opacity: 1;
+}
+
+.banner-area .carousel-control.right {
+  right: -50px;
+}
+
+.banner-area:hover .carousel-control.right {
+  right: 0;
+  opacity: 1;
+}
+
+.banner-area .carousel-control:hover {
+  opacity: 1 !important;
+}
+
+.slider-thumb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Portfolio Filter Styles */
+.portfolio-items {
+  transition: all 0.3s ease;
+}
+
+.pf-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pf-item.hidden {
+  display: none;
+}
+
+/* Portfolio Card Styles */
+.portfolio-area .portfolio-items .pf-item {
+  float: left;
+  margin-bottom: 0;
+  padding: 0;
+  width: 25%;
+}
+
+.portfolio-area .portfolio-items.columns-3 .pf-item {
+  padding: 15px;
+  width: 33.33%;
+}
+
+.portfolio-items::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.portfolio-effet {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.portfolio-effet .thumb {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.portfolio-area .pf-item .thumb::after {
+  background: var(--color-heading);
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  outline: 1px solid #7d7d79;
+  outline-offset: -15px;
+  position: absolute;
+  top: 0;
+  transition: all 0.4s ease-in 0s;
+  width: 100%;
+}
+
+.portfolio-effet:hover .thumb::after {
+  opacity: 0.7;
+}
+
+.portfolio-effet img {
+  display: block;
+  position: relative;
+  transition: all 0.35s ease-in-out;
+  width: 100%;
+}
+
+.portfolio-effet:hover img {
+  transform: scale(1.2);
+}
+
+.portfolio-effet .overlay {
+  left: 0;
+  margin-top: -20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 1;
+}
+
+.portfolio-effet .overlay a,
+.portfolio-effet .overlay button {
+  background: var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-heading) !important;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  margin: 2px;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transform: scale(0.7);
+  transition: all 0.35s ease-in-out;
+  opacity: 0;
+}
+
+.portfolio-effet:hover .overlay a,
+.portfolio-effet:hover .overlay button {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.portfolio-effet:hover .overlay a:hover,
+.portfolio-effet:hover .overlay button:hover {
+  color: var(--color-primary) !important;
+}
+
+.portfolio-area .pf-item .info {
+  background: var(--white);
+  border: medium none;
+  box-shadow: 0 0 10px #cccccc;
+  display: inline-block;
+  float: left;
+  padding: 30px;
+  width: 100%;
+}
+
+.portfolio-area .pf-item .info h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.portfolio-area .pf-item .info a {
+  background: var(--color-primary);
+  border-radius: 20px;
+  color: var(--color-heading);
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 15px;
+  text-transform: uppercase;
+}

@@ -54,10 +54,21 @@ const Team = () => {
       <Header />
 
       {/* Breadcrumb */}
-      <div className="bg-dark text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold font-heading">Our Team</h1>
-          <p className="text-gray-400 mt-2">Home / Team</p>
+      <div
+        className="text-white py-20 relative min-h-[400px] flex items-center"
+        style={{
+          backgroundImage: `url(/assets/img/banner/1.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0  bg-opacity-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h1 className="text-4xl font-bold font-heading text-white">
+            Our Team
+          </h1>
+          <p className="text-gray-200 mt-2">Home / Team</p>
         </div>
       </div>
 
@@ -129,4 +140,3 @@ const Team = () => {
 };
 
 export default Team;
-

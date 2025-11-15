@@ -142,25 +142,37 @@ const About = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <h3 className="text-xl text-gray-600 mb-4 font-heading">
-                Welcome to Ottrali
+                Welcome to Mandeep Cables
               </h3>
               <h2 className="text-4xl font-bold mb-6 font-heading">
-                A construction company
+                Leading OEM ODM USB Cable Manufacturer
               </h2>
+              <div className="mb-6">
+                <h4 className="text-2xl font-bold text-gray-900 mb-2 font-heading">
+                  Mr. Mandeep Singh
+                </h4>
+                <p className="text-lg text-primary font-semibold mb-4">
+                  Chairman & Managing Director
+                </p>
+              </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Extremity sweetness difficult behaviour he of. On disposal of as
-                landlord horrible. Afraid at highly months do things on at.
-                Situation recommend objection do intention so questions. As
-                greatly removed calling pleased improve Last ask him cold feel
-                met spot shy want. Children me laughing we prospect answered
-                followed. At it went is songface. Do greatest at in learning
-                steepest. As greatly removed calling pleased improve Last ask
-                calling pleased improve Last ask calling pleased improve Last
-                ask
+                Mr. Mandeep Singh is the visionary founder and driving force
+                behind Mandeep Cables Pvt. Ltd. With unwavering dedication and
+                relentless hard work, he has built this organization from the
+                ground up with his own blood and sweat. Boasting more than 35
+                years of extensive experience in the cable industry, he
+                possesses comprehensive knowledge of processes, production, and
+                components that makes him a true stalwart in the field.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                As the Chairman & Managing Director, he continues to lead the
+                organization with passion and expertise, ensuring Mandeep Cables
+                remains at the forefront of custom USB cable manufacturing and
+                OEM/ODM solutions.
               </p>
               <div className="flex items-center gap-6 mt-8">
                 <div className="text-6xl font-bold text-primary font-heading">
-                  8
+                  35+
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold font-heading">
@@ -199,7 +211,7 @@ const About = () => {
       </div>
 
       {/* Team Members Section */}
-      <div className="py-20 bg-bg-gray">
+      {/* <div className="py-20 bg-bg-gray">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="max-w-3xl mx-auto">
@@ -261,28 +273,34 @@ const About = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Video Section */}
       <div
-        className="relative py-20 text-center bg-cover bg-center"
+        className="relative py-20 text-center bg-cover bg-center mt-16 min-h-[500px] flex items-center"
         style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        {/* Light overlay - very subtle */}
+        <div className="absolute inset-0  bg-opacity-20 z-0"></div>
+        {/* Content - over the image */}
+        <div className="container mx-auto px-4 relative z-20 w-full">
           <div className="max-w-3xl mx-auto text-white">
-            <h4 className="text-xl mb-4 font-heading">Know more about us!</h4>
-            <h2 className="text-4xl font-bold mb-8 font-heading">
+            {/* Text at top */}
+            <h4 className="text-xl mb-4 font-heading text-white relative z-30">
+              Know more about us!
+            </h4>
+            <h2 className="text-4xl font-bold mb-8 font-heading text-white relative z-30">
               Check this video presentation to know more about us and our
               process
             </h2>
+            {/* Play button below text */}
             <a
               href="https://www.youtube.com/watch?v=vQqZIFCab9o"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary w-20 h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto"
+              className="bg-primary w-20 h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto relative z-30"
             >
-              <FaPlay className="text-gray-900 text-xl ml-1" />
+              <FaPlay className="text-white text-xl ml-1" />
             </a>
           </div>
         </div>

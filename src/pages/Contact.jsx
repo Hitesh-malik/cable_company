@@ -50,14 +50,8 @@ const Contact = () => {
       {/* Breadcrumb */}
       <div className="bg-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-          <nav className="flex items-center text-gray-300">
-            <Link to="/" className="hover:text-white transition">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <span>Contact</span>
-          </nav>
+          <h1 className="text-5xl font-bold mb-4 text-white">Contact Us</h1>
+          
         </div>
       </div>
 

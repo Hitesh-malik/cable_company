@@ -603,7 +603,7 @@ const Home = () => {
       </div>
 
       {/* Popular Work / Tabs Section */}
-      <div className="py-20 bg-dark text-white">
+      {/* <div className="py-20 bg-dark text-white">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <ul className="flex flex-wrap border-b border-gray-600">
@@ -668,10 +668,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Team Members Section */}
-      <div className="py-20 bg-bg-gray">
+      {/* <div className="py-20 bg-bg-gray">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -730,10 +730,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Blog Section */}
-      <div className="py-20 bg-white">
+      {/* <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -787,7 +787,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Footer />
 

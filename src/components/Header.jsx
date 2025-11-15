@@ -46,15 +46,11 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             {/* logo section */}
             <div className="flex items-center">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden mr-4 text-gray-800"
-              >
-                <i className="fa fa-bars text-xl"></i>
-              </button>
+            {!isMenuOpen && (
               <Link to="/" className="flex items-center">
                 <img src="/assets/img/logo.png" alt="Logo" className="h-12" />
               </Link>
+            )}
             </div>
 
             {/* Desktop Navigation */}
@@ -120,7 +116,7 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-opacity-50 z-40 lg:hidden backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         ></div>
       )}
@@ -132,7 +128,7 @@ const Header = () => {
         }`}
       >
         {/* Mobile Menu Header */}
-        <div className="flex items-center justify-between p-6 border-b">
+        <div className="flex items-center justify-between p-[1.12em] border-b">
           <div className="flex items-center space-x-2">
             <Link to="/" className="flex items-center">
               <img src="/assets/img/logo.png" alt="Logo" className="h-12" />
@@ -190,7 +186,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile CTA Button */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <Link
               to="/quote"
               onClick={() => setIsMenuOpen(false)}
@@ -198,7 +194,7 @@ const Header = () => {
             >
               Get a Quote
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Footer */}
           <div className="mt-8 pt-8 border-t">

@@ -86,45 +86,49 @@ const Team = () => {
               saw man led. Along on happy could cease green oh.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {teamMembers.slice(0, 2).map((member, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-lg"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-96 overflow-hidden bg-gray-200">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h4 className="text-2xl font-bold mb-2 font-heading">
+                <div className="bg-gray-800 py-4 text-center">
+                  <h4 className="text-2xl font-bold mb-1 font-heading text-yellow-400">
                     {member.name}
                   </h4>
-                  <span className="text-primary mb-4 block">
+                  <span className="text-white text-sm uppercase tracking-wide">
                     {member.position}
                   </span>
-                  <p className="text-gray-600 mb-6">{member.description}</p>
-                  <div className="flex justify-center gap-4">
+                </div>
+                <div className="p-6 text-center bg-white">
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                  <div className="flex justify-center gap-3">
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
                     >
-                      <i className="fab fa-facebook-f"></i>
+                      <i className="fab fa-facebook-f text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
                     >
-                      <i className="fab fa-twitter"></i>
+                      <i className="fab fa-twitter text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
                     >
-                      <i className="fab fa-google-plus-g"></i>
+                      <i className="fab fa-google-plus-g text-sm"></i>
                     </a>
                   </div>
                 </div>

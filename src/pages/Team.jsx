@@ -6,46 +6,69 @@ import Footer from "../components/Footer";
 const Team = () => {
   const teamMembers = [
     {
-      image: "/assets/img/team/4.jpg",
-      name: "Adam Smith",
-      position: "Chairman",
+      image: "/assets/img/team/infrastructure.jpg",
+      title: "Infrastructure & Technology",
+      subtitle: "Built for Precision. Powered by Innovation.",
       description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
+        "Griptronics is equipped with modern high-speed extruders, automatic online diameter controllers, and the latest production systems for consistency and performance.",
+      features: [
+        {
+          title: "Manufacturing Capabilities:",
+          items: [
+            "High-speed extrusion technology",
+            "Automatic insulation thickness and diameter control",
+            "Continuous online monitoring systems",
+            "Zero-defect quality management",
+          ],
+        },
+        {
+          title: "Research & Development:",
+          items: [
+            "Our R&D team continuously innovates new products and materials to meet evolving industrial standards and customer needs.",
+          ],
+        },
+        {
+          title: "Sustainability:",
+          items: [
+            "We're committed to environmental responsibility by adopting eco-friendly materials and minimizing industrial waste in every production cycle.",
+          ],
+        },
+      ],
     },
     {
-      image: "/assets/img/team/2.jpg",
-      name: "Mrobal Fukre",
-      position: "CEO",
+      image: "/assets/img/team/clients.jpg",
+      title: "Clients & Industries We Serve",
+      subtitle: "Trusted by Leading Industries Worldwide",
       description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/3.jpg",
-      name: "Ashib Niro",
-      position: "Product Manager",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/1.jpg",
-      name: "John Doe",
-      position: "Architect",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/6.jpg",
-      name: "Jane Smith",
-      position: "Engineer",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/7.jpg",
-      name: "Robert Johnson",
-      position: "Designer",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
+        "Our strong rapport with clients stems from our commitment to quality, transparency, and timely delivery — values that define the Griptronics brand.",
+      features: [
+        {
+          title: "Industries Served:",
+          items: [
+            "Telecommunications",
+            "Electrical & Power Distribution",
+            "Consumer Electronics",
+            "Automotive",
+            "Construction & Infrastructure",
+            "IT & Networking",
+          ],
+        },
+        {
+          title: "Our Clients Choose Us Because:",
+          items: [
+            "Reliable supply chain & quick turnaround",
+            "Custom design capability",
+            "Consistent product quality",
+            "Strong after-sales support",
+          ],
+        },
+        {
+          title: "Client Confidence:",
+          items: [
+            "Our strong rapport with clients stems from our commitment to quality, transparency, and timely delivery — values that define the Griptronics brand.",
+          ],
+        },
+      ],
     },
   ];
 
@@ -73,60 +96,98 @@ const Team = () => {
       </div>
 
       {/* Team Section */}
-      <div className="py-20 bg-bg-gray">
-        <div className="container mx-auto px-4">
+      <div className="py-20 bg-gray-50">
+        <div className="container mx-auto px-8 max-w-[1600px]">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 font-heading">
-              Team Members
+            <h2 className="text-4xl font-bold mb-4 font-heading text-gray-800">
+              Our Capabilities & Partners
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Able an hope of body. Any nay shyness article matters own removal
-              nothing his forming. Gay own additions education satisfied the
-              perpetual. If he cause manor happy. Without farther she exposed
-              saw man led. Along on happy could cease green oh.
+              Griptronics combines cutting-edge technology with industry
+              expertise to deliver exceptional wire and cable solutions. Our
+              commitment to innovation and customer satisfaction sets us apart
+              in the industry.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {teamMembers.slice(0, 2).map((member, index) => (
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-lg"
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
+                {/* Image Section - Top */}
                 <div className="relative h-96 overflow-hidden bg-gray-200">
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={member.title}
                     className="w-full h-full object-cover"
                   />
+                  {/* Placeholder overlay for 500x500 */}
+                  <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                    <span className="text-6xl font-bold text-gray-400">
+                      500x500
+                    </span>
+                  </div>
                 </div>
-                <div className="bg-gray-800 py-4 text-center">
-                  <h4 className="text-2xl font-bold mb-1 font-heading text-yellow-400">
-                    {member.name}
+
+                {/* Title Section */}
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900 py-6 px-6">
+                  <h4 className="text-2xl font-bold mb-2 font-heading text-yellow-400">
+                    {member.title}
                   </h4>
                   <span className="text-white text-sm uppercase tracking-wide">
-                    {member.position}
+                    {member.subtitle}
                   </span>
                 </div>
-                <div className="p-6 text-center bg-white">
+
+                {/* Content Section - Bottom */}
+                <div className="p-6 bg-white">
                   <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                     {member.description}
                   </p>
-                  <div className="flex justify-center gap-3">
+
+                  {/* Features List */}
+                  <div className="space-y-4">
+                    {member.features.map((feature, idx) => (
+                      <div key={idx} className="mb-3">
+                        <h5 className="font-semibold text-gray-800 mb-2 text-sm">
+                          {feature.title}
+                        </h5>
+                        <ul className="space-y-1.5">
+                          {feature.items.map((item, itemIdx) => (
+                            <li
+                              key={itemIdx}
+                              className="text-gray-600 text-sm flex items-start"
+                            >
+                              <span className="text-yellow-500 mr-2 mt-0.5">
+                                •
+                              </span>
+                              <span className="flex-1">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Social Icons */}
+                  <div className="flex justify-center gap-3 mt-6 pt-6 border-t border-gray-200">
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
                     >
                       <i className="fab fa-facebook-f text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
                     >
                       <i className="fab fa-twitter text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-primary transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
                     >
                       <i className="fab fa-google-plus-g text-sm"></i>
                     </a>

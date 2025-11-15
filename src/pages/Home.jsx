@@ -318,11 +318,10 @@ const Home = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                index === currentSlide
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide
                   ? "opacity-100 z-10"
                   : "opacity-0 z-0 pointer-events-none"
-              }`}
+                }`}
             >
               {/* Background Image */}
               <div
@@ -390,6 +389,8 @@ const Home = () => {
       <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
+
+            {/* LEFT SIDE — unchanged */}
             <div className="w-full lg:w-1/2 relative">
               <img
                 src="/assets/img/about/1.jpg"
@@ -405,43 +406,49 @@ const Home = () => {
                 </a>
               </div>
             </div>
+
+            {/* RIGHT SIDE — updated content */}
             <div className="w-full lg:w-1/2">
               <h3 className="text-xl text-gray-600 mb-4 font-heading">
-                Did you know that
+                Powering Connections. Building Reliability.
               </h3>
+
               <h2 className="text-4xl font-bold mb-6 font-heading">
-                We are trusted by more than 5,000 clients
+                Griptronics is a trusted Indian manufacturer of high-performance electrical wires, networking cables, cords, and wire harness solutions — engineered for reliability, safety, and innovation.
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Extremity sweetness difficult behaviour he of. On disposal of as
-                landlord horrible. Afraid at highly months do things on at.
-                Situation recommend objection do intention so questions. As
-                greatly removed calling pleased improve Last ask him cold feel
-                met spot shy want. Children me laughing we prospect answered
-                followed. At it went is songface. Do greatest at in learning
-                steepest. As greatly removed calling pleased improve Last ask.
-                Sincerity collected happiness do is contented. Sigh ever way now
-                many. Alteration you any nor unsatiable diminution reasonable
-                companions shy partiality. Leaf by left deal Year well shot deny
-                shew come now had. Shall downs stand marry taken his for out. Do
-                related mr account brandon an up. Wrong for never ready ham
-                these witty him. Our compass see age uncivil matters
-              </p>
-              <div className="flex items-center gap-6 mt-8">
-                <div className="text-6xl font-bold text-primary font-heading">
-                  8
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold font-heading">
-                    Years
-                    <br /> Experience Working
-                  </h4>
-                </div>
+
+              <div className="text-gray-600 leading-relaxed space-y-4">
+                <p>
+                  <strong>Premium Quality Standards —</strong> Certified and tested under IS, UL, JIS, JASO & DIN specifications.
+                </p>
+
+                <p>
+                  <strong>Custom Manufacturing —</strong> Tailor-made cable and wire solutions built to your specifications.
+                </p>
+
+                <p>
+                  <strong>Trusted Across Industries —</strong> Supplying to leading telecom, electrical, and networking sectors nationwide.
+                </p>
+
+                <p>
+                  <strong>20+ Years of Expertise —</strong> Built on precision engineering and customer-first values.
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="#"
+                  className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                >
+                  👉 Explore Our Range | Request a Quote
+                </a>
               </div>
             </div>
+
           </div>
         </div>
       </div>
+
 
       {/* Services Section */}
       <div className="py-20 bg-bg-gray services-area">
@@ -512,11 +519,10 @@ const Home = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentService(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentService
+                  className={`h-2 rounded-full transition-all ${index === currentService
                       ? "bg-primary w-8"
                       : "bg-gray-400 w-2 hover:bg-gray-600"
-                  }`}
+                    }`}
                   aria-label={`Go to service ${index + 1}`}
                 />
               ))}
@@ -544,11 +550,10 @@ const Home = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2 rounded font-semibold transition ${
-                  activeFilter === filter.id
+                className={`px-6 py-2 rounded font-semibold transition ${activeFilter === filter.id
                     ? "bg-primary text-gray-900"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -603,7 +608,7 @@ const Home = () => {
       </div>
 
       {/* Popular Work / Tabs Section */}
-      <div className="py-20 bg-dark text-white">
+      {/* <div className="py-20 bg-dark text-white">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <ul className="flex flex-wrap border-b border-gray-600">
@@ -668,10 +673,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Team Members Section */}
-      <div className="py-20 bg-bg-gray">
+      {/* <div className="py-20 bg-bg-gray">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -730,10 +735,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Blog Section */}
-      <div className="py-20 bg-white">
+      {/* <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -787,7 +792,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Footer />
 

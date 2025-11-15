@@ -172,7 +172,7 @@ const Team = () => {
                   </div>
 
                   {/* Social Icons */}
-                  <div className="flex justify-center gap-3 mt-6 pt-6 border-t border-gray-200">
+                  {/* <div className="flex justify-center gap-3 mt-6 pt-6 border-t border-gray-200">
                     <a
                       href="#"
                       className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
@@ -191,7 +191,7 @@ const Team = () => {
                     >
                       <i className="fab fa-google-plus-g text-sm"></i>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

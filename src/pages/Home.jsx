@@ -314,18 +314,15 @@ const Home = () => {
 
       {/* Banner Carousel */}
       <div className="relative h-screen overflow-hidden banner-area shadow-inner">
-        <div className="relative h-full w-full">
+        <div
+          className="relative h-full w-full flex transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide
-                  ? "opacity-100 z-10"
-                  : "opacity-0 z-0 pointer-events-none"
-                }`}
-            >
+            <div key={index} className="relative h-full w-full flex-shrink-0">
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center bg-fixed slider-thumb"
+                className="absolute inset-0 bg-cover bg-center slider-thumb"
                 style={{ backgroundImage: `url(${slide.image})` }}
               ></div>
 
@@ -383,6 +380,26 @@ const Home = () => {
         >
           <i className="fas fa-angle-right"></i>
         </button>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2.5 rounded-full transition-all ${index === currentSlide
+                  ? "w-6 bg-primary shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
+                  : "w-2 bg-white/60 hover:bg-white"
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+
+          <span className="ml-3 text-xs font-semibold tracking-[0.25em] text-white/80 uppercase">
+            {String(currentSlide + 1).padStart(2, "0")}
+            <span className="text-white/50"> / {String(slides.length).padStart(2, "0")}</span>
+          </span>
+        </div>
       </div>
 
       {/* About Section */}

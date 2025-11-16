@@ -123,53 +123,51 @@ const Home = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+
   const products = [
     {
-      image: "assets/img/projects/1.jpg",
-      title: "Metal Roofing",
-      category: "Construction",
-      filters: ["branding", "photography"],
-      type: "image",
+      title: "Power Cables",
+      description:
+        "High-efficiency electrical cables for industrial and residential power systems.",
+      image: "/images/power-cables.jpg",
+      icon: "flaticon-power",
     },
     {
-      image: "assets/img/projects/2.jpg",
-      title: "Printing And Cutting",
-      category: "Color",
-      filters: ["video", "development"],
-      type: "video",
-      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
+      title: "Networking Cables",
+      description:
+        "High-speed data and LAN cables for modern networking requirements.",
+      image: "/images/networking-cables.jpg",
+      icon: "flaticon-network",
     },
     {
-      image: "assets/img/projects/3.jpg",
-      title: "Laminate Flooring",
-      category: "Worker",
-      filters: ["design", "photography"],
-      type: "image",
+      title: "HDMI & Audio-Video Cables",
+      description:
+        "Superior-grade transmission cables for entertainment and commercial systems.",
+      image: "/images/hdmi-av-cables.jpg",
+      icon: "flaticon-hdmi",
     },
     {
-      image: "assets/img/projects/4.jpg",
-      title: "General Builders",
-      category: "Development",
-      filters: ["branding", "video"],
-      type: "video",
-      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
+      title: "Wire Harness Assemblies",
+      description:
+        "Custom harnesses for automotive, telecom, and consumer electronics.",
+      image: "/images/wire-harness.jpg",
+      icon: "flaticon-harness",
     },
     {
-      image: "assets/img/projects/5.jpg",
-      title: "House Renovation",
-      category: "3d design",
-      filters: ["design", "photography"],
-      type: "image",
+      title: "Industrial Wires",
+      description:
+        "Robust cables designed for heavy-duty industrial applications.",
+      image: "/images/industrial-wires.jpg",
+      icon: "flaticon-industrial",
     },
     {
-      image: "assets/img/projects/6.jpg",
-      title: "Green Building",
-      category: "Construction",
-      filters: ["branding", "design", "development"],
-      type: "image",
+      title: "Control & Instrumentation Cables",
+      description:
+        "For precise signal and power transmission in automation systems.",
+      image: "/images/control-instrumentation.jpg",
+      icon: "flaticon-control",
     },
   ];
-
   const filters = [
     { id: "*", label: "All" },
     { id: "development", label: "Development" },
@@ -388,8 +386,8 @@ const Home = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2.5 rounded-full transition-all ${index === currentSlide
-                  ? "w-6 bg-primary shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
-                  : "w-2 bg-white/60 hover:bg-white"
+                ? "w-6 bg-primary shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
+                : "w-2 bg-white/60 hover:bg-white"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -468,53 +466,43 @@ const Home = () => {
 
 
       {/* Services Section */}
-      <div className="py-20 bg-bg-gray services-area">
+      <div className="py-20 bg-bg-gray products-area">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">
-                Our Services
-              </h2>
+              <h2 className="text-4xl font-bold mb-4 font-heading">Our Products</h2>
               <p className="text-gray-600">
-                Able an hope of body. Any nay shyness article matters own
-                removal nothing his forming. Gay own additions education
-                satisfied the perpetual. If he cause manor happy. Without
-                farther she exposed saw man led. Along on happy could cease
-                green oh.
+                Explore our wide range of high‑quality cable solutions designed for
+                industrial, commercial, and residential applications.
               </p>
             </div>
           </div>
 
-          {/* Services Carousel */}
-          <div className="services-items services-carousel text-center">
+          {/* Products Carousel */}
+          <div className="products-items products-carousel text-center">
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-700 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentService * (100 / 3)}%)`,
-                }}
+                style={{ transform: `translateX(-${currentService * (100 / 3)}%)` }}
               >
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
-                  >
+                {products.map((product, index) => (
+                  <div key={index} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
                     <div
-                      className="relative h-96 rounded-lg overflow-hidden services-item"
-                      style={{ backgroundImage: `url(${service.image})` }}
+                      className="relative h-96 rounded-lg overflow-hidden products-item bg-cover bg-center"
+                      style={{ backgroundImage: `url(${product.image})` }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
                       <div className="relative h-full flex flex-col items-center justify-center p-8 text-white">
                         <div className="info">
                           <i
-                            className={`${service.icon} text-6xl mb-6 text-primary`}
+                            className={`${product.icon} text-6xl mb-6 text-primary`}
                             style={{ fontFamily: "Flaticon" }}
                           ></i>
                           <h4 className="text-2xl font-bold mb-4 font-heading">
-                            {service.title}
+                            {product.title}
                           </h4>
                           <p className="text-sm mb-6 leading-relaxed">
-                            {service.description}
+                            {product.description}
                           </p>
                           <a
                             href="#"
@@ -532,15 +520,15 @@ const Home = () => {
 
             {/* Carousel Indicators */}
             <div className="flex justify-center gap-2 mt-8">
-              {services.map((_, index) => (
+              {products.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentService(index)}
                   className={`h-2 rounded-full transition-all ${index === currentService
-                      ? "bg-primary w-8"
-                      : "bg-gray-400 w-2 hover:bg-gray-600"
+                    ? "bg-primary w-8"
+                    : "bg-gray-400 w-2 hover:bg-gray-600"
                     }`}
-                  aria-label={`Go to service ${index + 1}`}
+                  aria-label={`Go to product ${index + 1}`}
                 />
               ))}
             </div>
@@ -548,81 +536,11 @@ const Home = () => {
         </div>
       </div>
 
+
+
       {/* Portfolio Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 font-heading">
-              Work History
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Able an hope of body. Any nay shyness article matters own removal
-              nothing his forming. Gay own additions education satisfied the
-              perpetual. If he cause manor happy. Without farther she exposed
-              saw man led. Along on happy could cease green oh.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 mb-12 mix-item-menu">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2 rounded font-semibold transition ${activeFilter === filter.id
-                    ? "bg-primary text-gray-900"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-          <div className="magnific-mix-gallery text-center">
-            <div className="portfolio-items columns-3 hover-effect">
-              {filteredProducts.map((product, index) => (
-                <div
-                  key={`${product.title}-${index}`}
-                  className={`pf-item ${product.filters.join(" ")}`}
-                >
-                  <div className="portfolio-effet">
-                    <div className="thumb">
-                      <img src={product.image} alt="Thumb" />
-                      <div className="overlay">
-                        {product.type === "image" ? (
-                          <button
-                            onClick={() => {
-                              setLightboxImage(product.image);
-                              setIsLightboxOpen(true);
-                            }}
-                            className="item popup-link"
-                          >
-                            <i className="fa fa-eye"></i>
-                          </button>
-                        ) : (
-                          <a
-                            href={product.videoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="popup-youtube"
-                          >
-                            <i className="fa fa-play"></i>
-                          </a>
-                        )}
-                        <Link to="/project-details">
-                          <i className="fa fa-link"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h4>{product.title}</h4>
-                    <a href="#">{product.category}</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <WorkHistory />
+
 
       {/* Popular Work / Tabs Section */}
       {/* <div className="py-20 bg-dark text-white">
@@ -827,3 +745,66 @@ const Home = () => {
 };
 
 export default Home;
+const WorkHistory = () => {
+  return (
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-extrabold mb-6 font-heading tracking-tight">
+            Work History
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            M/s Mandeep Cables Pvt Ltd is led by <span className="font-semibold text-gray-800">Mr. Mandeep Singh</span> (Chairman & Managing Director),
+            who built the company through dedication and over 35 years of industry expertise. With deep
+            knowledge of production processes and components, he remains the driving force behind the
+            organization and is regarded as a stalwart in the cable industry.
+          </p>
+        </div>
+
+        {/* Highlights Section */}
+        <div className="grid md:grid-cols-2 gap-10 mt-10">
+          <div className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+            <h3 className="text-xl font-bold mb-4 text-gray-800">Why We Stand Out</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li className="flex items-start">
+                <span className="text-blue-600 mt-1 mr-2">•</span>
+                Innovative products and client satisfaction
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mt-1 mr-2">•</span>
+                Economical prices with timely delivery
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mt-1 mr-2">•</span>
+                Client-oriented and quality-centric approaches
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mt-1 mr-2">•</span>
+                Highly experienced technical & commercial team
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-600 mt-1 mr-2">•</span>
+                Dedicated lab with the latest equipment
+              </li>
+            </ul>
+          </div>
+
+          {/* Image / Visual Card */}
+          <div className="flex items-center justify-center">
+            <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300 max-w-sm">
+              <img
+                src="/assets/img/about/1.jpg"
+                alt="Industry"
+                className="rounded-xl w-full object-cover"
+              />
+              <p className="text-gray-600 text-center mt-4 text-sm">
+                Excellence in production & manufacturing for over 35 years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

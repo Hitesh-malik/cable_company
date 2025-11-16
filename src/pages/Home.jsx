@@ -540,6 +540,7 @@ const Home = () => {
 
       {/* Portfolio Section */}
       <WorkHistory />
+      <QualityAssurance />
 
 
       {/* Popular Work / Tabs Section */}
@@ -808,3 +809,90 @@ const WorkHistory = () => {
     </section>
   );
 };
+const QualityAssurance = () => {
+  return (
+    <section className="py-24 bg-[#F7F7F7]">
+      <div className="container mx-auto px-6 lg:px-12">
+        
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">
+            Quality Assurance
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our Commitment to Perfection
+          </p>
+          <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-lg">
+            At Griptronics, quality is not just a process — it’s a culture.
+            Every stage of production, from raw material inspection to final testing,
+            follows stringent quality control procedures.
+          </p>
+        </div>
+
+        {/* Standards Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          {/* Testing Standards */}
+          <div className="bg-white shadow-lg rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              Our Testing Standards Include:
+            </h3>
+            <ul className="space-y-3 text-gray-600">
+              {["ISI (Indian Standards)", "UL (Underwriters Laboratories)", "JIS / JASO (Japanese Industrial Standards)", "DIN (German Standards)"].map(
+                (item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-blue-600 mt-1 mr-2">•</span> {item}
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* In-House Testing Facilities */}
+          <div className="bg-white shadow-lg rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              In-House Testing Facilities:
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Our advanced laboratory is equipped with the latest instruments to ensure all products conform to:
+            </p>
+            <ul className="space-y-3 text-gray-600">
+              {["IS-694:2010", "UL-758", "IS-1293:2005", "ISO-9001:2015", "ISO-14001:2004"].map(
+                (item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-blue-600 mt-1 mr-2">•</span> {item}
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Certifications */}
+          <div className="bg-white shadow-lg rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              Certifications & Approvals:
+            </h3>
+            <ul className="space-y-3 text-gray-600">
+              {["BSNL", "MTNL", "DOT", "I.T.I. LTD."].map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <span className="text-blue-600 mt-1 mr-2">•</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Promise Section */}
+        <div className="mt-16 text-center max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Promise</h3>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Every cable that leaves our facility is designed to perform — ensuring
+            safety, durability, and efficiency for years to come.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+}

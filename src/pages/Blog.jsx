@@ -72,18 +72,18 @@ const Blog = () => {
       <Header />
 
       {/* Breadcrumb */}
-      <div className="bg-dark text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold font-heading">Our Blog</h1>
-          <p className="text-gray-400 mt-2">Home / Blog</p>
+      <div className="bg-dark text-white py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading">Our Blog</h1>
+          <p className="text-gray-400 mt-2 text-sm sm:text-base">Home / Blog</p>
         </div>
       </div>
 
       {/* Blog Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 font-heading">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
               Recent Blog
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const Blog = () => {
               saw man led. Along on happy could cease green oh.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {blogPosts.map((post, index) => (
               <div
                 key={index}

@@ -42,24 +42,24 @@ const Header = () => {
           isScrolled ? "shadow-lg" : "shadow-sm"
         }`}
       >
-        <nav className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+        <nav className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* logo section */}
             <div className="flex items-center">
             {!isMenuOpen && (
               <Link to="/" className="flex items-center">
-                <img src="/assets/img/logo.png" alt="Logo" className="h-12" />
+                <img src="/assets/img/logo.png" alt="Logo" className="h-10 sm:h-12" />
               </Link>
             )}
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative px-5 py-2 text-lg font-semibold transition-all duration-300 ${
+                  className={`relative px-3 xl:px-5 py-2 text-base xl:text-lg font-semibold transition-all duration-300 ${
                     isActive(link.path) ? "" : "text-gray-700"
                   }`}
                   style={isActive(link.path) ? { color: "#fcdb16" } : {}}
@@ -123,15 +123,15 @@ const Header = () => {
 
       {/* Mobile Menu Slide Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-full bg-white z-50 transform transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 transform transition-transform duration-300 lg:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Mobile Menu Header */}
-        <div className="flex items-center justify-between p-[1.12em] border-b">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b">
           <div className="flex items-center space-x-2">
             <Link to="/" className="flex items-center">
-              <img src="/assets/img/logo.png" alt="Logo" className="h-12" />
+              <img src="/assets/img/logo.png" alt="Logo" className="h-10 sm:h-12" />
             </Link>
           </div>
           <button
@@ -156,14 +156,14 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Links */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <nav className="space-y-1">
             {navigationLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 ${
                   isActive(link.path) ? "" : "text-gray-700 hover:bg-gray-50"
                 }`}
                 style={

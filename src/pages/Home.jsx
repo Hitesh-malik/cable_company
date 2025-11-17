@@ -11,6 +11,7 @@ const Home = () => {
   const [activeFilter, setActiveFilter] = useState("*");
   const [lightboxImage, setLightboxImage] = useState(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [servicesPerView, setServicesPerView] = useState(3);
 
   const slides = [
     {
@@ -89,28 +90,41 @@ const Home = () => {
   }, [slides.length]);
 
   useEffect(() => {
+    const updateServicesPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setServicesPerView(3);
+      } else if (window.innerWidth >= 640) {
+        setServicesPerView(2);
+      } else {
+        setServicesPerView(1);
+      }
+    };
+    
+    updateServicesPerView();
+    window.addEventListener('resize', updateServicesPerView);
+    return () => window.removeEventListener('resize', updateServicesPerView);
+  }, []);
+
+  useEffect(() => {
     const serviceInterval = setInterval(() => {
       setCurrentService((prev) => {
-        // Show 3 items at a time, so max slide is services.length - 3
-        const maxSlide = Math.max(0, services.length - 3);
+        const maxSlide = Math.max(0, services.length - servicesPerView);
         return prev >= maxSlide ? 0 : prev + 1;
       });
     }, 4000);
     return () => clearInterval(serviceInterval);
-  }, [services.length]);
+  }, [services.length, servicesPerView]);
 
   const nextService = () => {
     setCurrentService((prev) => {
-      // Show 3 items at a time, so max slide is services.length - 3
-      const maxSlide = Math.max(0, services.length - 3);
+      const maxSlide = Math.max(0, services.length - servicesPerView);
       return prev >= maxSlide ? 0 : prev + 1;
     });
   };
 
   const prevService = () => {
     setCurrentService((prev) => {
-      // Show 3 items at a time, so max slide is services.length - 3
-      const maxSlide = Math.max(0, services.length - 3);
+      const maxSlide = Math.max(0, services.length - servicesPerView);
       return prev <= 0 ? maxSlide : prev - 1;
     });
   };
@@ -313,7 +327,7 @@ const Home = () => {
       <Header />
 
       {/* Banner Carousel */}
-      <div className="relative h-screen overflow-hidden banner-area shadow-inner">
+      <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden banner-area shadow-inner">
         <div
           className="relative h-full w-full flex transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -329,28 +343,28 @@ const Home = () => {
               {/* Content Box with Dark Overlay */}
               <div className="box-table h-full w-full">
                 <div className="box-cell">
-                  <div className="container mx-auto px-4">
+                  <div className="container mx-auto px-4 sm:px-6">
                     <div className="max-w-4xl">
-                      <div className="content relative z-10 text-white p-20">
-                        <h3 className="text-xl font-semibold mb-6 font-heading uppercase relative inline-block pb-5">
+                      <div className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20">
+                        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5">
                           {slide.title}
                           <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-white"></span>
                         </h3>
-                        <h1 className="text-6xl font-black mb-6 font-heading uppercase leading-tight">
-                          <span className="inline-block bg-[#0056B3] text-white px-4 py-2 mb-2">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-5 md:mb-6 font-heading uppercase leading-tight">
+                          <span className="inline-block bg-[#0056B3] text-white px-3 sm:px-4 py-1.5 sm:py-2 mb-1 sm:mb-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                             BEST CHOICE
                           </span>
                           <br />
-                          <span className="inline-block bg-[#0056B3] text-white px-4 py-2">
+                          <span className="inline-block bg-[#0056B3] text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                             FOR YOU
                           </span>
                         </h1>
-                        <p className="text-base mb-8 text-gray-300 leading-relaxed max-w-2xl">
+                        <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 text-gray-300 leading-relaxed max-w-2xl">
                           {slide.description}
                         </p>
                         <a
                           href="#"
-                          className="inline-block bg-primary text-gray-900 px-6 py-3 rounded font-semibold hover:opacity-90 transition text-sm uppercase"
+                          className="inline-block bg-primary text-gray-900 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
                         >
                           Learn more
                         </a>
@@ -382,20 +396,20 @@ const Home = () => {
         </button>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 rounded-full transition-all ${index === currentSlide
-                  ? "w-6 bg-primary shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
-                  : "w-2 bg-white/60 hover:bg-white"
+              className={`h-2 sm:h-2.5 rounded-full transition-all ${index === currentSlide
+                  ? "w-5 sm:w-6 bg-primary shadow-[0_0_0_3px_rgba(0,0,0,0.35)] sm:shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
+                  : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
 
-          <span className="ml-3 text-xs font-semibold tracking-[0.25em] text-white/80 uppercase">
+          <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/80 uppercase">
             {String(currentSlide + 1).padStart(2, "0")}
             <span className="text-white/50"> / {String(slides.length).padStart(2, "0")}</span>
           </span>
@@ -403,9 +417,9 @@ const Home = () => {
       </div>
 
       {/* About Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
 
             {/* LEFT SIDE — unchanged */}
             <div className="w-full lg:w-1/2 relative">
@@ -417,24 +431,24 @@ const Home = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <a
                   href="https://www.youtube.com/watch?v=vQqZIFCab9o"
-                  className="bg-primary w-20 h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
+                  className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
                 >
-                  <i className="fas fa-play text-gray-900 text-xl ml-1"></i>
+                  <i className="fas fa-play text-gray-900 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
                 </a>
               </div>
             </div>
 
             {/* RIGHT SIDE — updated content */}
             <div className="w-full lg:w-1/2">
-              <h3 className="text-xl text-gray-600 mb-4 font-heading">
+              <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
                 Powering Connections. Building Reliability.
               </h3>
 
-              <h2 className="text-4xl font-bold mb-6 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                 Griptronics is a trusted Indian manufacturer of high-performance electrical wires, networking cables, cords, and wire harness solutions — engineered for reliability, safety, and innovation.
               </h2>
 
-              <div className="text-gray-600 leading-relaxed space-y-4">
+              <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
                 <p>
                   <strong>Premium Quality Standards —</strong> Certified and tested under IS, UL, JIS, JASO & DIN specifications.
                 </p>
@@ -452,10 +466,10 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8">
                 <a
                   href="#"
-                  className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                  className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
                 >
                   👉 Explore Our Range | Request a Quote
                 </a>
@@ -468,14 +482,14 @@ const Home = () => {
 
 
       {/* Services Section */}
-      <div className="py-20 bg-bg-gray services-area">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
                 Our Services
               </h2>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600 px-4">
                 Able an hope of body. Any nay shyness article matters own
                 removal nothing his forming. Gay own additions education
                 satisfied the perpetual. If he cause manor happy. Without
@@ -491,34 +505,34 @@ const Home = () => {
               <div
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{
-                  transform: `translateX(-${currentService * (100 / 3)}%)`,
+                  transform: `translateX(-${currentService * (100 / servicesPerView)}%)`,
                 }}
               >
                 {services.map((service, index) => (
                   <div
                     key={index}
-                    className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
+                    className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3"
                   >
                     <div
-                      className="relative h-96 rounded-lg overflow-hidden services-item"
+                      className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
                       style={{ backgroundImage: `url(${service.image})` }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
-                      <div className="relative h-full flex flex-col items-center justify-center p-8 text-white">
+                      <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
                         <div className="info">
                           <i
-                            className={`${service.icon} text-6xl mb-6 text-primary`}
+                            className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
                             style={{ fontFamily: "Flaticon" }}
                           ></i>
-                          <h4 className="text-2xl font-bold mb-4 font-heading">
+                          <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading">
                             {service.title}
                           </h4>
-                          <p className="text-sm mb-6 leading-relaxed">
+                          <p className="text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2">
                             {service.description}
                           </p>
                           <a
                             href="#"
-                            className="bg-white text-gray-900 border border-gray-900 px-6 py-2 rounded text-sm font-semibold hover:bg-primary hover:border-primary transition uppercase"
+                            className="bg-white text-gray-900 border border-gray-900 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary transition uppercase"
                           >
                             Read More
                           </a>
@@ -549,25 +563,25 @@ const Home = () => {
       </div>
 
       {/* Portfolio Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 font-heading">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
               Work History
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
               Able an hope of body. Any nay shyness article matters own removal
               nothing his forming. Gay own additions education satisfied the
               perpetual. If he cause manor happy. Without farther she exposed
               saw man led. Along on happy could cease green oh.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 mb-12 mix-item-menu">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12 mix-item-menu">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2 rounded font-semibold transition ${activeFilter === filter.id
+                className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${activeFilter === filter.id
                     ? "bg-primary text-gray-900"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                   }`}
@@ -577,7 +591,7 @@ const Home = () => {
             ))}
           </div>
           <div className="magnific-mix-gallery text-center">
-            <div className="portfolio-items columns-3 hover-effect">
+            <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 hover-effect">
               {filteredProducts.map((product, index) => (
                 <div
                   key={`${product.title}-${index}`}

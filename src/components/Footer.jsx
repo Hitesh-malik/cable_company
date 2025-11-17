@@ -22,24 +22,24 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* About Us Section */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 text-white">About Us</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed max-w-2xl">
+          <div className="md:col-span-2 lg:col-span-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">About Us</h3>
+            <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-2xl text-sm sm:text-base">
               Excellence decisively nay man yet impression for contrasted remarkably. 
               There spoke happy for you are out. Fertile how old address did showing 
               because sitting replied six. Had arose guest visit going off child she new.
             </p>
             
             {/* Contact Information */}
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center group">
-                  <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center mr-3 group-hover:bg-green-500/20 transition-colors">
-                    <i className={`${item.icon} text-green-500 text-sm`}></i>
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-green-500/10 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-green-500/20 transition-colors flex-shrink-0">
+                    <i className={`${item.icon} text-green-500 text-xs sm:text-sm`}></i>
                   </div>
                   {item.url ? (
                     <a 
@@ -57,12 +57,12 @@ const Footer = () => {
           </div>
 
           {/* Social Media Section */}
-          <div className="lg:text-right">
-            <h3 className="text-2xl font-bold mb-4 text-white">Follow Us</h3>
-            <p className="text-gray-400 mb-6">
+          <div className="md:text-left lg:text-right">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Follow Us</h3>
+            <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
               Stay connected with us on social media
             </p>
-            <div className="flex lg:justify-end space-x-3">
+            <div className="flex md:justify-start lg:justify-end space-x-2 sm:space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -81,17 +81,17 @@ const Footer = () => {
         <div className="border-t border-gray-800 my-8"></div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
+          <div className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
             © Copyright {new Date().getFullYear()}. All rights reserved.
           </div>
           
-          <nav className="flex flex-wrap gap-6">
+          <nav className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
             {footerLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
-                className="text-gray-400 hover:text-green-500 transition-colors text-sm"
+                className="text-gray-400 hover:text-green-500 transition-colors text-xs sm:text-sm"
               >
                 {link.text}
               </a>

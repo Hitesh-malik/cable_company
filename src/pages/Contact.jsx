@@ -49,27 +49,27 @@ const Contact = () => {
       <Header />
 
       {/* Breadcrumb */}
-      <div className="bg-gray-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4 text-white">Contact Us</h1>
+      <div className="bg-gray-800 text-white py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white">Contact Us</h1>
         </div>
       </div>
 
       {/* Main Contact Section */}
-      <div className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             {/* Left Column - Map and Contact Info */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6 sm:space-y-8 order-1">
               {/* Find Us Here Section */}
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold mb-8 text-gray-900">
+                <div className="p-6 sm:p-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900">
                     Find Us Here
                   </h2>
 
                   {/* Map */}
-                  <div className="relative h-96 mb-8 rounded-xl overflow-hidden bg-gray-100">
+                  <div className="relative h-64 sm:h-80 md:h-96 mb-6 sm:mb-8 rounded-xl overflow-hidden bg-gray-100">
                     {/* Loading Indicator */}
                     {!mapLoaded && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 z-10 rounded-xl overflow-hidden">
@@ -288,7 +288,7 @@ const Contact = () => {
                   </div>
 
                   {/* Contact Info Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     {contactInfo.map((info, index) => (
                       <a
                         key={index}
@@ -323,11 +323,11 @@ const Contact = () => {
               </div>
 
               {/* Why Choose Us Section */}
-              <div className="bg-[#1E2939] rounded-2xl shadow-sm p-8">
-                <h3 className="text-2xl font-bold mb-6 text-white">
+              <div className="bg-[#1E2939] rounded-2xl shadow-sm p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
                   Why Choose Us?
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {whyChooseUs.map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <i className={`${item.icon} text-white text-lg`}></i>
@@ -339,20 +339,20 @@ const Contact = () => {
             </div>
 
             {/* Right Column - Send Message */}
-            <div className="lg:col-span-1">
-              <div className="bg-[#1E2939] rounded-2xl p-8 text-white sticky top-8">
+            <div className="lg:col-span-1 order-2 lg:order-2 w-full">
+              <div className="bg-[#1E2939] rounded-2xl p-6 sm:p-8 text-white lg:sticky lg:top-4 lg:top-8">
                 {/* White Circle Icon */}
-                <div className="flex justify-center mb-6">
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center">
-                    <i className="fas fa-paper-plane text-black text-3xl"></i>
+                <div className="flex justify-center mb-4 sm:mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center">
+                    <i className="fas fa-paper-plane text-black text-xl sm:text-2xl md:text-3xl"></i>
                   </div>
                 </div>
 
-                <h3 className="text-3xl font-bold text-center mb-4 text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4 text-white">
                   Send Us a Message
                 </h3>
 
-                <p className="text-center mb-8 text-gray-300 opacity-90">
+                <p className="text-center mb-6 sm:mb-8 text-gray-300 opacity-90 text-sm sm:text-base">
                   Have a question or want to work together? Fill out our form
                   and we'll get back to you within 24 hours.
                 </p>
@@ -361,9 +361,9 @@ const Contact = () => {
                   href={googleFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-white text-black px-6 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="flex items-center justify-center w-full bg-white text-black px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
                 >
-                  <i className="fas fa-external-link-alt mr-3"></i>
+                  <i className="fas fa-external-link-alt mr-2 sm:mr-3"></i>
                   Open Contact Form
                 </a>
 

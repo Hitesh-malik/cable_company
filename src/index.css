@@ -81,11 +81,26 @@ i[class*=" flaticon-"]:before {
 }
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
   body {
     font-family: var(--font-family-default);
     font-size: 14px;
     line-height: 26px;
     color: var(--color-heading);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
   }
 
   h1,
@@ -115,6 +130,23 @@ i[class*=" flaticon-"]:before {
   position: relative;
   overflow: hidden;
   height: 100vh;
+  min-height: 500px;
+  width: 100%;
+  max-width: 100vw;
+}
+
+@media (max-width: 640px) {
+  .banner-area {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .banner-area {
+    height: 70vh;
+    min-height: 500px;
+  }
 }
 
 .banner-area .box-table {
@@ -148,20 +180,30 @@ i[class*=" flaticon-"]:before {
 }
 
 .banner-area .carousel-control {
-  font-size: 50px;
-  height: 50px;
-  line-height: 50px;
+  font-size: 30px;
+  height: 40px;
+  line-height: 40px;
   padding: 0;
   position: absolute;
   top: 50%;
-  width: 50px;
-  margin-top: -25px;
+  width: 40px;
+  margin-top: -20px;
   background: transparent;
   opacity: 0;
   z-index: 30;
   transition: all 0.35s ease-in-out;
   border: none;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .banner-area .carousel-control {
+    font-size: 50px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    margin-top: -25px;
+  }
 }
 
 .banner-area .carousel-control.left {

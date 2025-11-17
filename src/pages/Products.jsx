@@ -68,10 +68,10 @@ const Products = () => {
       <Header />
 
       {/* Page Intro */}
-      <div className="bg-[#1E2939] text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold font-heading text-white">Products</h1>
-          <p className="text-gray-300 mt-2 max-w-xl">
+      <div className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-white">Products</h1>
+          <p className="text-gray-300 mt-2 max-w-xl text-sm sm:text-base">
             Comprehensive Cable & Wiring Solutions engineered for durability and
             performance.
           </p>
@@ -79,9 +79,9 @@ const Products = () => {
       </div>
 
       {/* Info Section */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl font-bold mb-4 font-heading">
+      <div className="py-12 sm:py-14 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 text-center max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
             Griptronics Product Range
           </h2>
           <p className="text-gray-600">
@@ -115,13 +115,13 @@ const Products = () => {
       </div>
 
       {/* Filters */}
-      <div className="container mx-auto px-4 mb-10">
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="container mx-auto px-4 sm:px-6 mb-8 sm:mb-10">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-2 rounded font-semibold transition ${
+              className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${
                 activeFilter === filter.id
                   ? "bg-primary text-gray-900"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -134,8 +134,8 @@ const Products = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="container mx-auto px-4 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16 md:pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredProducts.map((product, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-md">
               <div className="relative overflow-hidden">

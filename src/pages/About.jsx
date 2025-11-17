@@ -92,14 +92,14 @@ const About = () => {
 
       {/* Breadcrumb */}
       <div
-        className="relative text-white py-20 bg-fixed bg-cover bg-center"
+        className="relative text-white py-12 sm:py-16 md:py-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/10.jpg)" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl font-bold font-heading mb-4">About Us</h1>
-            <ul className="flex justify-center gap-4 text-gray-300">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4">About Us</h1>
+            <ul className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-300">
               <li>
                 <Link to="/" className="hover:text-primary">
                   Home
@@ -119,11 +119,11 @@ const About = () => {
       </div>
 
       {/* About Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12">
             <div className="w-full lg:w-1/2">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <img
                     src="/assets/img/ongoing/1.jpg"
@@ -141,21 +141,21 @@ const About = () => {
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <h3 className="text-xl text-gray-600 mb-4 font-heading">
+              <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
                 Welcome to Mandeep Cables
               </h3>
-              <h2 className="text-4xl font-bold mb-6 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                 Leading OEM ODM USB Cable Manufacturer
               </h2>
-              <div className="mb-6">
-                <h4 className="text-2xl font-bold text-gray-900 mb-2 font-heading">
+              <div className="mb-4 sm:mb-5 md:mb-6">
+                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 font-heading">
                   Mr. Mandeep Singh
                 </h4>
-                <p className="text-lg text-primary font-semibold mb-4">
+                <p className="text-base sm:text-lg text-primary font-semibold mb-3 sm:mb-4">
                   Chairman & Managing Director
                 </p>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 Mr. Mandeep Singh is the visionary founder and driving force
                 behind Mandeep Cables Pvt. Ltd. With unwavering dedication and
                 relentless hard work, he has built this organization from the
@@ -164,18 +164,18 @@ const About = () => {
                 possesses comprehensive knowledge of processes, production, and
                 components that makes him a true stalwart in the field.
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 As the Chairman & Managing Director, he continues to lead the
                 organization with passion and expertise, ensuring Mandeep Cables
                 remains at the forefront of custom USB cable manufacturing and
                 OEM/ODM solutions.
               </p>
-              <div className="flex items-center gap-6 mt-8">
-                <div className="text-6xl font-bold text-primary font-heading">
+              <div className="flex items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary font-heading">
                   35+
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold font-heading">
+                  <h4 className="text-lg sm:text-xl font-semibold font-heading">
                     Years
                     <br /> Experience Working
                   </h4>
@@ -188,12 +188,12 @@ const About = () => {
 
       {/* Fun Factor / Stats Section */}
       <div
-        className="relative py-20 text-center bg-fixed bg-cover bg-center"
+        className="relative py-12 sm:py-16 md:py-20 text-center bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/2.jpg)" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-white">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
@@ -277,19 +277,19 @@ const About = () => {
 
       {/* Video Section */}
       <div
-        className="relative py-20 text-center bg-cover bg-center mt-16 min-h-[500px] flex items-center"
+        className="relative py-12 sm:py-16 md:py-20 text-center bg-cover bg-center mt-8 sm:mt-12 md:mt-16 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center"
         style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
       >
         {/* Light overlay - very subtle */}
         <div className="absolute inset-0  bg-opacity-20 z-0"></div>
         {/* Content - over the image */}
-        <div className="container mx-auto px-4 relative z-20 w-full">
+        <div className="container mx-auto px-4 sm:px-6 relative z-20 w-full">
           <div className="max-w-3xl mx-auto text-white">
             {/* Text at top */}
-            <h4 className="text-xl mb-4 font-heading text-white relative z-30">
+            <h4 className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-heading text-white relative z-30">
               Know more about us!
             </h4>
-            <h2 className="text-4xl font-bold mb-8 font-heading text-white relative z-30">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 font-heading text-white relative z-30 px-4">
               Check this video presentation to know more about us and our
               process
             </h2>
@@ -298,33 +298,33 @@ const About = () => {
               href="https://www.youtube.com/watch?v=vQqZIFCab9o"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary w-20 h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto relative z-30"
+              className="bg-primary w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto relative z-30"
             >
-              <FaPlay className="text-white text-xl ml-1" />
+              <FaPlay className="text-white text-lg sm:text-xl ml-1" />
             </a>
           </div>
         </div>
       </div>
 
       {/* Clients Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
             <div>
-              <h2 className="text-4xl font-bold mb-6 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                 Our Clients
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 Yourself required no at thoughts delicate landlord it be.
                 Branched dashwood do is whatever it. Farther be chapter at
                 visited married in it pressed. By distrusts procuring be oh
               </p>
-              <blockquote className="border-l-4 border-primary pl-6 py-4 mb-6 text-gray-700 italic">
+              <blockquote className="border-l-4 border-primary pl-4 sm:pl-6 py-3 sm:py-4 mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base text-gray-700 italic">
                 frankness existence believing instantly if. Doubtful on an
                 juvenile as of servants insisted. Judge why maids led sir whose
                 guest drift her point. Him comparison especially friendship was
               </blockquote>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 who sufficient attachment favourable how. Luckily but minutes
                 ask picture man perhaps are inhabit. How her good all sang more
                 why.
@@ -334,12 +334,12 @@ const About = () => {
               </p>
               <a
                 href="#"
-                className="inline-block bg-dark text-white px-6 py-3 rounded text-sm font-semibold hover:opacity-90 transition"
+                className="inline-block bg-dark text-white px-4 sm:px-6 py-2 sm:py-3 rounded text-xs sm:text-sm font-semibold hover:opacity-90 transition"
               >
                 Request a quote
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {clients.map((client, index) => (
                 <div
                   key={index}

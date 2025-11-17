@@ -110,13 +110,13 @@ const Services = () => {
 
       {/* Breadcrumb */}
       <div
-        className="relative text-white py-20 bg-fixed bg-cover bg-center"
+        className="relative text-white py-12 sm:py-16 md:py-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/2.jpg)" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl font-bold font-heading mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4">
               Our Services
             </h1>
             <ul className="flex justify-center gap-4 text-gray-300">
@@ -140,16 +140,16 @@ const Services = () => {
 
       {/* Featured Services */}
       <div className="bg-bg-gray">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {featuredServices.map((service, index) => {
             const isMiddle = index === 1;
             return (
               <div
                 key={index}
-                className={`text-center p-16 transition-all duration-500 group featured-service-card ${
+                className={`text-center p-8 sm:p-12 md:p-16 transition-all duration-500 group featured-service-card ${
                   isMiddle
                     ? "bg-primary middle-card"
-                    : "bg-white hover:bg-primary border-r border-gray-200 last:border-r-0"
+                    : "bg-white hover:bg-primary border-r border-gray-200 last:border-r-0 sm:border-b lg:border-b-0"
                 }`}
               >
                 <div
@@ -188,11 +188,11 @@ const Services = () => {
       </div>
 
       {/* Trending Services */}
-      <div className="py-20 bg-bg-gray">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <div className="py-12 sm:py-16 md:py-20 bg-bg-gray">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
                 Trending Services
               </h2>
               <p className="text-gray-600">
@@ -204,11 +204,11 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col lg:flex-row items-center gap-8"
+                className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8"
               >
                 <div className="w-full lg:w-1/2">
                   <img
@@ -218,7 +218,7 @@ const Services = () => {
                   />
                 </div>
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-3xl font-bold mb-4 font-heading">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-heading">
                     {service.title}
                   </h3>
                   <h5 className="text-lg text-gray-600 mb-4">
@@ -242,11 +242,11 @@ const Services = () => {
       </div>
 
       {/* Pricing Tables */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
                 Best Pricing
               </h2>
               <p className="text-gray-600">
@@ -258,7 +258,7 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}

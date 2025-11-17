@@ -89,13 +89,13 @@ const ProductDetails = () => {
 
       {/* Breadcrumb */}
       <div
-        className="relative text-white py-20 bg-fixed bg-cover bg-center"
+        className="relative text-white py-12 sm:py-16 md:py-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/3.jpg)" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl font-bold font-heading mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4">
               Product Details
             </h1>
             <ul className="flex justify-center gap-4 text-gray-300">
@@ -118,11 +118,11 @@ const ProductDetails = () => {
       </div>
 
       {/* Portfolio Details */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           {/* Image Carousel */}
-          <div className="mb-12">
-            <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden">
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden">
               <img
                 src={productImages[currentImageIndex]}
                 alt="Product"
@@ -184,10 +184,10 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2">
-              <h3 className="text-3xl font-bold mb-6 font-heading">
+            <div className="lg:col-span-2 order-2 lg:order-1 w-full">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                 Behaviour are contented
               </h3>
               <ul className="flex gap-6 mb-6">
@@ -306,9 +306,9 @@ const ProductDetails = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="bg-bg-gray p-8 rounded-lg">
-                <h4 className="text-2xl font-bold mb-6 font-heading">
+            <div className="lg:col-span-1 order-1 lg:order-2 w-full">
+              <div className="bg-bg-gray p-6 sm:p-8 rounded-lg lg:sticky lg:top-4">
+                <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                   Product Details
                 </h4>
                 <div className="flex items-center gap-2 text-gray-600 mb-6">
@@ -350,11 +350,11 @@ const ProductDetails = () => {
           </div>
 
           {/* Related Products */}
-          <div className="mt-20">
-            <h3 className="text-3xl font-bold mb-8 font-heading">
+          <div className="mt-12 sm:mt-16 md:mt-20">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 font-heading">
               Related Products
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {relatedProducts.map((product, index) => (
                 <div
                   key={index}

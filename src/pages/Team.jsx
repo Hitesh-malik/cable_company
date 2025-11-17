@@ -78,7 +78,7 @@ const Team = () => {
 
       {/* Breadcrumb */}
       <div
-        className="text-white py-20 relative min-h-[400px] flex items-center"
+        className="text-white py-12 sm:py-16 md:py-20 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] flex items-center"
         style={{
           backgroundImage: `url(/assets/img/banner/1.jpg)`,
           backgroundSize: "cover",
@@ -87,8 +87,8 @@ const Team = () => {
         }}
       >
         <div className="absolute inset-0  bg-opacity-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl font-bold font-heading text-white">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-white">
             Our Team
           </h1>
           <p className="text-gray-200 mt-2">Home / Team</p>
@@ -96,10 +96,10 @@ const Team = () => {
       </div>
 
       {/* Team Section */}
-      <div className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 max-w-[1600px]">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 font-heading text-gray-800">
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1600px]">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading text-gray-800">
               Our Capabilities & Partners
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -110,14 +110,14 @@ const Team = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Image Section - Top */}
-                <div className="relative h-96 overflow-hidden bg-gray-200">
+                <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden bg-gray-200">
                   <img
                     src={member.image}
                     alt={member.title}

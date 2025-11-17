@@ -140,46 +140,48 @@ const Home = () => {
 
   const products = [
     {
-      title: "Power Cables",
-      description:
-        "High-efficiency electrical cables for industrial and residential power systems.",
-      image: "/images/power-cables.jpg",
-      icon: "flaticon-power",
+      image: "assets/img/projects/1.jpg",
+      title: "Metal Roofing",
+      category: "Construction",
+      filters: ["branding", "photography"],
+      type: "image",
     },
     {
-      title: "Networking Cables",
-      description:
-        "High-speed data and LAN cables for modern networking requirements.",
-      image: "/images/networking-cables.jpg",
-      icon: "flaticon-network",
+      image: "assets/img/projects/2.jpg",
+      title: "Printing And Cutting",
+      category: "Color",
+      filters: ["video", "development"],
+      type: "video",
+      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
     },
     {
-      title: "HDMI & Audio-Video Cables",
-      description:
-        "Superior-grade transmission cables for entertainment and commercial systems.",
-      image: "/images/hdmi-av-cables.jpg",
-      icon: "flaticon-hdmi",
+      image: "assets/img/projects/3.jpg",
+      title: "Laminate Flooring",
+      category: "Worker",
+      filters: ["design", "photography"],
+      type: "image",
     },
     {
-      title: "Wire Harness Assemblies",
-      description:
-        "Custom harnesses for automotive, telecom, and consumer electronics.",
-      image: "/images/wire-harness.jpg",
-      icon: "flaticon-harness",
+      image: "assets/img/projects/4.jpg",
+      title: "General Builders",
+      category: "Development",
+      filters: ["branding", "video"],
+      type: "video",
+      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
     },
     {
-      title: "Industrial Wires",
-      description:
-        "Robust cables designed for heavy-duty industrial applications.",
-      image: "/images/industrial-wires.jpg",
-      icon: "flaticon-industrial",
+      image: "assets/img/projects/5.jpg",
+      title: "House Renovation",
+      category: "3d design",
+      filters: ["design", "photography"],
+      type: "image",
     },
     {
-      title: "Control & Instrumentation Cables",
-      description:
-        "For precise signal and power transmission in automation systems.",
-      image: "/images/control-instrumentation.jpg",
-      icon: "flaticon-control",
+      image: "assets/img/projects/6.jpg",
+      title: "Green Building",
+      category: "Construction",
+      filters: ["branding", "design", "development"],
+      type: "image",
     },
   ];
   const filters = [
@@ -399,15 +401,9 @@ const Home = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-<<<<<<< HEAD
               className={`h-2 sm:h-2.5 rounded-full transition-all ${index === currentSlide
                   ? "w-5 sm:w-6 bg-primary shadow-[0_0_0_3px_rgba(0,0,0,0.35)] sm:shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
                   : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
-=======
-              className={`h-2.5 rounded-full transition-all ${index === currentSlide
-                ? "w-6 bg-primary shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
-                : "w-2 bg-white/60 hover:bg-white"
->>>>>>> 0c1761209d33a8a3994d0b0c81aa923ffc2a3d47
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -486,7 +482,6 @@ const Home = () => {
 
 
       {/* Services Section */}
-<<<<<<< HEAD
       <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -500,26 +495,15 @@ const Home = () => {
                 satisfied the perpetual. If he cause manor happy. Without
                 farther she exposed saw man led. Along on happy could cease
                 green oh.
-=======
-      <div className="py-20 bg-bg-gray products-area">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">Our Products</h2>
-              <p className="text-gray-600">
-                Explore our wide range of high‑quality cable solutions designed for
-                industrial, commercial, and residential applications.
->>>>>>> 0c1761209d33a8a3994d0b0c81aa923ffc2a3d47
               </p>
             </div>
           </div>
 
-          {/* Products Carousel */}
-          <div className="products-items products-carousel text-center">
+          {/* Services Carousel */}
+          <div className="services-items services-carousel text-center">
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-700 ease-in-out"
-<<<<<<< HEAD
                 style={{
                   transform: `translateX(-${currentService * (100 / servicesPerView)}%)`,
                 }}
@@ -532,21 +516,11 @@ const Home = () => {
                     <div
                       className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
                       style={{ backgroundImage: `url(${service.image})` }}
-=======
-                style={{ transform: `translateX(-${currentService * (100 / 3)}%)` }}
-              >
-                {products.map((product, index) => (
-                  <div key={index} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
-                    <div
-                      className="relative h-96 rounded-lg overflow-hidden products-item bg-cover bg-center"
-                      style={{ backgroundImage: `url(${product.image})` }}
->>>>>>> 0c1761209d33a8a3994d0b0c81aa923ffc2a3d47
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
                       <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
                         <div className="info">
                           <i
-<<<<<<< HEAD
                             className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
                             style={{ fontFamily: "Flaticon" }}
                           ></i>
@@ -555,16 +529,6 @@ const Home = () => {
                           </h4>
                           <p className="text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2">
                             {service.description}
-=======
-                            className={`${product.icon} text-6xl mb-6 text-primary`}
-                            style={{ fontFamily: "Flaticon" }}
-                          ></i>
-                          <h4 className="text-2xl font-bold mb-4 font-heading">
-                            {product.title}
-                          </h4>
-                          <p className="text-sm mb-6 leading-relaxed">
-                            {product.description}
->>>>>>> 0c1761209d33a8a3994d0b0c81aa923ffc2a3d47
                           </p>
                           <a
                             href="#"
@@ -601,7 +565,6 @@ const Home = () => {
 
 
       {/* Portfolio Section */}
-<<<<<<< HEAD
       <div className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -676,11 +639,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-=======
-      <WorkHistory />
-      <QualityAssurance />
-
->>>>>>> 0c1761209d33a8a3994d0b0c81aa923ffc2a3d47
 
       {/* Popular Work / Tabs Section */}
       {/* <div className="py-20 bg-dark text-white">

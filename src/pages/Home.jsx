@@ -745,22 +745,28 @@ const Home = () => {
                   <p className="text-gray-600 mb-6">{member.description}</p>
                   <div className="flex justify-center gap-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/griptronicsindia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-600 hover:text-primary transition"
                     >
                       <i className="fab fa-facebook-f"></i>
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/griptronicsindia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-600 hover:text-primary transition"
                     >
-                      <i className="fab fa-twitter"></i>
+                      <i className="fab fa-instagram"></i>
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/company/griptronics-india-wires-cables-pvt-ltd/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-600 hover:text-primary transition"
                     >
-                      <i className="fab fa-google-plus-g"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </div>
                 </div>

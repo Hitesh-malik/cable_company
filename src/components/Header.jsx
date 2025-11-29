@@ -200,32 +200,31 @@ const Header = () => {
           <div className="mt-8 pt-8 border-t">
             <div className="flex justify-center space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/griptronicsindia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
-                aria-label="Twitter"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/griptronicsindia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
                 aria-label="Instagram"
               >
                 <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/griptronics-india-wires-cables-pvt-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
           </div>

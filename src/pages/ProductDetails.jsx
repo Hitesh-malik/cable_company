@@ -13,7 +13,7 @@ import {
   FaLink,
   FaPlay,
   FaFacebookF,
-  FaTwitter,
+  FaInstagram,
   FaLinkedinIn,
   FaGooglePlusG,
 } from "react-icons/fa";
@@ -270,7 +270,9 @@ const ProductDetails = () => {
                     <li className="text-gray-700 font-semibold">Share:</li>
                     <li>
                       <a
-                        href="#"
+                        href="https://www.facebook.com/griptronicsindia/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-600 hover:text-primary transition text-xl"
                       >
                         <FaFacebookF />
@@ -278,15 +280,19 @@ const ProductDetails = () => {
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="https://www.instagram.com/griptronicsindia/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-600 hover:text-primary transition text-xl"
                       >
-                        <FaTwitter />
+                        <FaInstagram />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/company/griptronics-india-wires-cables-pvt-ltd/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-600 hover:text-primary transition text-xl"
                       >
                         <FaLinkedinIn />

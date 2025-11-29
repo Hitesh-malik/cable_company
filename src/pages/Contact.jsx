@@ -20,8 +20,14 @@ const Contact = () => {
     {
       icon: "fas fa-envelope",
       title: "SEND US MAIL",
-      content: "Info@Yourdomain.Com",
-      link: "mailto:Info@Yourdomain.Com",
+      content: "crm@griptronics.com",
+      link: "mailto:crm@griptronics.com",
+    },
+    {
+      icon: "fas fa-envelope",
+      title: "SALES INQUIRY",
+      content: "sales@griptronics.com",
+      link: "mailto:sales@griptronics.com",
     },
     {
       icon: "fas fa-phone-alt",
@@ -39,7 +45,7 @@ const Contact = () => {
   ];
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("Info@Yourdomain.Com");
+    navigator.clipboard.writeText("crm@griptronics.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

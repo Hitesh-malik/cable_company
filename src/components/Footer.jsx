@@ -2,15 +2,16 @@ import React from 'react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: 'fab fa-facebook-f', url: '#', label: 'Facebook' },
-    { icon: 'fab fa-instagram', url: '#', label: 'Instagram' },
-    { icon: 'fab fa-twitter', url: '#', label: 'Twitter' },
-    { icon: 'fab fa-youtube', url: '#', label: 'YouTube' }
+    { icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/griptronicsindia/', label: 'Facebook' },
+    { icon: 'fab fa-instagram', url: 'https://www.instagram.com/griptronicsindia/', label: 'Instagram' },
+    { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/company/griptronics-india-wires-cables-pvt-ltd/', label: 'LinkedIn' },
+    { icon: 'fas fa-envelope', url: 'mailto:crm@griptronics.com', label: 'Email' }
   ];
 
   const contactInfo = [
     { icon: 'fas fa-globe', text: 'www.validtheme.com', url: 'https://www.validtheme.com' },
-    { icon: 'fas fa-envelope', text: 'support@validtheme.com', url: 'mailto:support@validtheme.com' },
+    { icon: 'fas fa-envelope', text: 'crm@griptronics.com', url: 'mailto:crm@griptronics.com' },
+    { icon: 'fas fa-envelope', text: 'sales@griptronics.com', url: 'mailto:sales@griptronics.com' },
     { icon: 'fas fa-map-marker-alt', text: '123 6th St. Melbourne, FL 32904' }
   ];
 
@@ -68,6 +69,8 @@ const Footer = () => {
                   key={index}
                   href={social.url}
                   aria-label={social.label}
+                  target={social.url !== '#' ? "_blank" : "_self"}
+                  rel={social.url !== '#' ? "noopener noreferrer" : ""}
                   className="w-10 h-10 rounded-full bg-gray-800 hover:bg-green-500 flex items-center justify-center transition-all duration-300 hover:scale-110"
                 >
                   <i className={`${social.icon} text-white text-sm`}></i>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import LogoTwo from "../assets/img/LogoTwo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,14 +44,22 @@ const Header = () => {
         }`}
       >
         <nav className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
             {/* logo section */}
-            <div className="flex items-center">
-            {!isMenuOpen && (
-              <Link to="/" className="flex items-center">
-                <img src="/assets/img/logo.png" alt="Griptronics India Wires & Cables" className="h-10 sm:h-12" />
-              </Link>
-            )}
+            <div className="flex items-center shrink-0">
+              {!isMenuOpen && (
+                <Link
+                  to="/"
+                  className="flex items-center transition-opacity hover:opacity-90"
+                >
+                  <img
+                    src={LogoTwo}
+                    alt="Griptronics India Wires & Cables"
+                    className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+                    style={{ maxHeight: "80px" }}
+                  />
+                </Link>
+              )}
             </div>
 
             {/* Desktop Navigation */}
@@ -130,8 +139,17 @@ const Header = () => {
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between p-4 sm:p-6 border-b">
           <div className="flex items-center space-x-2">
-            <Link to="/" className="flex items-center">
-              <img src="/assets/img/logo.png" alt="Logo" className="h-10 sm:h-12" />
+            <Link
+              to="/"
+              className="flex items-center transition-opacity hover:opacity-90"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <img
+                src={LogoTwo}
+                alt="Griptronics India Wires & Cables"
+                className="h-12 sm:h-14 w-auto object-contain"
+                style={{ maxHeight: "70px" }}
+              />
             </Link>
           </div>
           <button

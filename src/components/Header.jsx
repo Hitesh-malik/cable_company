@@ -48,7 +48,7 @@ const Header = () => {
             <div className="flex items-center">
             {!isMenuOpen && (
               <Link to="/" className="flex items-center">
-                <img src="/assets/img/logo.png" alt="Logo" className="h-10 sm:h-12" />
+                <img src="/assets/img/logo.png" alt="Griptronics India Wires & Cables" className="h-10 sm:h-12" />
               </Link>
             )}
             </div>

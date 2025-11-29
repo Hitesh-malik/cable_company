@@ -14,8 +14,8 @@ const Contact = () => {
     {
       icon: "fas fa-map-marker-alt",
       title: "OUR LOCATION",
-      content: "Alexima, NT 456678",
-      link: "https://maps.google.com/?q=Alexima+NT+456678",
+      content: "A-22, Phase II, Sector 80, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301",
+      link: "https://maps.google.com/?q=A-22+Phase+II+Sector+80+Noida+Gautam+Buddha+Nagar+Uttar+Pradesh+201301",
     },
     {
       icon: "fas fa-envelope",
@@ -277,7 +277,7 @@ const Contact = () => {
                     )}
 
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.5439674098!2d72.81764931490256!3d19.039823787106677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAyJzIzLjQiTiA3MsKwNDknMTEuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1234567890!2d77.3256789!3d28.6123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a123456789%3A0x1234567890abcdef!2sA-22%2C%20Phase%20II%2C%20Sector%2080%2C%20Noida%2C%20Gautam%20Buddha%20Nagar%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1234567890"
                       width="100%"
                       height="100%"
                       style={{

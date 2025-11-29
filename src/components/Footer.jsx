@@ -9,10 +9,10 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: 'fas fa-globe', text: 'www.validtheme.com', url: 'https://www.validtheme.com' },
+    { icon: 'fas fa-globe', text: 'www.mandeepcables.com', url: 'https://www.mandeepcables.com' },
     { icon: 'fas fa-envelope', text: 'crm@griptronics.com', url: 'mailto:crm@griptronics.com' },
     { icon: 'fas fa-envelope', text: 'sales@griptronics.com', url: 'mailto:sales@griptronics.com' },
-    { icon: 'fas fa-map-marker-alt', text: '123 6th St. Melbourne, FL 32904' }
+    { icon: 'fas fa-map-marker-alt', text: 'A-22, Phase II, Sector 80, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301' }
   ];
 
   const footerLinks = [
@@ -30,9 +30,9 @@ const Footer = () => {
           <div className="md:col-span-2 lg:col-span-2">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">About Us</h3>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-2xl text-sm sm:text-base">
-              Excellence decisively nay man yet impression for contrasted remarkably. 
-              There spoke happy for you are out. Fertile how old address did showing 
-              because sitting replied six. Had arose guest visit going off child she new.
+              Griptronics India Wires & Cables Pvt. Ltd. is a reputed manufacturer of a wide assortment of electric wires, 
+              networking cables, cords & wire harnesses. We have gained a huge client base all across the nation and 
+              presently catering to the needs of the domestic market successfully.
             </p>
             
             {/* Contact Information */}

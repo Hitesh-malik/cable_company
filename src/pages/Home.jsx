@@ -15,21 +15,21 @@ const Home = () => {
 
   const slides = [
     {
-      image: "assets/img/banner/4.jpg",
+      image: "assets/img/banner/bannertwo.png",
       title: "We are the",
       heading: "Best Choice for you",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis aliquid sed id saepe. Quasi totam, dolorem repellendus cupiditate! Quos eaque, voluptas doloribus",
     },
     {
-      image: "assets/img/banner/5.jpg",
+      image: "assets/img/banner/bannerone.png",
       title: "We are the",
       heading: "Best Choice for you",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis aliquid sed id saepe. Quasi totam, dolorem repellendus cupiditate! Quos eaque, voluptas doloribus",
     },
     {
-      image: "assets/img/banner/6.jpg",
+      image: "assets/img/banner/bannertwo.png",
       title: "We are the",
       heading: "Best Choice for you",
       description:
@@ -99,10 +99,10 @@ const Home = () => {
         setServicesPerView(1);
       }
     };
-    
+
     updateServicesPerView();
-    window.addEventListener('resize', updateServicesPerView);
-    return () => window.removeEventListener('resize', updateServicesPerView);
+    window.addEventListener("resize", updateServicesPerView);
+    return () => window.removeEventListener("resize", updateServicesPerView);
   }, []);
 
   useEffect(() => {
@@ -136,7 +136,6 @@ const Home = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
-
 
   const products = [
     {
@@ -401,17 +400,21 @@ const Home = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 sm:h-2.5 rounded-full transition-all ${index === currentSlide
+              className={`h-2 sm:h-2.5 rounded-full transition-all ${
+                index === currentSlide
                   ? "w-5 sm:w-6 bg-primary shadow-[0_0_0_3px_rgba(0,0,0,0.35)] sm:shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
                   : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
-                }`}
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
 
           <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/80 uppercase">
             {String(currentSlide + 1).padStart(2, "0")}
-            <span className="text-white/50"> / {String(slides.length).padStart(2, "0")}</span>
+            <span className="text-white/50">
+              {" "}
+              / {String(slides.length).padStart(2, "0")}
+            </span>
           </span>
         </div>
       </div>
@@ -420,7 +423,6 @@ const Home = () => {
       <div className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
-
             {/* LEFT SIDE — unchanged */}
             <div className="w-full lg:w-1/2 relative">
               <img
@@ -445,24 +447,31 @@ const Home = () => {
               </h3>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
-                Griptronics is a trusted Indian manufacturer of high-performance electrical wires, networking cables, cords, and wire harness solutions — engineered for reliability, safety, and innovation.
+                Griptronics is a trusted Indian manufacturer of high-performance
+                electrical wires, networking cables, cords, and wire harness
+                solutions — engineered for reliability, safety, and innovation.
               </h2>
 
               <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
                 <p>
-                  <strong>Premium Quality Standards —</strong> Certified and tested under IS, UL, JIS, JASO & DIN specifications.
+                  <strong>Premium Quality Standards —</strong> Certified and
+                  tested under IS, UL, JIS, JASO & DIN specifications.
                 </p>
 
                 <p>
-                  <strong>Custom Manufacturing —</strong> Tailor-made cable and wire solutions built to your specifications.
+                  <strong>Custom Manufacturing —</strong> Tailor-made cable and
+                  wire solutions built to your specifications.
                 </p>
 
                 <p>
-                  <strong>Trusted Across Industries —</strong> Supplying to leading telecom, electrical, and networking sectors nationwide.
+                  <strong>Trusted Across Industries —</strong> Supplying to
+                  leading telecom, electrical, and networking sectors
+                  nationwide.
                 </p>
 
                 <p>
-                  <strong>20+ Years of Expertise —</strong> Built on precision engineering and customer-first values.
+                  <strong>20+ Years of Expertise —</strong> Built on precision
+                  engineering and customer-first values.
                 </p>
               </div>
 
@@ -475,11 +484,9 @@ const Home = () => {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
 
       {/* Services Section */}
       <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
@@ -505,7 +512,9 @@ const Home = () => {
               <div
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{
-                  transform: `translateX(-${currentService * (100 / servicesPerView)}%)`,
+                  transform: `translateX(-${
+                    currentService * (100 / servicesPerView)
+                  }%)`,
                 }}
               >
                 {services.map((service, index) => (
@@ -550,10 +559,11 @@ const Home = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentService(index)}
-                  className={`h-2 rounded-full transition-all ${index === currentService
-                    ? "bg-primary w-8"
-                    : "bg-gray-400 w-2 hover:bg-gray-600"
-                    }`}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentService
+                      ? "bg-primary w-8"
+                      : "bg-gray-400 w-2 hover:bg-gray-600"
+                  }`}
                   aria-label={`Go to product ${index + 1}`}
                 />
               ))}
@@ -561,8 +571,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
 
       {/* Portfolio Section */}
       <div className="py-12 sm:py-16 md:py-20 bg-white">
@@ -583,10 +591,11 @@ const Home = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${activeFilter === filter.id
+                className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${
+                  activeFilter === filter.id
                     ? "bg-primary text-gray-900"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
+                }`}
               >
                 {filter.label}
               </button>
@@ -859,17 +868,24 @@ const WorkHistory = () => {
             Work History
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            M/s Mandeep Cables Pvt Ltd is led by <span className="font-semibold text-gray-800">Mr. Mandeep Singh</span> (Chairman & Managing Director),
-            who built the company through dedication and over 35 years of industry expertise. With deep
-            knowledge of production processes and components, he remains the driving force behind the
-            organization and is regarded as a stalwart in the cable industry.
+            M/s Mandeep Cables Pvt Ltd is led by{" "}
+            <span className="font-semibold text-gray-800">
+              Mr. Mandeep Singh
+            </span>{" "}
+            (Chairman & Managing Director), who built the company through
+            dedication and over 35 years of industry expertise. With deep
+            knowledge of production processes and components, he remains the
+            driving force behind the organization and is regarded as a stalwart
+            in the cable industry.
           </p>
         </div>
 
         {/* Highlights Section */}
         <div className="grid md:grid-cols-2 gap-10 mt-10">
           <div className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-            <h3 className="text-xl font-bold mb-4 text-gray-800">Why We Stand Out</h3>
+            <h3 className="text-xl font-bold mb-4 text-gray-800">
+              Why We Stand Out
+            </h3>
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start">
                 <span className="text-blue-600 mt-1 mr-2">•</span>
@@ -916,7 +932,6 @@ const QualityAssurance = () => {
   return (
     <section className="py-24 bg-[#F7F7F7]">
       <div className="container mx-auto px-6 lg:px-12">
-        
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">
@@ -927,27 +942,29 @@ const QualityAssurance = () => {
           </p>
           <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-lg">
             At Griptronics, quality is not just a process — it’s a culture.
-            Every stage of production, from raw material inspection to final testing,
-            follows stringent quality control procedures.
+            Every stage of production, from raw material inspection to final
+            testing, follows stringent quality control procedures.
           </p>
         </div>
 
         {/* Standards Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
           {/* Testing Standards */}
           <div className="bg-white shadow-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-800 mb-4">
               Our Testing Standards Include:
             </h3>
             <ul className="space-y-3 text-gray-600">
-              {["ISI (Indian Standards)", "UL (Underwriters Laboratories)", "JIS / JASO (Japanese Industrial Standards)", "DIN (German Standards)"].map(
-                (item, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-blue-600 mt-1 mr-2">•</span> {item}
-                  </li>
-                )
-              )}
+              {[
+                "ISI (Indian Standards)",
+                "UL (Underwriters Laboratories)",
+                "JIS / JASO (Japanese Industrial Standards)",
+                "DIN (German Standards)",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <span className="text-blue-600 mt-1 mr-2">•</span> {item}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -957,16 +974,21 @@ const QualityAssurance = () => {
               In-House Testing Facilities:
             </h3>
             <p className="text-gray-600 mb-4">
-              Our advanced laboratory is equipped with the latest instruments to ensure all products conform to:
+              Our advanced laboratory is equipped with the latest instruments to
+              ensure all products conform to:
             </p>
             <ul className="space-y-3 text-gray-600">
-              {["IS-694:2010", "UL-758", "IS-1293:2005", "ISO-9001:2015", "ISO-14001:2004"].map(
-                (item, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-blue-600 mt-1 mr-2">•</span> {item}
-                  </li>
-                )
-              )}
+              {[
+                "IS-694:2010",
+                "UL-758",
+                "IS-1293:2005",
+                "ISO-9001:2015",
+                "ISO-14001:2004",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <span className="text-blue-600 mt-1 mr-2">•</span> {item}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -983,19 +1005,17 @@ const QualityAssurance = () => {
               ))}
             </ul>
           </div>
-
         </div>
 
         {/* Promise Section */}
         <div className="mt-16 text-center max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Promise</h3>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Every cable that leaves our facility is designed to perform — ensuring
-            safety, durability, and efficiency for years to come.
+            Every cable that leaves our facility is designed to perform —
+            ensuring safety, durability, and efficiency for years to come.
           </p>
         </div>
-
       </div>
     </section>
   );
-}
+};

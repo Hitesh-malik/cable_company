@@ -140,56 +140,70 @@ const Home = () => {
   const products = [
     {
       image: "assets/img/projects/1.jpg",
-      title: "Metal Roofing",
-      category: "Construction",
-      filters: ["branding", "photography"],
+      title: "Power Cables",
+      category: "Product Range",
+      description:
+        "High-efficiency electrical cables for industrial and residential power systems.",
+      filters: ["power-cables"],
       type: "image",
     },
     {
       image: "assets/img/projects/2.jpg",
-      title: "Printing And Cutting",
-      category: "Color",
-      filters: ["video", "development"],
-      type: "video",
-      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
+      title: "Networking Cables",
+      category: "Product Range",
+      description:
+        "High-speed data and LAN cables for modern networking requirements.",
+      filters: ["networking-cables"],
+      type: "image",
     },
     {
       image: "assets/img/projects/3.jpg",
-      title: "Laminate Flooring",
-      category: "Worker",
-      filters: ["design", "photography"],
+      title: "HDMI & Audio-Video Cables",
+      category: "Product Range",
+      description:
+        "Superior-grade transmission cables for entertainment and commercial systems.",
+      filters: ["hdmi-audio-video-cables"],
       type: "image",
     },
     {
       image: "assets/img/projects/4.jpg",
-      title: "General Builders",
-      category: "Development",
-      filters: ["branding", "video"],
-      type: "video",
-      videoUrl: "https://www.youtube.com/watch?v=KVzCfWWzGyA",
+      title: "Wire Harness Assemblies",
+      category: "Product Range",
+      description:
+        "Custom harnesses for automotive, telecom, and consumer electronics.",
+      filters: ["wire-harness-assemblies"],
+      type: "image",
     },
     {
       image: "assets/img/projects/5.jpg",
-      title: "House Renovation",
-      category: "3d design",
-      filters: ["design", "photography"],
+      title: "Industrial Wires",
+      category: "Product Range",
+      description:
+        "Robust cables designed for heavy-duty industrial applications.",
+      filters: ["industrial-wires"],
       type: "image",
     },
     {
       image: "assets/img/projects/6.jpg",
-      title: "Green Building",
-      category: "Construction",
-      filters: ["branding", "design", "development"],
+      title: "Control & Instrumentation Cables",
+      category: "Product Range",
+      description:
+        "For precise signal and power transmission in automation systems.",
+      filters: ["control-instrumentation-cables"],
       type: "image",
     },
   ];
   const filters = [
     { id: "*", label: "All" },
-    { id: "development", label: "Development" },
-    { id: "design", label: "Design" },
-    { id: "photography", label: "Photography" },
-    { id: "branding", label: "branding" },
-    { id: "video", label: "video" },
+    { id: "power-cables", label: "Power Cables" },
+    { id: "networking-cables", label: "Networking Cables" },
+    { id: "hdmi-audio-video-cables", label: "HDMI & Audio-Video Cables" },
+    { id: "wire-harness-assemblies", label: "Wire Harness Assemblies" },
+    { id: "industrial-wires", label: "Industrial Wires" },
+    {
+      id: "control-instrumentation-cables",
+      label: "Control & Instrumentation Cables",
+    },
   ];
 
   const filteredProducts =
@@ -572,78 +586,155 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Portfolio Section */}
+      {/* Product Section */}
       <div className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
-              Work History
+              Product
             </h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
-              Able an hope of body. Any nay shyness article matters own removal
-              nothing his forming. Gay own additions education satisfied the
-              perpetual. If he cause manor happy. Without farther she exposed
-              saw man led. Along on happy could cease green oh.
+              Explore our comprehensive range of high-quality cables and wire
+              solutions. From power systems to networking infrastructure, we
+              deliver reliable products engineered for excellence and
+              performance.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12 mix-item-menu">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${
-                  activeFilter === filter.id
-                    ? "bg-primary text-gray-700"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-          <div className="magnific-mix-gallery text-center">
-            <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 hover-effect">
-              {filteredProducts.map((product, index) => (
-                <div
-                  key={`${product.title}-${index}`}
-                  className={`pf-item ${product.filters.join(" ")}`}
+
+          {/* Product Range / Filter Buttons */}
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 font-heading">
+              Product Range
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2 md:gap-3 mix-item-menu max-w-4xl mx-auto">
+              {filters.map((filter) => (
+                <button
+                  key={filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
+                  className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
+                    activeFilter === filter.id
+                      ? "bg-primary text-gray-700"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
                 >
-                  <div className="portfolio-effet">
-                    <div className="thumb">
-                      <img src={product.image} alt="Thumb" />
-                      <div className="overlay">
-                        {product.type === "image" ? (
-                          <button
-                            onClick={() => {
-                              setLightboxImage(product.image);
-                              setIsLightboxOpen(true);
-                            }}
-                            className="item popup-link"
-                          >
-                            <i className="fa fa-eye"></i>
-                          </button>
-                        ) : (
-                          <a
-                            href={product.videoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="popup-youtube"
-                          >
-                            <i className="fa fa-play"></i>
-                          </a>
-                        )}
-                        <Link to="/project-details">
-                          <i className="fa fa-link"></i>
-                        </Link>
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Name of Product */}
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-gray-800 font-heading">
+              Name of Product
+            </h3>
+            <div className="magnific-mix-gallery text-center">
+              <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 hover-effect">
+                {filteredProducts.map((product, index) => (
+                  <div
+                    key={`${product.title}-${index}`}
+                    className={`pf-item ${product.filters.join(" ")}`}
+                  >
+                    <div className="portfolio-effet">
+                      <div className="thumb">
+                        <img src={product.image} alt={product.title} />
+                        <div className="overlay">
+                          {product.type === "image" ? (
+                            <button
+                              onClick={() => {
+                                setLightboxImage(product.image);
+                                setIsLightboxOpen(true);
+                              }}
+                              className="item popup-link"
+                            >
+                              <i className="fa fa-eye"></i>
+                            </button>
+                          ) : (
+                            <a
+                              href={product.videoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="popup-youtube"
+                            >
+                              <i className="fa fa-play"></i>
+                            </a>
+                          )}
+                          <Link to="/project-details">
+                            <i className="fa fa-link"></i>
+                          </Link>
+                        </div>
                       </div>
                     </div>
+                    <div className="info">
+                      <h4>{product.title}</h4>
+                      <p className="text-sm text-gray-600 mt-2">
+                        {product.description}
+                      </p>
+                      <a
+                        href="#"
+                        className="text-primary hover:underline mt-1 block"
+                      >
+                        {product.category}
+                      </a>
+                    </div>
                   </div>
-                  <div className="info">
-                    <h4>{product.title}</h4>
-                    <a href="#">{product.category}</a>
-                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Why Choose Griptronics Products */}
+          <div className="mt-16 sm:mt-20 md:mt-24 bg-bg-gray py-12 sm:py-16 md:py-20 rounded-lg">
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="text-center mb-10 sm:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-heading">
+                  Why Choose Griptronics Products
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div className="text-3xl mb-4">✅</div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">
+                    Manufactured under strict supervision
+                  </p>
                 </div>
-              ))}
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div className="text-3xl mb-4">✅</div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">
+                    Tested to meet IS, UL, JIS, JASO & DIN standards
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div className="text-3xl mb-4">✅</div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">
+                    Custom-built as per client requirements
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div className="text-3xl mb-4">✅</div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">
+                    Zero-defect production policy
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-10 sm:mt-12 md:mt-16 text-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+              <a
+                href="#"
+                className="inline-block bg-primary text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-semibold hover:opacity-90 transition uppercase"
+              >
+                View Technical Catalogue
+              </a>
+              <a
+                href="#"
+                className="inline-block bg-gray-800 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-semibold hover:bg-gray-700 transition uppercase"
+              >
+                Request Specifications
+              </a>
             </div>
           </div>
         </div>

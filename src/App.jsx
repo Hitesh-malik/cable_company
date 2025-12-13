@@ -54,7 +54,7 @@ function App() {
     <div className="app-shell">
       {showLoader && (
         <FullScreenLoader
-          color="#fcdb16"
+          color="#FF8C00"
           strokeWidth={3}
           duration={2.4}
           easing="cubic-bezier(0.22, 1, 0.36, 1)"

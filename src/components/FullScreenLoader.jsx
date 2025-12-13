@@ -13,13 +13,13 @@ import React from "react";
  * - isVisible (boolean): controls fade-out transition (keeps mounted while hiding)
  */
 function FullScreenLoader({
-  color = "#fcdb16",
+  color = "#FF8C00",
   strokeWidth = 2.8,
   duration = 2.4,
   easing = "cubic-bezier(0.19, 1, 0.22, 1)",
   pathShape = "infinity",
   // Dark gradient background to keep strong brand contrast
-  backgroundColor = "radial-gradient(circle at top, #111118 0, #1e1e27 40%, #2b2b35 100%)",
+  backgroundColor = "radial-gradient(circle at top, #4A4A4A 0, #5A5A5A 40%, #6A6A6A 100%)",
   isVisible = true,
 }) {
   const PATHS = {

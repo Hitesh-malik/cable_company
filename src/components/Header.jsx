@@ -71,10 +71,10 @@ const Header = () => {
                   className={`relative px-3 xl:px-5 py-2 text-base xl:text-lg font-semibold transition-all duration-300 ${
                     isActive(link.path) ? "" : "text-gray-700"
                   }`}
-                  style={isActive(link.path) ? { color: "#fcdb16" } : {}}
+                  style={isActive(link.path) ? { color: "#FF8C00" } : {}}
                   onMouseEnter={(e) => {
                     if (!isActive(link.path)) {
-                      e.target.style.color = "#fcdb16";
+                      e.target.style.color = "#FF8C00";
                     }
                   }}
                   onMouseLeave={(e) => {
@@ -87,7 +87,7 @@ const Header = () => {
                   {isActive(link.path) && (
                     <span
                       className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 rounded-full"
-                      style={{ backgroundColor: "#fcdb16" }}
+                      style={{ backgroundColor: "#FF8C00" }}
                     ></span>
                   )}
                 </Link>
@@ -186,7 +186,7 @@ const Header = () => {
                 }`}
                 style={
                   isActive(link.path)
-                    ? { backgroundColor: "#fef3c7", color: "#fcdb16" }
+                    ? { backgroundColor: "#FFE4CC", color: "#FF8C00" }
                     : {}
                 }
               >
@@ -194,7 +194,7 @@ const Header = () => {
                   {isActive(link.path) && (
                     <span
                       className="w-1 h-6 rounded-full mr-3"
-                      style={{ backgroundColor: "#fcdb16" }}
+                      style={{ backgroundColor: "#FF8C00" }}
                     ></span>
                   )}
                   {link.label}

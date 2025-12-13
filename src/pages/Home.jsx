@@ -363,7 +363,7 @@ const Home = () => {
                         </p>
                         <a
                           href="#"
-                          className="inline-block bg-primary text-gray-900 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
+                          className="inline-block bg-primary text-gray-700 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
                         >
                           Learn more
                         </a>
@@ -435,7 +435,7 @@ const Home = () => {
                   href="https://www.youtube.com/watch?v=vQqZIFCab9o"
                   className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
                 >
-                  <i className="fas fa-play text-gray-900 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
+                  <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
                 </a>
               </div>
             </div>
@@ -526,7 +526,7 @@ const Home = () => {
                       className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
                       style={{ backgroundImage: `url(${service.image})` }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
                       <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
                         <div className="info">
                           <i
@@ -541,7 +541,7 @@ const Home = () => {
                           </p>
                           <a
                             href="#"
-                            className="bg-white text-gray-900 border border-gray-900 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary transition uppercase"
+                            className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary transition uppercase"
                           >
                             Read More
                           </a>
@@ -593,7 +593,7 @@ const Home = () => {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm md:text-base font-semibold transition ${
                   activeFilter === filter.id
-                    ? "bg-primary text-gray-900"
+                    ? "bg-primary text-gray-700"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -705,7 +705,7 @@ const Home = () => {
                     </ul>
                     <a
                       href="#"
-                      className="inline-block bg-primary text-gray-900 px-6 py-3 rounded font-semibold hover:opacity-90 transition"
+                      className="inline-block bg-primary text-gray-700 px-6 py-3 rounded font-semibold hover:opacity-90 transition"
                     >
                       Know more
                     </a>
@@ -811,7 +811,7 @@ const Home = () => {
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-0 group-hover:bg-opacity-50 transition">
                     <i
                       className={`${post.icon} text-white text-3xl opacity-0 group-hover:opacity-100 transition`}
                     ></i>

@@ -92,7 +92,7 @@ const ProductDetails = () => {
         className="relative text-white py-12 sm:py-16 md:py-20 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/3.jpg)" }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4">
@@ -372,7 +372,7 @@ const ProductDetails = () => {
                       alt={product.title}
                       className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center gap-4">
+                    <div className="absolute inset-0 bg-gray-800 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center gap-4">
                       <h4 className="text-white text-xl font-bold mb-2 absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition">
                         {product.title}
                       </h4>

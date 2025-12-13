@@ -70,9 +70,9 @@ i[class*=" flaticon-"]:before {
 }
 
 @theme {
-  --color-primary: #fcdb16;
-  --color-dark: #2b2b35;
-  --color-heading: #0e0e0e;
+  --color-primary: #FF8C00;
+  --color-dark: #6A6A6A;
+  --color-heading: #4A4A4A;
   --color-paragraph: #666666;
   --color-bg-gray: #F7F7F7;
 
@@ -122,7 +122,7 @@ i[class*=" flaticon-"]:before {
 }
 
 .featured-service-card:not(.middle-card):hover .featured-service-icon svg {
-  color: #0e0e0e !important;
+  color: #4A4A4A !important;
 }
 
 /* Banner Area Styles */
@@ -168,7 +168,7 @@ i[class*=" flaticon-"]:before {
 }
 
 .banner-area.shadow-inner .content::after {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(74, 74, 74, 0.5);
   content: "";
   height: 100%;
   left: 0;

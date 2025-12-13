@@ -133,7 +133,7 @@ const Team = () => {
 
                 {/* Title Section */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-900 py-6 px-6">
-                  <h4 className="text-2xl font-bold mb-2 font-heading text-yellow-400">
+                  <h4 className="text-2xl font-bold mb-2 font-heading text-orange-400">
                     {member.title}
                   </h4>
                   <span className="text-white text-sm uppercase tracking-wide">
@@ -160,7 +160,7 @@ const Team = () => {
                               key={itemIdx}
                               className="text-gray-600 text-sm flex items-start"
                             >
-                              <span className="text-yellow-500 mr-2 mt-0.5">
+                              <span className="text-orange-500 mr-2 mt-0.5">
                                 •
                               </span>
                               <span className="flex-1">{item}</span>
@@ -175,19 +175,19 @@ const Team = () => {
                   {/* <div className="flex justify-center gap-3 mt-6 pt-6 border-t border-gray-200">
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-orange-500 transition"
                     >
                       <i className="fab fa-facebook-f text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-orange-500 transition"
                     >
                       <i className="fab fa-twitter text-sm"></i>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-yellow-500 transition"
+                      className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-orange-500 transition"
                     >
                       <i className="fab fa-google-plus-g text-sm"></i>
                     </a>

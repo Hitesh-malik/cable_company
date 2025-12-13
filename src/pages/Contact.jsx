@@ -242,14 +242,14 @@ const Contact = () => {
                         <div className="relative mb-6 z-10">
                           {/* Pulsing circles */}
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 border-4 border-yellow-400 rounded-full animate-ping opacity-75"></div>
+                            <div className="w-20 h-20 border-4 border-orange-400 rounded-full animate-ping opacity-75"></div>
                           </div>
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-16 h-16 border-4 border-yellow-500 rounded-full animate-ping opacity-50 animation-delay-150"></div>
+                            <div className="w-16 h-16 border-4 border-orange-500 rounded-full animate-ping opacity-50 animation-delay-150"></div>
                           </div>
                           {/* Location Pin Icon */}
                           <div className="relative z-10 flex items-center justify-center">
-                            <i className="fas fa-map-marker-alt text-yellow-400 text-5xl drop-shadow-lg animate-bounce"></i>
+                            <i className="fas fa-map-marker-alt text-orange-400 text-5xl drop-shadow-lg animate-bounce"></i>
                           </div>
                         </div>
 
@@ -260,15 +260,15 @@ const Contact = () => {
                           </p>
                           <div className="flex items-center justify-center space-x-1">
                             <div
-                              className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"
+                              className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"
                               style={{ animationDelay: "0ms" }}
                             ></div>
                             <div
-                              className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce"
+                              className="w-2 h-2 bg-orange-500 rounded-full animate-bounce"
                               style={{ animationDelay: "150ms" }}
                             ></div>
                             <div
-                              className="w-2 h-2 bg-yellow-600 rounded-full animate-bounce"
+                              className="w-2 h-2 bg-orange-600 rounded-full animate-bounce"
                               style={{ animationDelay: "300ms" }}
                             ></div>
                           </div>
@@ -310,7 +310,7 @@ const Contact = () => {
                         className="group block"
                       >
                         <div className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
-                          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 mb-4">
+                          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-400 mb-4">
                             <i
                               className={`${info.icon} text-white text-lg`}
                             ></i>
@@ -350,7 +350,7 @@ const Contact = () => {
                 {/* White Circle Icon */}
                 <div className="flex justify-center mb-4 sm:mb-6">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center">
-                    <i className="fas fa-paper-plane text-black text-xl sm:text-2xl md:text-3xl"></i>
+                    <i className="fas fa-paper-plane text-gray-700 text-xl sm:text-2xl md:text-3xl"></i>
                   </div>
                 </div>
 
@@ -367,7 +367,7 @@ const Contact = () => {
                   href={googleFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-white text-black px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                  className="flex items-center justify-center w-full bg-white text-gray-700 px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
                 >
                   <i className="fas fa-external-link-alt mr-2 sm:mr-3"></i>
                   Open Contact Form
@@ -382,7 +382,7 @@ const Contact = () => {
                   <div className="space-y-3">
                     <button
                       onClick={handleCopyEmail}
-                      className="w-full bg-gray-300 hover:bg-gray-400 text-black px-4 py-3 rounded-lg transition-colors flex items-center justify-center"
+                      className="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-3 rounded-lg transition-colors flex items-center justify-center"
                     >
                       <i className="fas fa-copy mr-2"></i>
                       {copied ? "Email Copied!" : "Copy Email"}
@@ -390,7 +390,7 @@ const Contact = () => {
 
                     <a
                       href="tel:+4564564443"
-                      className="w-full bg-gray-300 hover:bg-gray-400 text-black px-4 py-3 rounded-lg transition-colors flex items-center justify-center"
+                      className="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-3 rounded-lg transition-colors flex items-center justify-center"
                     >
                       <i className="fas fa-phone mr-2"></i>
                       Call Now

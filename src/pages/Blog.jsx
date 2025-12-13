@@ -105,7 +105,7 @@ const Blog = () => {
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-0 group-hover:bg-opacity-50 transition">
                     <i
                       className={`${post.icon} text-white text-3xl opacity-0 group-hover:opacity-100 transition`}
                     ></i>

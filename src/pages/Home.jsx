@@ -359,25 +359,25 @@ const Home = () => {
                   <div className="container mx-auto px-4 sm:px-6">
                     <div className="max-w-4xl">
                       <div className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20">
-                        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5">
+                        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5 text-white">
                           {slide.title}
                           <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-white"></span>
                         </h3>
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-5 md:mb-6 font-heading uppercase leading-tight">
-                          <span className="inline-block bg-[#0056B3] text-white px-3 sm:px-4 py-1.5 sm:py-2 mb-1 sm:mb-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+                          <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-1 sm:mb-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                             BEST CHOICE
                           </span>
                           <br />
-                          <span className="inline-block bg-[#0056B3] text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+                          <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                             FOR YOU
                           </span>
                         </h1>
-                        <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 text-gray-300 leading-relaxed max-w-2xl">
+                        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-white leading-relaxed max-w-2xl">
                           {slide.description}
                         </p>
                         <a
                           href="#"
-                          className="inline-block bg-primary text-gray-700 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
+                          className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
                         >
                           Learn more
                         </a>

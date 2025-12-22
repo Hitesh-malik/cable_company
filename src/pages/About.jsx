@@ -12,6 +12,15 @@ import {
   FaTwitter,
   FaGooglePlusG,
 } from "react-icons/fa";
+import HAVELSImg from "../assets/img/clients/HAVELS.png";
+import DCLINKImg from "../assets/img/clients/DCLINK.png";
+import HMIImg from "../assets/img/clients/HMI.png";
+import KEIImg from "../assets/img/clients/KEI.png";
+import FinolexImg from "../assets/img/clients/finolex.png";
+import PolycabImg from "../assets/img/clients/polycab.png";
+import AnchorImg from "../assets/img/clients/anchor.png";
+import RRKabelImg from "../assets/img/clients/rrkabel.png";
+import SyskaImg from "../assets/img/clients/syska.png";
 
 const About = () => {
   const [counts, setCounts] = useState({
@@ -75,15 +84,15 @@ const About = () => {
   ];
 
   const clients = [
-    "/assets/img/clients/1.png",
-    "/assets/img/clients/2.png",
-    "/assets/img/clients/3.png",
-    "/assets/img/clients/4.png",
-    "/assets/img/clients/5.png",
-    "/assets/img/clients/6.png",
-    "/assets/img/clients/7.png",
-    "/assets/img/clients/8.png",
-    "/assets/img/clients/9.png",
+    HAVELSImg,
+    DCLINKImg,
+    HMIImg,
+    KEIImg,
+    FinolexImg,
+    PolycabImg,
+    AnchorImg,
+    RRKabelImg,
+    SyskaImg,
   ];
 
   return (
@@ -317,22 +326,51 @@ const About = () => {
                 Our Clients
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                Yourself required no at thoughts delicate landlord it be.
-                Branched dashwood do is whatever it. Farther be chapter at
-                visited married in it pressed. By distrusts procuring be oh
+                At Griptronics, we proudly serve a diverse portfolio of clients
+                across multiple industries who rely on high-performance and
+                durable cable solutions. Our commitment to quality, consistency,
+                and timely delivery has made us a trusted partner for businesses
+                of all scales.
               </p>
-              <blockquote className="border-l-4 border-primary pl-4 sm:pl-6 py-3 sm:py-4 mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base text-gray-700 italic">
-                frankness existence believing instantly if. Doubtful on an
-                juvenile as of servants insisted. Judge why maids led sir whose
-                guest drift her point. Him comparison especially friendship was
-              </blockquote>
+              <div className="mb-4 sm:mb-5 md:mb-6">
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 font-semibold">
+                  We work closely with:
+                </p>
+                <ul className="text-sm sm:text-base text-gray-600 space-y-2 sm:space-y-2.5 pl-4 sm:pl-6">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Electrical Contractors & System Integrators</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Industrial & Manufacturing Units</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Infrastructure & Real Estate Developers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>OEMs & Equipment Manufacturers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Renewable Energy & Power Projects</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Telecom & Networking Companies</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">•</span>
+                    <span>Commercial & Residential Projects</span>
+                  </li>
+                </ul>
+              </div>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                who sufficient attachment favourable how. Luckily but minutes
-                ask picture man perhaps are inhabit. How her good all sang more
-                why.
-                <br />
-                Real sold my in call. Invitation on an advantages collecting.
-                But event old above shy bed noisy. Had sister see wooded favour
+                From large-scale industrial operations to specialized project
+                requirements, our clients trust Griptronics for reliable
+                products, technical expertise, and long-term value.
               </p>
               <Link
                 to="/contact"

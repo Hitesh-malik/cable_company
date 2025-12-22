@@ -68,46 +68,46 @@ const Home = () => {
 
   const services = [
     {
-      image: "assets/img/services/co-1.jpg",
-      icon: "flaticon-skyline-2",
-      title: "Construction",
+      image: BISCablesImg,
+      icon: "fas fa-building",
+      title: "Building & Panel Wires",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "Premium BIS certified building wires and panel wires designed for safe and reliable residential and commercial electrical installations. Engineered to meet Indian Standard specifications.",
     },
     {
-      image: "assets/img/services/hr-2.jpg",
-      icon: "flaticon-maintenance",
-      title: "Renovation",
+      image: Cat6UTPImg,
+      icon: "fas fa-network-wired",
+      title: "Networking Solutions",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "High-performance Category 6 UTP cables designed for Gigabit Ethernet and high-bandwidth networking applications. Ensuring efficient connectivity and dependable data transmission.",
     },
     {
-      image: "assets/img/services/hr-4.jpg",
-      icon: "flaticon-home",
-      title: "Home Maintenance",
+      image: HDMICablesImg,
+      icon: "fas fa-tv",
+      title: "Data & Connectivity Cables",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "Superior HDMI and USB cables for high-definition multimedia transmission and universal connectivity. Delivering flawless audio and video performance in home entertainment and professional AV systems.",
     },
     {
-      image: "assets/img/services/gb-2.jpg",
-      icon: "flaticon-drill",
-      title: "Electrical",
+      image: AVSSWireImg,
+      icon: "fas fa-car",
+      title: "Automotive Wires",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "High-quality AVSS and FLRY automotive wires engineered for reliable vehicle electrical systems. Designed with flexible multi-colored patterns for heavy-duty automotive applications.",
     },
     {
-      image: "assets/img/services/hr-1.jpg",
-      icon: "flaticon-house-sketch",
-      title: "Architecture",
+      image: AirConditionerWireHarnessImg,
+      icon: "fas fa-cog",
+      title: "Wire Harnesses",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "Specialized wire harnesses for appliances including air conditioners, refrigerators, and washing machines. Ensuring reliable electrical connections and optimal performance in demanding environments.",
     },
     {
-      image: "assets/img/services/hr-3.jpg",
-      icon: "flaticon-roof",
-      title: "Metal Roofing",
+      image: IndianPlugImg,
+      icon: "fas fa-plug",
+      title: "Power Cords & Plugs",
       description:
-        "Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song",
+        "Indian standard power plugs and cords (IS 1293) designed for safe and compliant electrical connections. Meeting UL/CSA standards for reliable power transmission.",
     },
   ];
 
@@ -689,7 +689,7 @@ const Home = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
                 Griptronics is a trusted Indian manufacturer of high-performance
                 electrical wires, networking cables, cords, and wire harness
-                solutions — engineered for reliability, safety, and innovation.
+                solutions engineered for reliability, safety, and innovation.
               </h2>
 
               <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
@@ -736,12 +736,18 @@ const Home = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
                 Our Services
               </h2>
-              <p className="text-sm sm:text-base text-gray-600 px-4">
-                Able an hope of body. Any nay shyness article matters own
-                removal nothing his forming. Gay own additions education
-                satisfied the perpetual. If he cause manor happy. Without
-                farther she exposed saw man led. Along on happy could cease
-                green oh.
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4 leading-relaxed">
+                Griptronics is a leading manufacturer and supplier of
+                high-quality electrical and electronic cables, engineered to
+                deliver superior performance, long-term durability, and
+                consistent reliability. Our product range is designed to meet
+                the evolving demands of modern industries, ensuring safe power
+                transmission, efficient connectivity, and dependable operation
+                across diverse applications. With a strong focus on quality
+                standards, precision manufacturing, and customer-centric
+                solutions, Griptronics provides cables that perform flawlessly
+                even under challenging environments, making us a trusted partner
+                for reliable electrical solutions.
               </p>
             </div>
           </div>
@@ -771,20 +777,19 @@ const Home = () => {
                         <div className="info">
                           <i
                             className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
-                            style={{ fontFamily: "Flaticon" }}
                           ></i>
-                          <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading">
+                          <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading text-white">
                             {service.title}
                           </h4>
-                          <p className="text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2">
+                          <p className="text-sm sm:text-base mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2 text-white">
                             {service.description}
                           </p>
-                          <a
-                            href="#"
-                            className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary transition uppercase"
+                          <Link
+                            to="/products"
+                            className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block"
                           >
                             Read More
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -795,7 +800,7 @@ const Home = () => {
 
             {/* Carousel Indicators */}
             <div className="flex justify-center gap-2 mt-8">
-              {products.map((_, index) => (
+              {services.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentService(index)}
@@ -804,7 +809,7 @@ const Home = () => {
                       ? "bg-primary w-8"
                       : "bg-gray-400 w-2 hover:bg-gray-600"
                   }`}
-                  aria-label={`Go to product ${index + 1}`}
+                  aria-label={`Go to service ${index + 1}`}
                 />
               ))}
             </div>

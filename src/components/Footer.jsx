@@ -10,8 +10,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: 'fas fa-globe', text: 'www.mandeepcables.com', url: 'https://www.mandeepcables.com' },
-    { icon: 'fas fa-envelope', text: 'crm@griptronics.com', url: 'mailto:crm@griptronics.com' },
-    { icon: 'fas fa-envelope', text: 'sales@griptronics.com', url: 'mailto:sales@griptronics.com' },
+    { icon: 'fas fa-envelope', text: 'crm@griptronics.com / sales@griptronics.com', url: 'mailto:crm@griptronics.com' },
     { icon: 'fas fa-map-marker-alt', text: 'A-22, Phase II, Sector 80, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301' }
   ];
 

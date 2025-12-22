@@ -716,12 +716,12 @@ const Home = () => {
               </div>
 
               <div className="mt-6 sm:mt-8">
-                <a
-                  href="#"
+                <Link
+                  to="/contact"
                   className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
                 >
                   👉 Explore Our Range | Request a Quote
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -922,25 +922,33 @@ const Home = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="text-3xl mb-4">✅</div>
+                  <div className="mb-4">
+                    <i className="fas fa-industry text-4xl text-primary"></i>
+                  </div>
                   <p className="text-sm sm:text-base font-semibold text-gray-800">
                     Manufactured under strict supervision
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="text-3xl mb-4">✅</div>
+                  <div className="mb-4">
+                    <i className="fas fa-certificate text-4xl text-primary"></i>
+                  </div>
                   <p className="text-sm sm:text-base font-semibold text-gray-800">
                     Tested to meet IS, UL, JIS, JASO & DIN standards
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="text-3xl mb-4">✅</div>
+                  <div className="mb-4">
+                    <i className="fas fa-sliders-h text-4xl text-primary"></i>
+                  </div>
                   <p className="text-sm sm:text-base font-semibold text-gray-800">
                     Custom-built as per client requirements
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="text-3xl mb-4">✅</div>
+                  <div className="mb-4">
+                    <i className="fas fa-shield-alt text-4xl text-primary"></i>
+                  </div>
                   <p className="text-sm sm:text-base font-semibold text-gray-800">
                     Zero-defect production policy
                   </p>
@@ -950,7 +958,7 @@ const Home = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-10 sm:mt-12 md:mt-16 text-center">
+          {/* <div className="mt-10 sm:mt-12 md:mt-16 text-center">
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <a
                 href="#"
@@ -965,7 +973,7 @@ const Home = () => {
                 Request Specifications
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

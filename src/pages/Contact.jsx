@@ -14,7 +14,8 @@ const Contact = () => {
     {
       icon: "fas fa-map-marker-alt",
       title: "OUR LOCATION",
-      content: "A-22, Phase II, Sector 80, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301",
+      content:
+        "A-22, Phase II, Sector 80, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301",
       link: "https://maps.google.com/?q=A-22+Phase+II+Sector+80+Noida+Gautam+Buddha+Nagar+Uttar+Pradesh+201301",
     },
     {
@@ -57,7 +58,9 @@ const Contact = () => {
       {/* Breadcrumb */}
       <div className="bg-gray-800 text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white">Contact Us</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white">
+            Contact Us
+          </h1>
         </div>
       </div>
 
@@ -329,7 +332,7 @@ const Contact = () => {
               </div>
 
               {/* Why Choose Us Section */}
-              <div className="bg-[#1E2939] rounded-2xl shadow-sm p-6 sm:p-8">
+              {/* <div className="bg-[#1E2939] rounded-2xl shadow-sm p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
                   Why Choose Us?
                 </h3>
@@ -341,7 +344,7 @@ const Contact = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Column - Send Message */}

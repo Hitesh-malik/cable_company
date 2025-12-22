@@ -4,6 +4,35 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 
+// Import product images
+import AVSSWireImg from "../assets/img/products/AutomobileWires/AVSS-Wire.jpg";
+import FLRYWireImg from "../assets/img/products/AutomobileWires/FLRY-Wire-300x300.jpg";
+import BISCablesImg from "../assets/img/products/BuildingWirePanelWire/BIS-Cables-300x300.jpg";
+import HouseWireImg from "../assets/img/products/BuildingWirePanelWire/House-Wire-300x300.jpg";
+import SolarCablesImg from "../assets/img/products/BuildingWirePanelWire/Solar-Cables-300x300.jpg";
+import ULCULCablesImg from "../assets/img/products/BuildingWirePanelWire/UL-CUL-300x300.jpg";
+import VDECablesImg from "../assets/img/products/BuildingWirePanelWire/VDE-Cables-300x300.jpg";
+import CoAxialImg from "../assets/img/products/Co-AxialCables/Co-Axial-Cables-300x300.jpg";
+import ControlCableImg from "../assets/img/products/ControlCable/Control-Cable-300x300.jpg";
+import HDMICablesImg from "../assets/img/products/Duraconnect - DataCables/HDMI-Cables-300x300.jpg";
+import USBCablesImg from "../assets/img/products/Duraconnect - DataCables/USB-Cables-300x300.jpg";
+import Cat5eSFTPImg from "../assets/img/products/NetworkingCables/Cat-5e-SFTP-300x300.jpg";
+import Cat5eUTPImg from "../assets/img/products/NetworkingCables/Cat-5e-UTP-300x300.jpg";
+import Cat6SFTPImg from "../assets/img/products/NetworkingCables/Cat-6-SFTP-300x300.jpg";
+import Cat6UTPImg from "../assets/img/products/NetworkingCables/Cat-6-UTP-300x300.jpg";
+import ConnectorImg from "../assets/img/products/PowerCord/Connector-300x300.jpg";
+import EuropePlugImg from "../assets/img/products/PowerCord/Europe-Plug-300x300.jpg";
+import IndianPlugImg from "../assets/img/products/PowerCord/Indian-Plug-300x300.jpg";
+import NorthAmericanPlugImg from "../assets/img/products/PowerCord/North-American-Plug-300x300.jpg";
+import PanelWiresImg from "../assets/img/products/PanelWires/Panel-Wires-300x300.jpg";
+import BatteryCableImg from "../assets/img/products/BatteryCable/Battery-Cable-300x300.jpg";
+import SubmersibleImg from "../assets/img/products/SubmersibleFlatCable/Submersible-flat-cable-300x300.jpg";
+import AirConditionerWireHarnessImg from "../assets/img/products/WireandHarnesses/Air-Conditioner-Wire-Harnesses-300x300.jpg";
+import DishwasherWireHarnessImg from "../assets/img/products/WireandHarnesses/Dishwasher-Wire-Harnesses-300x300.jpg";
+import MicrowaveWireHarnessImg from "../assets/img/products/WireandHarnesses/Microwave-Wire-Harnesses-300x300.jpg";
+import RefrigeratorWireHarnessImg from "../assets/img/products/WireandHarnesses/Refrigerator-Wire-Harnesses-300x300.jpg";
+import WashingMachineWireHarnessImg from "../assets/img/products/WireandHarnesses/Washing-Machine-Wire-Harness-300x300.jpg";
+
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentService, setCurrentService] = useState(0);
@@ -137,73 +166,270 @@ const Home = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Debug: Log image imports to verify they're working
+  useEffect(() => {
+    console.log("AVSSWireImg:", AVSSWireImg);
+    console.log("FLRYWireImg:", FLRYWireImg);
+  }, []);
+
   const products = [
     {
-      image: "assets/img/projects/1.jpg",
-      title: "Power Cables",
+      image: AVSSWireImg,
+      title: "AVSS Wire",
       category: "Product Range",
       description:
-        "High-efficiency electrical cables for industrial and residential power systems.",
-      filters: ["power-cables"],
+        "High-quality AVSS automotive wires designed for reliable vehicle electrical systems with flexible multi-colored striped pattern.",
+      filters: ["automobile-wires"],
       type: "image",
     },
     {
-      image: "assets/img/projects/2.jpg",
-      title: "Networking Cables",
+      image: FLRYWireImg,
+      title: "FLRY Wire",
       category: "Product Range",
       description:
-        "High-speed data and LAN cables for modern networking requirements.",
+        "Premium FLRY automotive wires with single-color insulation, designed for heavy-duty vehicle electrical applications.",
+      filters: ["automobile-wires"],
+      type: "image",
+    },
+    {
+      image: BISCablesImg,
+      title: "BIS Cables",
+      category: "Product Range",
+      description:
+        "BIS certified building wires meeting Indian Standard specifications for residential and commercial electrical installations.",
+      filters: ["building-wire-panel-wire"],
+      type: "image",
+    },
+    {
+      image: HouseWireImg,
+      title: "House Wire",
+      category: "Product Range",
+      description:
+        "Premium house wires designed for safe and reliable residential electrical wiring systems.",
+      filters: ["building-wire-panel-wire"],
+      type: "image",
+    },
+    {
+      image: SolarCablesImg,
+      title: "Solar Cables",
+      category: "Product Range",
+      description:
+        "Specialized solar cables engineered for photovoltaic systems with excellent UV resistance and durability.",
+      filters: ["building-wire-panel-wire"],
+      type: "image",
+    },
+    {
+      image: ULCULCablesImg,
+      title: "UL CUL Cables",
+      category: "Product Range",
+      description:
+        "UL and CUL certified cables meeting North American safety standards for building and panel wire applications.",
+      filters: ["building-wire-panel-wire"],
+      type: "image",
+    },
+    {
+      image: VDECablesImg,
+      title: "VDE Cables",
+      category: "Product Range",
+      description:
+        "VDE approved cables conforming to German standards, ideal for European building and panel wiring requirements.",
+      filters: ["building-wire-panel-wire"],
+      type: "image",
+    },
+    {
+      image: CoAxialImg,
+      title: "Co-Axial Cables",
+      category: "Product Range",
+      description:
+        "Premium coaxial cables for high-frequency signal transmission and communication systems.",
+      filters: ["co-axial-cables"],
+      type: "image",
+    },
+    {
+      image: ControlCableImg,
+      title: "Control Cable",
+      category: "Product Range",
+      description:
+        "Precision control cables for automation, instrumentation, and industrial control systems.",
+      filters: ["control-cable"],
+      type: "image",
+    },
+    {
+      image: HDMICablesImg,
+      title: "HDMI Cables",
+      category: "Product Range",
+      description:
+        "High-definition multimedia interface cables for superior audio and video transmission in home entertainment and professional AV systems.",
+      filters: ["duraconnect-data-cables"],
+      type: "image",
+    },
+    {
+      image: USBCablesImg,
+      title: "USB Cables",
+      category: "Product Range",
+      description:
+        "Universal Serial Bus cables for data transfer, charging, and connectivity across various devices and applications.",
+      filters: ["duraconnect-data-cables"],
+      type: "image",
+    },
+    {
+      image: Cat5eSFTPImg,
+      title: "Cat-5e SFTP Cable",
+      category: "Product Range",
+      description:
+        "Category 5e Shielded Foiled Twisted Pair cable for enhanced EMI protection and reliable data transmission.",
       filters: ["networking-cables"],
       type: "image",
     },
     {
-      image: "assets/img/projects/3.jpg",
-      title: "HDMI & Audio-Video Cables",
+      image: Cat5eUTPImg,
+      title: "Cat-5e UTP Cable",
       category: "Product Range",
       description:
-        "Superior-grade transmission cables for entertainment and commercial systems.",
-      filters: ["hdmi-audio-video-cables"],
+        "Category 5e Unshielded Twisted Pair cable for cost-effective networking solutions in standard environments.",
+      filters: ["networking-cables"],
       type: "image",
     },
     {
-      image: "assets/img/projects/4.jpg",
-      title: "Wire Harness Assemblies",
+      image: Cat6SFTPImg,
+      title: "Cat-6 SFTP Cable",
       category: "Product Range",
       description:
-        "Custom harnesses for automotive, telecom, and consumer electronics.",
-      filters: ["wire-harness-assemblies"],
+        "Category 6 Shielded Foiled Twisted Pair cable offering superior performance and interference protection for high-speed networks.",
+      filters: ["networking-cables"],
       type: "image",
     },
     {
-      image: "assets/img/projects/5.jpg",
-      title: "Industrial Wires",
+      image: Cat6UTPImg,
+      title: "Cat-6 UTP Cable",
       category: "Product Range",
       description:
-        "Robust cables designed for heavy-duty industrial applications.",
-      filters: ["industrial-wires"],
+        "Category 6 Unshielded Twisted Pair cable designed for Gigabit Ethernet and high-bandwidth networking applications.",
+      filters: ["networking-cables"],
       type: "image",
     },
     {
-      image: "assets/img/projects/6.jpg",
-      title: "Control & Instrumentation Cables",
+      image: ConnectorImg,
+      title: "Power Cord Connector",
       category: "Product Range",
       description:
-        "For precise signal and power transmission in automation systems.",
-      filters: ["control-instrumentation-cables"],
+        "High-quality power cord connectors for secure and reliable electrical connections in appliances and equipment.",
+      filters: ["power-cord"],
+      type: "image",
+    },
+    {
+      image: EuropePlugImg,
+      title: "Europe Plug",
+      category: "Product Range",
+      description:
+        "European standard power plugs compliant with CEE 7/4 (Schuko) and CEE 7/7 specifications for European markets.",
+      filters: ["power-cord"],
+      type: "image",
+    },
+    {
+      image: IndianPlugImg,
+      title: "Indian Plug",
+      category: "Product Range",
+      description:
+        "Indian standard power plugs (IS 1293) designed for safe and compliant electrical connections in Indian markets.",
+      filters: ["power-cord"],
+      type: "image",
+    },
+    {
+      image: NorthAmericanPlugImg,
+      title: "North American Plug",
+      category: "Product Range",
+      description:
+        "North American standard power plugs (NEMA) meeting UL/CSA standards for US and Canadian electrical systems.",
+      filters: ["power-cord"],
+      type: "image",
+    },
+    {
+      image: PanelWiresImg,
+      title: "Panel Wires",
+      category: "Product Range",
+      description:
+        "Specialized panel wires for control panels and electrical distribution systems.",
+      filters: ["panel-wires"],
+      type: "image",
+    },
+    {
+      image: BatteryCableImg,
+      title: "Battery Cables",
+      category: "Product Range",
+      description:
+        "Heavy-duty battery cables for automotive and industrial power applications.",
+      filters: ["battery-cables"],
+      type: "image",
+    },
+    {
+      image: SubmersibleImg,
+      title: "Submersible Flat Cable",
+      category: "Product Range",
+      description:
+        "Water-resistant submersible flat cables designed for underwater and harsh environment applications.",
+      filters: ["submersible-flat-cable"],
+      type: "image",
+    },
+    {
+      image: AirConditionerWireHarnessImg,
+      title: "Air Conditioner Wire Harness",
+      category: "Product Range",
+      description:
+        "Specialized wire harnesses for air conditioning systems, ensuring reliable electrical connections and optimal performance.",
+      filters: ["wire-harnesses"],
+      type: "image",
+    },
+    {
+      image: DishwasherWireHarnessImg,
+      title: "Dishwasher Wire Harness",
+      category: "Product Range",
+      description:
+        "Durable wire harnesses designed for dishwasher applications, with water-resistant properties for safe operation.",
+      filters: ["wire-harnesses"],
+      type: "image",
+    },
+    {
+      image: MicrowaveWireHarnessImg,
+      title: "Microwave Wire Harness",
+      category: "Product Range",
+      description:
+        "High-quality wire harnesses for microwave ovens, engineered to handle high-frequency electrical loads safely.",
+      filters: ["wire-harnesses"],
+      type: "image",
+    },
+    {
+      image: RefrigeratorWireHarnessImg,
+      title: "Refrigerator Wire Harness",
+      category: "Product Range",
+      description:
+        "Reliable wire harnesses for refrigerator systems, providing secure connections for cooling and control components.",
+      filters: ["wire-harnesses"],
+      type: "image",
+    },
+    {
+      image: WashingMachineWireHarnessImg,
+      title: "Washing Machine Wire Harness",
+      category: "Product Range",
+      description:
+        "Robust wire harnesses for washing machines, designed to withstand moisture and mechanical stress in laundry appliances.",
+      filters: ["wire-harnesses"],
       type: "image",
     },
   ];
   const filters = [
     { id: "*", label: "All" },
-    { id: "power-cables", label: "Power Cables" },
+    { id: "automobile-wires", label: "Automobile Wires" },
+    { id: "building-wire-panel-wire", label: "Building Wire Panel Wire" },
+    { id: "co-axial-cables", label: "Co-Axial Cables" },
+    { id: "control-cable", label: "Control Cable" },
+    { id: "duraconnect-data-cables", label: "Duraconnect-Data Cables" },
     { id: "networking-cables", label: "Networking Cables" },
-    { id: "hdmi-audio-video-cables", label: "HDMI & Audio-Video Cables" },
-    { id: "wire-harness-assemblies", label: "Wire Harness Assemblies" },
-    { id: "industrial-wires", label: "Industrial Wires" },
-    {
-      id: "control-instrumentation-cables",
-      label: "Control & Instrumentation Cables",
-    },
+    { id: "power-cord", label: "Power Cord" },
+    { id: "panel-wires", label: "Panel Wires" },
+    { id: "battery-cables", label: "Battery Cables" },
+    { id: "submersible-flat-cable", label: "Submersible Flat Cable" },
+    { id: "wire-harnesses", label: "Wire & Harnesses" },
   ];
 
   const filteredProducts =
@@ -629,53 +855,56 @@ const Home = () => {
               Name of Product
             </h3>
             <div className="magnific-mix-gallery text-center">
-              <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 hover-effect">
+              <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {filteredProducts.map((product, index) => (
                   <div
                     key={`${product.title}-${index}`}
-                    className={`pf-item ${product.filters.join(" ")}`}
+                    className={`pf-item ${product.filters.join(
+                      " "
+                    )} bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden`}
                   >
-                    <div className="portfolio-effet">
-                      <div className="thumb">
-                        <img src={product.image} alt={product.title} />
-                        <div className="overlay">
-                          {product.type === "image" ? (
-                            <button
-                              onClick={() => {
-                                setLightboxImage(product.image);
-                                setIsLightboxOpen(true);
-                              }}
-                              className="item popup-link"
-                            >
-                              <i className="fa fa-eye"></i>
-                            </button>
-                          ) : (
-                            <a
-                              href={product.videoUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="popup-youtube"
-                            >
-                              <i className="fa fa-play"></i>
-                            </a>
-                          )}
-                          <Link to="/project-details">
-                            <i className="fa fa-link"></i>
-                          </Link>
-                        </div>
-                      </div>
+                    <div className="thumb relative overflow-hidden bg-gray-50 group w-full">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/2 group-hover:to-black/0 transition-all duration-300 z-10 pointer-events-none"></div>
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer transition-all duration-500 ease-out group-hover:scale-110"
+                        style={{
+                          display: "block",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "center",
+                        }}
+                        loading="lazy"
+                        onClick={() => {
+                          setLightboxImage(product.image);
+                          setIsLightboxOpen(true);
+                        }}
+                        onError={() => {
+                          console.error(
+                            "Image failed to load:",
+                            product.image,
+                            product.title,
+                            typeof product.image
+                          );
+                        }}
+                        onLoad={() => {
+                          console.log(
+                            "Image loaded successfully:",
+                            product.title,
+                            product.image
+                          );
+                        }}
+                      />
                     </div>
-                    <div className="info">
-                      <h4>{product.title}</h4>
-                      <p className="text-sm text-gray-600 mt-2">
+                    <div className="info p-6 sm:p-7 md:p-8 bg-white">
+                      <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight">
+                        {product.title}
+                      </h4>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                         {product.description}
                       </p>
-                      <a
-                        href="#"
-                        className="text-primary hover:underline mt-1 block"
-                      >
-                        {product.category}
-                      </a>
                     </div>
                   </div>
                 ))}

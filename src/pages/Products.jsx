@@ -57,163 +57,190 @@ const Products = () => {
     {
       image: AVSSWireImg,
       title: "AVSS Wire",
-      category: "High-quality AVSS automotive wires designed for reliable vehicle electrical systems with flexible multi-colored striped pattern",
+      category:
+        "High-quality AVSS automotive wires designed for reliable vehicle electrical systems with flexible multi-colored striped pattern",
       tags: ["automobile-wires"],
     },
     {
       image: FLRYWireImg,
       title: "FLRY Wire",
-      category: "Premium FLRY automotive wires with single-color insulation, designed for heavy-duty vehicle electrical applications",
+      category:
+        "Premium FLRY automotive wires with single-color insulation, designed for heavy-duty vehicle electrical applications",
       tags: ["automobile-wires"],
     },
     {
       image: BISCablesImg,
       title: "BIS Cables",
-      category: "BIS certified building wires meeting Indian Standard specifications for residential and commercial electrical installations",
+      category:
+        "BIS certified building wires meeting Indian Standard specifications for residential and commercial electrical installations",
       tags: ["building-wire-panel-wire"],
     },
     {
       image: HouseWireImg,
       title: "House Wire",
-      category: "Premium house wires designed for safe and reliable residential electrical wiring systems",
+      category:
+        "Premium house wires designed for safe and reliable residential electrical wiring systems",
       tags: ["building-wire-panel-wire"],
     },
     {
       image: SolarCablesImg,
       title: "Solar Cables",
-      category: "Specialized solar cables engineered for photovoltaic systems with excellent UV resistance and durability",
+      category:
+        "Specialized solar cables engineered for photovoltaic systems with excellent UV resistance and durability",
       tags: ["building-wire-panel-wire"],
     },
     {
       image: ULCULCablesImg,
       title: "UL CUL Cables",
-      category: "UL and CUL certified cables meeting North American safety standards for building and panel wire applications",
+      category:
+        "UL and CUL certified cables meeting North American safety standards for building and panel wire applications",
       tags: ["building-wire-panel-wire"],
     },
     {
       image: VDECablesImg,
       title: "VDE Cables",
-      category: "VDE approved cables conforming to German standards, ideal for European building and panel wiring requirements",
+      category:
+        "VDE approved cables conforming to German standards, ideal for European building and panel wiring requirements",
       tags: ["building-wire-panel-wire"],
     },
     {
       image: CoAxialImg,
       title: "Co-Axial Cables",
-      category: "Premium coaxial cables for high-frequency signal transmission and communication systems",
+      category:
+        "Premium coaxial cables for high-frequency signal transmission and communication systems",
       tags: ["co-axial-cables"],
     },
     {
       image: ControlCableImg,
       title: "Control Cable",
-      category: "Precision control cables for automation, instrumentation, and industrial control systems",
+      category:
+        "Precision control cables for automation, instrumentation, and industrial control systems",
       tags: ["control-cable"],
     },
     {
       image: HDMICablesImg,
       title: "HDMI Cables",
-      category: "High-definition multimedia interface cables for superior audio and video transmission in home entertainment and professional AV systems",
+      category:
+        "High-definition multimedia interface cables for superior audio and video transmission in home entertainment and professional AV systems",
       tags: ["duraconnect-data-cables"],
     },
     {
       image: USBCablesImg,
       title: "USB Cables",
-      category: "Universal Serial Bus cables for data transfer, charging, and connectivity across various devices and applications",
+      category:
+        "Universal Serial Bus cables for data transfer, charging, and connectivity across various devices and applications",
       tags: ["duraconnect-data-cables"],
     },
     {
       image: Cat5eSFTPImg,
       title: "Cat-5e SFTP Cable",
-      category: "Category 5e Shielded Foiled Twisted Pair cable for enhanced EMI protection and reliable data transmission",
+      category:
+        "Category 5e Shielded Foiled Twisted Pair cable for enhanced EMI protection and reliable data transmission",
       tags: ["networking-cables"],
     },
     {
       image: Cat5eUTPImg,
       title: "Cat-5e UTP Cable",
-      category: "Category 5e Unshielded Twisted Pair cable for cost-effective networking solutions in standard environments",
+      category:
+        "Category 5e Unshielded Twisted Pair cable for cost-effective networking solutions in standard environments",
       tags: ["networking-cables"],
     },
     {
       image: Cat6SFTPImg,
       title: "Cat-6 SFTP Cable",
-      category: "Category 6 Shielded Foiled Twisted Pair cable offering superior performance and interference protection for high-speed networks",
+      category:
+        "Category 6 Shielded Foiled Twisted Pair cable offering superior performance and interference protection for high-speed networks",
       tags: ["networking-cables"],
     },
     {
       image: Cat6UTPImg,
       title: "Cat-6 UTP Cable",
-      category: "Category 6 Unshielded Twisted Pair cable designed for Gigabit Ethernet and high-bandwidth networking applications",
+      category:
+        "Category 6 Unshielded Twisted Pair cable designed for Gigabit Ethernet and high-bandwidth networking applications",
       tags: ["networking-cables"],
     },
     {
       image: ConnectorImg,
       title: "Power Cord Connector",
-      category: "High-quality power cord connectors for secure and reliable electrical connections in appliances and equipment",
+      category:
+        "High-quality power cord connectors for secure and reliable electrical connections in appliances and equipment",
       tags: ["power-cord"],
     },
     {
       image: EuropePlugImg,
       title: "Europe Plug",
-      category: "European standard power plugs compliant with CEE 7/4 (Schuko) and CEE 7/7 specifications for European markets",
+      category:
+        "European standard power plugs compliant with CEE 7/4 (Schuko) and CEE 7/7 specifications for European markets",
       tags: ["power-cord"],
     },
     {
       image: IndianPlugImg,
       title: "Indian Plug",
-      category: "Indian standard power plugs (IS 1293) designed for safe and compliant electrical connections in Indian markets",
+      category:
+        "Indian standard power plugs (IS 1293) designed for safe and compliant electrical connections in Indian markets",
       tags: ["power-cord"],
     },
     {
       image: NorthAmericanPlugImg,
       title: "North American Plug",
-      category: "North American standard power plugs (NEMA) meeting UL/CSA standards for US and Canadian electrical systems",
+      category:
+        "North American standard power plugs (NEMA) meeting UL/CSA standards for US and Canadian electrical systems",
       tags: ["power-cord"],
     },
     {
       image: PanelWiresImg,
       title: "Panel Wires",
-      category: "Specialized panel wires for control panels and electrical distribution systems",
+      category:
+        "Specialized panel wires for control panels and electrical distribution systems",
       tags: ["panel-wires"],
     },
     {
       image: BatteryCableImg,
       title: "Battery Cables",
-      category: "Heavy-duty battery cables for automotive and industrial power applications",
+      category:
+        "Heavy-duty battery cables for automotive and industrial power applications",
       tags: ["battery-cables"],
     },
     {
       image: SubmersibleImg,
       title: "Submersible Flat Cable",
-      category: "Water-resistant submersible flat cables designed for underwater and harsh environment applications",
+      category:
+        "Water-resistant submersible flat cables designed for underwater and harsh environment applications",
       tags: ["submersible-flat-cable"],
     },
     {
       image: AirConditionerWireHarnessImg,
       title: "Air Conditioner Wire Harness",
-      category: "Specialized wire harnesses for air conditioning systems, ensuring reliable electrical connections and optimal performance",
+      category:
+        "Specialized wire harnesses for air conditioning systems, ensuring reliable electrical connections and optimal performance",
       tags: ["wire-harnesses"],
     },
     {
       image: DishwasherWireHarnessImg,
       title: "Dishwasher Wire Harness",
-      category: "Durable wire harnesses designed for dishwasher applications, with water-resistant properties for safe operation",
+      category:
+        "Durable wire harnesses designed for dishwasher applications, with water-resistant properties for safe operation",
       tags: ["wire-harnesses"],
     },
     {
       image: MicrowaveWireHarnessImg,
       title: "Microwave Wire Harness",
-      category: "High-quality wire harnesses for microwave ovens, engineered to handle high-frequency electrical loads safely",
+      category:
+        "High-quality wire harnesses for microwave ovens, engineered to handle high-frequency electrical loads safely",
       tags: ["wire-harnesses"],
     },
     {
       image: RefrigeratorWireHarnessImg,
       title: "Refrigerator Wire Harness",
-      category: "Reliable wire harnesses for refrigerator systems, providing secure connections for cooling and control components",
+      category:
+        "Reliable wire harnesses for refrigerator systems, providing secure connections for cooling and control components",
       tags: ["wire-harnesses"],
     },
     {
       image: WashingMachineWireHarnessImg,
       title: "Washing Machine Wire Harness",
-      category: "Robust wire harnesses for washing machines, designed to withstand moisture and mechanical stress in laundry appliances",
+      category:
+        "Robust wire harnesses for washing machines, designed to withstand moisture and mechanical stress in laundry appliances",
       tags: ["wire-harnesses"],
     },
   ];
@@ -230,7 +257,9 @@ const Products = () => {
       {/* Page Intro */}
       <div className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-white">Products</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-white">
+            Products
+          </h1>
           <p className="text-gray-300 mt-2 max-w-xl text-sm sm:text-base">
             Comprehensive Cable & Wiring Solutions engineered for durability and
             performance.
@@ -297,28 +326,35 @@ const Products = () => {
       <div className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16 md:pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product, index) => (
-            <div key={index} className="relative overflow-hidden rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 bg-white">
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 bg-white"
+            >
               <div className="relative overflow-hidden bg-gray-50 group w-full">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/2 group-hover:to-black/0 transition-all duration-300 z-10 pointer-events-none"></div>
                 <img
                   src={product.image}
                   alt={product.title}
                   className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer transition-all duration-500 ease-out group-hover:scale-110"
-                  style={{ 
-                    display: 'block', 
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center'
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
                   }}
                   loading="lazy"
-                  onClick={() => {
-                    setLightboxImage(product.image);
-                    setIsLightboxOpen(true);
-                  }}
+                  // onClick={() => {
+                  //   setLightboxImage(product.image);
+                  //   setIsLightboxOpen(true);
+                  // }}
                   onError={(e) => {
-                    console.error("Image failed to load:", product.image, product.title);
-                    e.target.style.display = 'none';
+                    console.error(
+                      "Image failed to load:",
+                      product.image,
+                      product.title
+                    );
+                    e.target.style.display = "none";
                   }}
                   onLoad={(e) => {
                     console.log("Image loaded successfully:", product.title);
@@ -329,7 +365,9 @@ const Products = () => {
                 <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight">
                   {product.title}
                 </h4>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{product.category}</p>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  {product.category}
+                </p>
               </div>
             </div>
           ))}

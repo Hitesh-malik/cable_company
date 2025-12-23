@@ -882,10 +882,10 @@ const Home = () => {
                           objectPosition: "center",
                         }}
                         loading="lazy"
-                        onClick={() => {
-                          setLightboxImage(product.image);
-                          setIsLightboxOpen(true);
-                        }}
+                        // onClick={() => {
+                        //   setLightboxImage(product.image);
+                        //   setIsLightboxOpen(true);
+                        // }}
                         onError={() => {
                           console.error(
                             "Image failed to load:",

@@ -280,7 +280,8 @@ const Contact = () => {
                     )}
 
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1234567890!2d77.3256789!3d28.6123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a123456789%3A0x1234567890abcdef!2sA-22%2C%20Phase%20II%2C%20Sector%2080%2C%20Noida%2C%20Gautam%20Buddha%20Nagar%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1234567890"
+                      // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1234567890!2d77.3256789!3d28.6123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a123456789%3A0x1234567890abcdef!2sA-22%2C%20Phase%20II%2C%20Sector%2080%2C%20Noida%2C%20Gautam%20Buddha%20Nagar%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.234!2d77.412412!3d28.55618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef2df545dd3b:0xdb5aa27a5192c6a9!2sa%2C%2022%2C%20Sector%2080%20Rd%2C%20Block%20A%2C%20Sector%2080%2C%20Noida%2C%20Uttar%20Pradesh%20201305!5e0!3m2!1sen-IN!2sin!4v1734963600000"
                       width="100%"
                       height="100%"
                       style={{

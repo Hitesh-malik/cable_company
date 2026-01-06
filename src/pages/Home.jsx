@@ -786,14 +786,17 @@ const Home = () => {
                       key={index}
                       className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-1.5 sm:px-2 md:px-2.5 lg:px-3 xl:px-4 flex"
                     >
-                      <div
-                        className="relative w-full h-full rounded-lg overflow-hidden services-item bg-cover bg-center bg-no-repeat shadow-lg"
-                        style={{
-                          backgroundImage: `url(${service.image})`,
-                        }}
-                      >
+                      <div className="relative w-full h-full rounded-lg overflow-hidden services-item shadow-lg">
+                        {/* Background Image with Grayscale Filter */}
+                        <div
+                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                          style={{
+                            backgroundImage: `url(${service.image})`,
+                            filter: "grayscale(100%)",
+                          }}
+                        ></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
-                        <div className="relative h-full w-full flex flex-col items-center justify-center text-white">
+                        <div className="relative h-full w-full flex flex-col items-center justify-center text-white z-10">
                           <div className="info w-full max-w-full px-3 sm:px-4 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-3.5 flex flex-col items-center justify-center h-full">
                             {/* Icon */}
                             <div

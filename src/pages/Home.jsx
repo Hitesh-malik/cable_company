@@ -599,29 +599,161 @@ const Home = () => {
                   <div className="box-cell">
                     <div className="container mx-auto px-4 sm:px-6">
                       <div className="max-w-4xl">
-                        <div className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20">
-                          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5 text-white">
-                            {slide.title}
-                            <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-white"></span>
-                          </h3>
+                        <div
+                          className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20"
+                          key={`slide-${index}-${currentSlide}`}
+                        >
+                          {/* Title with staggered word animation */}
+                          <motion.h3
+                            className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5 text-white"
+                            key={`title-${index}-${currentSlide}`}
+                            initial={{ opacity: 0, y: -30 }}
+                            animate={
+                              index === currentSlide
+                                ? { opacity: 1, y: 0 }
+                                : { opacity: 0, y: -30 }
+                            }
+                            transition={{
+                              duration: 0.6,
+                              delay: 0.2,
+                              ease: "easeOut",
+                            }}
+                          >
+                            {slide.title.split(" ").map((word, wordIndex) => (
+                              <motion.span
+                                key={`${index}-${wordIndex}`}
+                                className="inline-block"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={
+                                  index === currentSlide
+                                    ? { opacity: 1, y: 0 }
+                                    : { opacity: 0, y: -20 }
+                                }
+                                transition={{
+                                  duration: 0.5,
+                                  delay: 0.2 + wordIndex * 0.15,
+                                  ease: "easeOut",
+                                }}
+                              >
+                                {word}
+                                {wordIndex <
+                                  slide.title.split(" ").length - 1 && "\u00A0"}
+                              </motion.span>
+                            ))}
+                            <motion.span
+                              className="absolute bottom-0 left-0 h-0.5 bg-white"
+                              initial={{ width: 0 }}
+                              animate={
+                                index === currentSlide
+                                  ? { width: "50%" }
+                                  : { width: 0 }
+                              }
+                              transition={{
+                                duration: 0.6,
+                                delay: 0.5,
+                                ease: "easeOut",
+                              }}
+                            ></motion.span>
+                          </motion.h3>
+
+                          {/* Heading with staggered line animation */}
                           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-5 md:mb-6 font-heading uppercase leading-tight">
-                            <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-1 sm:mb-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                            <motion.span
+                              className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-1 sm:mb-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+                              key={`heading1-${index}-${currentSlide}`}
+                              initial={{ opacity: 0, y: -40 }}
+                              animate={
+                                index === currentSlide
+                                  ? { opacity: 1, y: 0 }
+                                  : { opacity: 0, y: -40 }
+                              }
+                              transition={{
+                                duration: 0.7,
+                                delay: 0.4,
+                                ease: "easeOut",
+                              }}
+                            >
                               BEST CHOICE
-                            </span>
+                            </motion.span>
                             <br />
-                            <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                            <motion.span
+                              className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+                              key={`heading2-${index}-${currentSlide}`}
+                              initial={{ opacity: 0, y: -40 }}
+                              animate={
+                                index === currentSlide
+                                  ? { opacity: 1, y: 0 }
+                                  : { opacity: 0, y: -40 }
+                              }
+                              transition={{
+                                duration: 0.7,
+                                delay: 0.6,
+                                ease: "easeOut",
+                              }}
+                            >
                               FOR YOU
-                            </span>
+                            </motion.span>
                           </h1>
-                          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-white leading-relaxed max-w-2xl">
-                            {slide.description}
-                          </p>
-                          <a
+
+                          {/* Description with staggered word animation */}
+                          <motion.p
+                            className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-white leading-relaxed max-w-2xl"
+                            key={`desc-${index}-${currentSlide}`}
+                            initial={{ opacity: 0 }}
+                            animate={
+                              index === currentSlide
+                                ? { opacity: 1 }
+                                : { opacity: 0 }
+                            }
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                          >
+                            {slide.description
+                              .split(" ")
+                              .map((word, wordIndex) => (
+                                <motion.span
+                                  key={`${index}-desc-${wordIndex}`}
+                                  className="inline-block"
+                                  initial={{ opacity: 0, y: -15 }}
+                                  animate={
+                                    index === currentSlide
+                                      ? { opacity: 1, y: 0 }
+                                      : { opacity: 0, y: -15 }
+                                  }
+                                  transition={{
+                                    duration: 0.4,
+                                    delay: 0.8 + wordIndex * 0.03,
+                                    ease: "easeOut",
+                                  }}
+                                >
+                                  {word}
+                                  {wordIndex <
+                                    slide.description.split(" ").length - 1 &&
+                                    "\u00A0"}
+                                </motion.span>
+                              ))}
+                          </motion.p>
+
+                          {/* Button animation */}
+                          <motion.a
                             href="#"
                             className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
+                            key={`button-${index}-${currentSlide}`}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={
+                              index === currentSlide
+                                ? { opacity: 1, y: 0 }
+                                : { opacity: 0, y: -20 }
+                            }
+                            transition={{
+                              duration: 0.6,
+                              delay: 1.2,
+                              ease: "easeOut",
+                            }}
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
                           >
                             Learn more
-                          </a>
+                          </motion.a>
                         </div>
                       </div>
                     </div>
@@ -749,29 +881,73 @@ const Home = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
+                {/* Tagline with staggered word animation */}
                 <motion.h3
                   className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading"
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  Powering Connections. Building Reliability.
+                  {"Powering Connections. Building Reliability."
+                    .split(" ")
+                    .map((word, wordIndex) => (
+                      <motion.span
+                        key={wordIndex}
+                        className="inline-block"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.2 + wordIndex * 0.1,
+                          ease: "easeOut",
+                        }}
+                      >
+                        {word}
+                        {wordIndex <
+                          "Powering Connections. Building Reliability.".split(
+                            " "
+                          ).length -
+                            1 && "\u00A0"}
+                      </motion.span>
+                    ))}
                 </motion.h3>
 
+                {/* Main heading with staggered word animation */}
                 <motion.h2
                   className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading"
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  Griptronics is a trusted Indian manufacturer of
-                  high-performance electrical wires, networking cables, cords,
-                  and wire harness solutions engineered for reliability, safety,
-                  and innovation.
+                  {"Griptronics is a trusted Indian manufacturer of high-performance electrical wires, networking cables, cords, and wire harness solutions engineered for reliability, safety, and innovation."
+                    .split(" ")
+                    .map((word, wordIndex) => (
+                      <motion.span
+                        key={wordIndex}
+                        className="inline-block"
+                        initial={{ opacity: 0, y: -25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.3 + wordIndex * 0.04,
+                          ease: "easeOut",
+                        }}
+                      >
+                        {word}
+                        {wordIndex <
+                          "Griptronics is a trusted Indian manufacturer of high-performance electrical wires, networking cables, cords, and wire harness solutions engineered for reliability, safety, and innovation.".split(
+                            " "
+                          ).length -
+                            1 && "\u00A0"}
+                      </motion.span>
+                    ))}
                 </motion.h2>
 
+                {/* Feature list with staggered animation */}
                 <motion.div
                   className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4"
                   initial={{ opacity: 0 }}
@@ -799,24 +975,80 @@ const Home = () => {
                   ].map((item, index) => (
                     <motion.p
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
                     >
-                      <strong>{item.text}</strong> {item.desc}
+                      <motion.strong
+                        className="inline-block"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.5 + index * 0.15,
+                          ease: "easeOut",
+                        }}
+                      >
+                        {item.text.split(" ").map((word, wordIndex) => (
+                          <motion.span
+                            key={wordIndex}
+                            className="inline-block"
+                            initial={{ opacity: 0, y: -15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 0.4,
+                              delay: 0.5 + index * 0.15 + wordIndex * 0.05,
+                              ease: "easeOut",
+                            }}
+                          >
+                            {word}
+                            {wordIndex < item.text.split(" ").length - 1 &&
+                              "\u00A0"}
+                          </motion.span>
+                        ))}
+                      </motion.strong>{" "}
+                      {item.desc.split(" ").map((word, wordIndex) => (
+                        <motion.span
+                          key={wordIndex}
+                          className="inline-block"
+                          initial={{ opacity: 0, y: -15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.4,
+                            delay:
+                              0.5 +
+                              index * 0.15 +
+                              item.text.split(" ").length * 0.05 +
+                              wordIndex * 0.03,
+                            ease: "easeOut",
+                          }}
+                        >
+                          {word}
+                          {wordIndex < item.desc.split(" ").length - 1 &&
+                            "\u00A0"}
+                        </motion.span>
+                      ))}
                     </motion.p>
                   ))}
                 </motion.div>
 
+                {/* Button animation */}
                 <motion.div
                   className="mt-6 sm:mt-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
                 >
                   <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

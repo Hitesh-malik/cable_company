@@ -177,7 +177,7 @@ const Home = () => {
     {
       image: AVSSWireImg,
       title: "AVSS Wire",
-      category: "Product Range",
+      category: "Read More",
       description:
         "High-quality AVSS automotive wires designed for reliable vehicle electrical systems with flexible multi-colored striped pattern.",
       filters: ["automobile-wires"],
@@ -186,7 +186,7 @@ const Home = () => {
     {
       image: FLRYWireImg,
       title: "FLRY Wire",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Premium FLRY automotive wires with single-color insulation, designed for heavy-duty vehicle electrical applications.",
       filters: ["automobile-wires"],
@@ -195,7 +195,7 @@ const Home = () => {
     {
       image: BISCablesImg,
       title: "BIS Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "BIS certified building wires meeting Indian Standard specifications for residential and commercial electrical installations.",
       filters: ["building-wire-panel-wire"],
@@ -204,7 +204,7 @@ const Home = () => {
     {
       image: HouseWireImg,
       title: "House Wire",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Premium house wires designed for safe and reliable residential electrical wiring systems.",
       filters: ["building-wire-panel-wire"],
@@ -213,7 +213,7 @@ const Home = () => {
     {
       image: SolarCablesImg,
       title: "Solar Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Specialized solar cables engineered for photovoltaic systems with excellent UV resistance and durability.",
       filters: ["building-wire-panel-wire"],
@@ -222,7 +222,7 @@ const Home = () => {
     {
       image: ULCULCablesImg,
       title: "UL CUL Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "UL and CUL certified cables meeting North American safety standards for building and panel wire applications.",
       filters: ["building-wire-panel-wire"],
@@ -231,7 +231,7 @@ const Home = () => {
     {
       image: VDECablesImg,
       title: "VDE Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "VDE approved cables conforming to German standards, ideal for European building and panel wiring requirements.",
       filters: ["building-wire-panel-wire"],
@@ -240,7 +240,7 @@ const Home = () => {
     {
       image: CoAxialImg,
       title: "Co-Axial Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Premium coaxial cables for high-frequency signal transmission and communication systems.",
       filters: ["co-axial-cables"],
@@ -249,7 +249,7 @@ const Home = () => {
     {
       image: ControlCableImg,
       title: "Control Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Precision control cables for automation, instrumentation, and industrial control systems.",
       filters: ["control-cable"],
@@ -258,7 +258,7 @@ const Home = () => {
     {
       image: HDMICablesImg,
       title: "HDMI Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "High-definition multimedia interface cables for superior audio and video transmission in home entertainment and professional AV systems.",
       filters: ["duraconnect-data-cables"],
@@ -267,7 +267,7 @@ const Home = () => {
     {
       image: USBCablesImg,
       title: "USB Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Universal Serial Bus cables for data transfer, charging, and connectivity across various devices and applications.",
       filters: ["duraconnect-data-cables"],
@@ -276,7 +276,7 @@ const Home = () => {
     {
       image: Cat5eSFTPImg,
       title: "Cat-5e SFTP Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Category 5e Shielded Foiled Twisted Pair cable for enhanced EMI protection and reliable data transmission.",
       filters: ["networking-cables"],
@@ -285,7 +285,7 @@ const Home = () => {
     {
       image: Cat5eUTPImg,
       title: "Cat-5e UTP Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Category 5e Unshielded Twisted Pair cable for cost-effective networking solutions in standard environments.",
       filters: ["networking-cables"],
@@ -294,7 +294,7 @@ const Home = () => {
     {
       image: Cat6SFTPImg,
       title: "Cat-6 SFTP Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Category 6 Shielded Foiled Twisted Pair cable offering superior performance and interference protection for high-speed networks.",
       filters: ["networking-cables"],
@@ -303,7 +303,7 @@ const Home = () => {
     {
       image: Cat6UTPImg,
       title: "Cat-6 UTP Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Category 6 Unshielded Twisted Pair cable designed for Gigabit Ethernet and high-bandwidth networking applications.",
       filters: ["networking-cables"],
@@ -312,7 +312,7 @@ const Home = () => {
     {
       image: ConnectorImg,
       title: "Power Cord Connector",
-      category: "Product Range",
+      category: "Read More",
       description:
         "High-quality power cord connectors for secure and reliable electrical connections in appliances and equipment.",
       filters: ["power-cord"],
@@ -321,7 +321,7 @@ const Home = () => {
     {
       image: EuropePlugImg,
       title: "Europe Plug",
-      category: "Product Range",
+      category: "Read More",
       description:
         "European standard power plugs compliant with CEE 7/4 (Schuko) and CEE 7/7 specifications for European markets.",
       filters: ["power-cord"],
@@ -330,7 +330,7 @@ const Home = () => {
     {
       image: IndianPlugImg,
       title: "Indian Plug",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Indian standard power plugs (IS 1293) designed for safe and compliant electrical connections in Indian markets.",
       filters: ["power-cord"],
@@ -339,7 +339,7 @@ const Home = () => {
     {
       image: NorthAmericanPlugImg,
       title: "North American Plug",
-      category: "Product Range",
+      category: "Read More",
       description:
         "North American standard power plugs (NEMA) meeting UL/CSA standards for US and Canadian electrical systems.",
       filters: ["power-cord"],
@@ -348,7 +348,7 @@ const Home = () => {
     {
       image: PanelWiresImg,
       title: "Panel Wires",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Specialized panel wires for control panels and electrical distribution systems.",
       filters: ["panel-wires"],
@@ -357,7 +357,7 @@ const Home = () => {
     {
       image: BatteryCableImg,
       title: "Battery Cables",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Heavy-duty battery cables for automotive and industrial power applications.",
       filters: ["battery-cables"],
@@ -366,7 +366,7 @@ const Home = () => {
     {
       image: SubmersibleImg,
       title: "Submersible Flat Cable",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Water-resistant submersible flat cables designed for underwater and harsh environment applications.",
       filters: ["submersible-flat-cable"],
@@ -375,7 +375,7 @@ const Home = () => {
     {
       image: AirConditionerWireHarnessImg,
       title: "Air Conditioner Wire Harness",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Specialized wire harnesses for air conditioning systems, ensuring reliable electrical connections and optimal performance.",
       filters: ["wire-harnesses"],
@@ -384,7 +384,7 @@ const Home = () => {
     {
       image: DishwasherWireHarnessImg,
       title: "Dishwasher Wire Harness",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Durable wire harnesses designed for dishwasher applications, with water-resistant properties for safe operation.",
       filters: ["wire-harnesses"],
@@ -393,7 +393,7 @@ const Home = () => {
     {
       image: MicrowaveWireHarnessImg,
       title: "Microwave Wire Harness",
-      category: "Product Range",
+      category: "Read More",
       description:
         "High-quality wire harnesses for microwave ovens, engineered to handle high-frequency electrical loads safely.",
       filters: ["wire-harnesses"],
@@ -402,7 +402,7 @@ const Home = () => {
     {
       image: RefrigeratorWireHarnessImg,
       title: "Refrigerator Wire Harness",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Reliable wire harnesses for refrigerator systems, providing secure connections for cooling and control components.",
       filters: ["wire-harnesses"],
@@ -411,7 +411,7 @@ const Home = () => {
     {
       image: WashingMachineWireHarnessImg,
       title: "Washing Machine Wire Harness",
-      category: "Product Range",
+      category: "Read More",
       description:
         "Robust wire harnesses for washing machines, designed to withstand moisture and mechanical stress in laundry appliances.",
       filters: ["wire-harnesses"],

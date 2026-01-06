@@ -21,8 +21,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
+      {/* Animated Background - Always Running */}
+      <div className="footer-animated-bg"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* About Us Section */}
@@ -38,7 +41,7 @@ const Footer = () => {
             <div className="space-y-2 sm:space-y-3">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center group">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-green-500/10 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-green-500/20 transition-colors flex-shrink-0">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-green-500/10 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-green-500/20 transition-colors shrink-0">
                     <i className={`${item.icon} text-green-500 text-xs sm:text-sm`}></i>
                   </div>
                   {item.url ? (

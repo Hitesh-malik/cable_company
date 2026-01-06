@@ -41,6 +41,7 @@ const Home = () => {
   const [lightboxImage, setLightboxImage] = useState(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [servicesPerView, setServicesPerView] = useState(3);
+  const [visibleProductsCount, setVisibleProductsCount] = useState(3);
 
   const slides = [
     {
@@ -436,6 +437,21 @@ const Home = () => {
     activeFilter === "*"
       ? products
       : products.filter((product) => product.filters.includes(activeFilter));
+
+  // Get visible products based on pagination
+  const visibleProducts = filteredProducts.slice(0, visibleProductsCount);
+  const hasMoreProducts = visibleProductsCount < filteredProducts.length;
+
+  const handleFilterChange = (filterId) => {
+    setActiveFilter(filterId);
+    setVisibleProductsCount(3);
+  };
+
+  const handleLoadMore = () => {
+    setVisibleProductsCount((prev) =>
+      Math.min(prev + 3, filteredProducts.length)
+    );
+  };
 
   const tabs = [
     {
@@ -1109,7 +1125,7 @@ const Home = () => {
                 {filters.map((filter, index) => (
                   <motion.button
                     key={filter.id}
-                    onClick={() => setActiveFilter(filter.id)}
+                    onClick={() => handleFilterChange(filter.id)}
                     className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
                       activeFilter === filter.id
                         ? "bg-primary text-gray-700"
@@ -1159,7 +1175,7 @@ const Home = () => {
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  {filteredProducts.map((product, index) => (
+                  {visibleProducts.map((product, index) => (
                     <motion.div
                       key={`${product.title}-${index}`}
                       className={`pf-item ${product.filters.join(
@@ -1210,6 +1226,22 @@ const Home = () => {
                             );
                           }}
                         />
+                        {/* Hover Overlay with Product Details */}
+                        <div className="product-overlay absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/85 to-primary/75 flex flex-col items-center justify-center p-6 sm:p-8 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
+                          <div className="text-center text-white">
+                            <h4 className="product-overlay-title text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 font-heading opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8 transition-all duration-500 delay-150 ease-out">
+                              {product.title}
+                            </h4>
+                            <p className="product-overlay-desc text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-md mx-auto opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-6 transition-all duration-500 delay-200 ease-out">
+                              {product.description}
+                            </p>
+                            <div className="product-overlay-category mt-4 sm:mt-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 group-hover:scale-100 scale-95 transition-all duration-400 delay-250 ease-out">
+                              <span className="inline-block bg-white text-primary px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:scale-105 transition-transform duration-200">
+                                {product.category}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div className="info p-6 sm:p-7 md:p-8 bg-white">
                         <motion.h4
@@ -1243,6 +1275,26 @@ const Home = () => {
                     </motion.div>
                   ))}
                 </motion.div>
+
+                {/* Load More Button */}
+                {hasMoreProducts && (
+                  <motion.div
+                    className="mt-10 sm:mt-12 md:mt-16 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <motion.button
+                      onClick={handleLoadMore}
+                      className="bg-primary text-gray-700 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-semibold hover:opacity-90 transition uppercase shadow-lg hover:shadow-xl"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Load More Products
+                    </motion.button>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
 

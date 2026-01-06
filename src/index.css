@@ -848,3 +848,34 @@ i[class*=" flaticon-"]:before {
     max-height: 440px;
   }
 }
+
+/* Product Overlay Orange Animation - Left to Right */
+.orange-sweep {
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 140, 0, 0.5) 25%,
+    rgba(255, 140, 0, 0.7) 50%,
+    rgba(255, 140, 0, 0.5) 75%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .orange-sweep {
+  opacity: 1;
+  animation: sweep-left-to-right 1.2s ease-in-out;
+}
+
+@keyframes sweep-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

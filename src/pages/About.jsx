@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import TextAnimation from "../components/TextAnimation";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import {
   FaUser,
   FaCogs,
@@ -21,6 +23,472 @@ import AnchorImg from "../assets/img/clients/anchor.png";
 import RRKabelImg from "../assets/img/clients/rrkabel.png";
 import SyskaImg from "../assets/img/clients/syska.png";
 
+// Breadcrumb components - moved outside to prevent recreation
+const BreadcrumbTitle = React.memo(() => {
+  const [ref, isVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px",
+    triggerOnce: true,
+  });
+
+  return (
+    <h1
+      ref={ref}
+      className={`text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4 text-white scroll-fade-in ${
+        isVisible ? "visible" : ""
+      }`}
+    >
+      About Us
+    </h1>
+  );
+});
+
+BreadcrumbTitle.displayName = "BreadcrumbTitle";
+
+const BreadcrumbNav = React.memo(() => {
+  const [ref, isVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px",
+    triggerOnce: true,
+  });
+
+  return (
+    <ul
+      ref={ref}
+      className={`flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-300 scroll-fade-in scroll-fade-in-delay-1 ${
+        isVisible ? "visible" : ""
+      }`}
+    >
+      <li>
+        <Link to="/" className="hover:text-primary">
+          Home
+        </Link>
+      </li>
+      <li>/</li>
+      <li>
+        <Link to="/about" className="hover:text-primary">
+          Pages
+        </Link>
+      </li>
+      <li>/</li>
+      <li className="text-primary">About</li>
+    </ul>
+  );
+});
+
+BreadcrumbNav.displayName = "BreadcrumbNav";
+
+// About Section Component - moved outside
+const AboutSection = React.memo(() => {
+  const [imageRef, imageVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+    triggerOnce: true,
+  });
+  const [contentRef, contentVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+    triggerOnce: true,
+  });
+
+  return (
+    <div className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12">
+          <div
+            ref={imageRef}
+            className={`w-full lg:w-1/2 scroll-slide-left ${
+              imageVisible ? "visible" : ""
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div>
+                <img
+                  src="/assets/img/ongoing/1.jpg"
+                  alt="About"
+                  className="w-full rounded-lg image-fade-in"
+                  style={{
+                    opacity: imageVisible ? 1 : 0,
+                    transform: imageVisible ? "scale(1)" : "scale(0.95)",
+                    transition: "opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s",
+                  }}
+                />
+              </div>
+              <div>
+                <img
+                  src="/assets/img/ongoing/2.jpg"
+                  alt="About"
+                  className="w-full rounded-lg mt-8 image-fade-in"
+                  style={{
+                    opacity: imageVisible ? 1 : 0,
+                    transform: imageVisible ? "scale(1)" : "scale(0.95)",
+                    transition: "opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            ref={contentRef}
+            className={`w-full lg:w-1/2 scroll-slide-right ${
+              contentVisible ? "visible" : ""
+            }`}
+          >
+            <TextAnimation
+              text="Welcome to Mandeep Cables"
+              type="word"
+              delay={60}
+              as="h3"
+              className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading"
+              animationOptions={{
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px",
+                triggerOnce: true,
+              }}
+            />
+            <TextAnimation
+              text="Leading OEM ODM USB Cable Manufacturer"
+              type="word"
+              delay={80}
+              as="h2"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading"
+              animationOptions={{
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px",
+                triggerOnce: true,
+              }}
+            />
+            <div className="mb-4 sm:mb-5 md:mb-6">
+              <TextAnimation
+                text="Mr. Mandeep Singh"
+                type="word"
+                delay={50}
+                as="h4"
+                className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 font-heading"
+                animationOptions={{
+                  threshold: 0.2,
+                  rootMargin: "0px 0px -50px 0px",
+                  triggerOnce: true,
+                }}
+              />
+              <TextAnimation
+                text="Chairman & Managing Director"
+                type="word"
+                delay={50}
+                className="text-base sm:text-lg text-primary font-semibold mb-3 sm:mb-4"
+                animationOptions={{
+                  threshold: 0.2,
+                  rootMargin: "0px 0px -50px 0px",
+                  triggerOnce: true,
+                }}
+              />
+            </div>
+            <TextAnimation
+              text="Mr. Mandeep Singh is the visionary founder and driving force behind Mandeep Cables Pvt. Ltd. With unwavering dedication and relentless hard work, he has built this organization from the ground up with his own blood and sweat. Boasting more than 35 years of extensive experience in the cable industry, he possesses comprehensive knowledge of processes, production, and components that makes him a true stalwart in the field."
+              type="word"
+              delay={30}
+              className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+              animationOptions={{
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px",
+                triggerOnce: true,
+              }}
+            />
+            <TextAnimation
+              text="As the Chairman & Managing Director, he continues to lead the organization with passion and expertise, ensuring Mandeep Cables remains at the forefront of custom USB cable manufacturing and OEM/ODM solutions."
+              type="word"
+              delay={30}
+              className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+              animationOptions={{
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px",
+                triggerOnce: true,
+              }}
+            />
+            <div className="flex items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary font-heading">
+                35+
+              </div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold font-heading">
+                  Years
+                  <br /> Experience Working
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+AboutSection.displayName = "AboutSection";
+
+// Stats Section Component - moved outside
+const StatsSection = React.memo(({ stats, onSectionVisible }) => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (sectionVisible && onSectionVisible) {
+      onSectionVisible();
+    }
+  }, [sectionVisible, onSectionVisible]);
+
+  return (
+    <div
+      ref={sectionRef}
+      className="relative py-12 sm:py-16 md:py-20 text-center bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: "url(/assets/img/banner/2.jpg)" }}
+    >
+      <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+
+            return (
+              <div
+                key={index}
+                className={`stats-item-entrance ${
+                  sectionVisible ? "visible" : ""
+                }`}
+                style={{
+                  transitionDelay: `${index * 0.1}s`,
+                }}
+              >
+                <IconComponent className="text-5xl text-primary mx-auto mb-4" />
+                <div className="text-5xl font-bold text-primary mb-2 font-heading">
+                  {stat.number}
+                </div>
+                <span className="text-lg font-medium">{stat.label}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+});
+
+StatsSection.displayName = "StatsSection";
+
+// Video Section Component - moved outside
+const VideoSection = React.memo(() => {
+  const [ref, isVisible] = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+    triggerOnce: true,
+  });
+
+  return (
+    <div
+      className="relative py-12 sm:py-16 md:py-20 text-center bg-cover bg-center mt-8 sm:mt-12 md:mt-16 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center"
+      style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
+    >
+      <div className="absolute inset-0 bg-opacity-20 z-0"></div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-20 w-full">
+        <div
+          ref={ref}
+          className={`max-w-3xl mx-auto text-white section-entrance ${
+            isVisible ? "visible" : ""
+          }`}
+        >
+          <TextAnimation
+            text="Know more about us!"
+            type="word"
+            delay={80}
+            as="h4"
+            className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-heading text-white relative z-30"
+            animationOptions={{
+              threshold: 0.2,
+              rootMargin: "0px 0px -50px 0px",
+              triggerOnce: true,
+            }}
+          />
+          <TextAnimation
+            text="Check this video presentation to know more about us and our process"
+            type="word"
+            delay={60}
+            as="h2"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 font-heading text-white relative z-30 px-4"
+            animationOptions={{
+              threshold: 0.2,
+              rootMargin: "0px 0px -50px 0px",
+              triggerOnce: true,
+            }}
+          />
+          <a
+            href="https://www.youtube.com/watch?v=vQqZIFCab9o"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto relative z-30 scroll-scale-up"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "scale(1)" : "scale(0.8)",
+              transition: "opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s",
+            }}
+          >
+            <FaPlay className="text-white text-lg sm:text-xl ml-1" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+VideoSection.displayName = "VideoSection";
+
+// Clients Section Component - moved outside
+const ClientsSection = React.memo(({ clients }) => {
+  const [textRef, textVisible] = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
+    triggerOnce: true,
+  });
+  const [imagesRef, imagesVisible] = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
+    triggerOnce: true,
+  });
+
+  return (
+    <div className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
+          {/* Left Side - Text Content */}
+          <div
+            ref={textRef}
+            className={`scroll-slide-left order-1 lg:order-1 ${textVisible ? "visible" : ""}`}
+          >
+            <div className="w-full">
+              <TextAnimation
+                text="Our Clients"
+                type="word"
+                delay={80}
+                as="h2"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading text-gray-900"
+                animationOptions={{
+                  threshold: 0.1,
+                  rootMargin: "0px 0px -100px 0px",
+                  triggerOnce: true,
+                }}
+              />
+              <TextAnimation
+                text="At Griptronics, we proudly serve a diverse portfolio of clients across multiple industries who rely on high-performance and durable cable solutions. Our commitment to quality, consistency, and timely delivery has made us a trusted partner for businesses of all scales."
+                type="word"
+                delay={30}
+                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+                animationOptions={{
+                  threshold: 0.1,
+                  rootMargin: "0px 0px -100px 0px",
+                  triggerOnce: true,
+                }}
+              />
+              <div className="mb-4 sm:mb-5 md:mb-6">
+                <TextAnimation
+                  text="We work closely with:"
+                  type="word"
+                  delay={40}
+                  className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 font-semibold"
+                  animationOptions={{
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -100px 0px",
+                    triggerOnce: true,
+                  }}
+                />
+                <ul className="text-sm sm:text-base text-gray-600 space-y-2 sm:space-y-2.5">
+                  {[
+                    "Electrical Contractors & System Integrators",
+                    "Industrial & Manufacturing Units",
+                    "Infrastructure & Real Estate Developers",
+                    "OEMs & Equipment Manufacturers",
+                    "Renewable Energy & Power Projects",
+                    "Telecom & Networking Companies",
+                    "Commercial & Residential Projects",
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start"
+                      style={{
+                        opacity: textVisible ? 1 : 0,
+                        transform: textVisible ? "translateY(0)" : "translateY(20px)",
+                        transition: `opacity 0.6s ease-out ${0.4 + index * 0.1}s, transform 0.6s ease-out ${0.4 + index * 0.1}s`,
+                      }}
+                    >
+                      <span className="text-primary mr-2 mt-1 flex-shrink-0">•</span>
+                      <span className="flex-1 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <TextAnimation
+                text="From large-scale industrial operations to specialized project requirements, our clients trust Griptronics for reliable products, technical expertise, and long-term value."
+                type="word"
+                delay={30}
+                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+                animationOptions={{
+                  threshold: 0.1,
+                  rootMargin: "0px 0px -100px 0px",
+                  triggerOnce: true,
+                }}
+              />
+              <div
+                style={{
+                  opacity: textVisible ? 1 : 0,
+                  transform: textVisible ? "scale(1)" : "scale(0.9)",
+                  transition: "opacity 0.8s ease-out 1.2s, transform 0.8s ease-out 1.2s",
+                }}
+              >
+                <Link
+                  to="/contact"
+                  className="inline-block bg-dark text-white px-4 sm:px-6 py-2 sm:py-3 rounded text-xs sm:text-sm font-semibold hover:opacity-90 transition"
+                >
+                  Request a quote
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Client Logos */}
+          <div
+            ref={imagesRef}
+            className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 scroll-slide-right order-2 lg:order-2 ${
+              imagesVisible ? "visible" : ""
+            }`}
+          >
+            {clients.map((client, index) => (
+              <div
+                key={index}
+                className="bg-bg-gray p-4 rounded-lg flex items-center justify-center hover:opacity-80 transition min-h-[100px] sm:min-h-[120px]"
+                style={{
+                  opacity: imagesVisible ? 1 : 0,
+                  transform: imagesVisible ? "scale(1)" : "scale(0.9)",
+                  transition: `opacity 0.6s ease-out ${0.2 + index * 0.1}s, transform 0.6s ease-out ${0.2 + index * 0.1}s`,
+                }}
+              >
+                <a href="#" className="w-full h-full flex items-center justify-center">
+                  <img
+                    src={client}
+                    alt={`Client ${index + 1}`}
+                    className="max-w-full max-h-full h-auto object-contain"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+ClientsSection.displayName = "ClientsSection";
+
 const About = () => {
   const [counts, setCounts] = useState({
     clients: 0,
@@ -29,74 +497,60 @@ const About = () => {
     projects: 0,
   });
 
-  useEffect(() => {
-    const animateCount = (target, setter, key) => {
-      const duration = 2000;
-      const steps = 60;
-      const increment = target / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        setter((prev) => ({ ...prev, [key]: Math.floor(current) }));
-      }, duration / steps);
-    };
+  // Stats counter animation function - useCallback to prevent recreation
+  const animateCount = useCallback((target, setter, key) => {
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      setter((prev) => ({ ...prev, [key]: Math.floor(current) }));
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, []);
 
+  // Memoize stats array to prevent recreation
+  const stats = useMemo(
+    () => [
+      { icon: FaUser, number: counts.clients, label: "Clients Services" },
+      { icon: FaCogs, number: counts.machinery, label: "Machinery" },
+      { icon: FaGraduationCap, number: counts.staff, label: "Qualified Staff" },
+      { icon: FaClone, number: counts.projects, label: "Project Done" },
+    ],
+    [counts.clients, counts.machinery, counts.staff, counts.projects]
+  );
+
+  // Memoize clients array
+  const clients = useMemo(
+    () => [
+      HAVELSImg,
+      DCLINKImg,
+      HMIImg,
+      KEIImg,
+      FinolexImg,
+      PolycabImg,
+      AnchorImg,
+      RRKabelImg,
+      SyskaImg,
+    ],
+    []
+  );
+
+  // Handle stats section visibility
+  const handleStatsVisible = useCallback(() => {
     animateCount(230, setCounts, "clients");
     animateCount(89, setCounts, "machinery");
     animateCount(50, setCounts, "staff");
     animateCount(2348, setCounts, "projects");
-  }, []);
-
-  const stats = [
-    { icon: FaUser, number: counts.clients, label: "Clients Services" },
-    { icon: FaCogs, number: counts.machinery, label: "Machinery" },
-    { icon: FaGraduationCap, number: counts.staff, label: "Qualified Staff" },
-    { icon: FaClone, number: counts.projects, label: "Project Done" },
-  ];
-
-  const teamMembers = [
-    {
-      image: "/assets/img/team/2.jpg",
-      name: "Adam Smith",
-      position: "Chairman",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/3.jpg",
-      name: "Adam Smith",
-      position: "Chairman",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-    {
-      image: "/assets/img/team/1.jpg",
-      name: "Adam Smith",
-      position: "Chairman",
-      description:
-        "We are a team of multi-skilled and curious digital specialists who are always up for a challenge and learning as fast as digital is changing.",
-    },
-  ];
-
-  const clients = [
-    HAVELSImg,
-    DCLINKImg,
-    HMIImg,
-    KEIImg,
-    FinolexImg,
-    PolycabImg,
-    AnchorImg,
-    RRKabelImg,
-    SyskaImg,
-  ];
+  }, [animateCount]);
 
   return (
     <div className="min-h-screen bg-white">
-
       {/* Breadcrumb */}
       <div
         className="relative text-white py-12 sm:py-16 md:py-20 pt-28 sm:pt-32 md:pt-36 bg-fixed bg-cover bg-center"
@@ -105,297 +559,23 @@ const About = () => {
         <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4 text-white">
-              About Us
-            </h1>
-            <ul className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-300">
-              <li>
-                <Link to="/" className="hover:text-primary">
-                  Home
-                </Link>
-              </li>
-              <li>/</li>
-              <li>
-                <Link to="/about" className="hover:text-primary">
-                  Pages
-                </Link>
-              </li>
-              <li>/</li>
-              <li className="text-primary">About</li>
-            </ul>
+            <BreadcrumbTitle />
+            <BreadcrumbNav />
           </div>
         </div>
       </div>
 
       {/* About Section */}
-      <div className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12">
-            <div className="w-full lg:w-1/2">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div>
-                  <img
-                    src="/assets/img/ongoing/1.jpg"
-                    alt="About"
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div>
-                  <img
-                    src="/assets/img/ongoing/2.jpg"
-                    alt="About"
-                    className="w-full rounded-lg mt-8"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
-                Welcome to Mandeep Cables
-              </h3>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
-                Leading OEM ODM USB Cable Manufacturer
-              </h2>
-              <div className="mb-4 sm:mb-5 md:mb-6">
-                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 font-heading">
-                  Mr. Mandeep Singh
-                </h4>
-                <p className="text-base sm:text-lg text-primary font-semibold mb-3 sm:mb-4">
-                  Chairman & Managing Director
-                </p>
-              </div>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                Mr. Mandeep Singh is the visionary founder and driving force
-                behind Mandeep Cables Pvt. Ltd. With unwavering dedication and
-                relentless hard work, he has built this organization from the
-                ground up with his own blood and sweat. Boasting more than 35
-                years of extensive experience in the cable industry, he
-                possesses comprehensive knowledge of processes, production, and
-                components that makes him a true stalwart in the field.
-              </p>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                As the Chairman & Managing Director, he continues to lead the
-                organization with passion and expertise, ensuring Mandeep Cables
-                remains at the forefront of custom USB cable manufacturing and
-                OEM/ODM solutions.
-              </p>
-              <div className="flex items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary font-heading">
-                  35+
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-semibold font-heading">
-                    Years
-                    <br /> Experience Working
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AboutSection />
 
       {/* Fun Factor / Stats Section */}
-      <div
-        className="relative py-12 sm:py-16 md:py-20 text-center bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: "url(/assets/img/banner/2.jpg)" }}
-      >
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div key={index}>
-                  <IconComponent className="text-5xl text-primary mx-auto mb-4" />
-                  <div className="text-5xl font-bold text-primary mb-2 font-heading">
-                    {stat.number}
-                  </div>
-                  <span className="text-lg font-medium">{stat.label}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Team Members Section */}
-      {/* <div className="py-20 bg-bg-gray">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-4 font-heading">
-                Team Mebers
-              </h2>
-              <p className="text-gray-600">
-                Able an hope of body. Any nay shyness article matters own
-                removal nothing his forming. Gay own additions education
-                satisfied the perpetual. If he cause manor happy. Without
-                farther she exposed saw man led. Along on happy could cease
-                green oh.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-lg"
-              >
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h4 className="text-2xl font-bold mb-2 font-heading">
-                    {member.name}
-                  </h4>
-                  <span className="text-primary mb-4 block">
-                    {member.position}
-                  </span>
-                  <p className="text-gray-600 mb-6">{member.description}</p>
-                  <div className="flex justify-center gap-4">
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-primary transition"
-                    >
-                      <FaFacebookF />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-primary transition"
-                    >
-                      <FaTwitter />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-primary transition"
-                    >
-                      <FaGooglePlusG />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
+      <StatsSection stats={stats} onSectionVisible={handleStatsVisible} />
 
       {/* Video Section */}
-      <div
-        className="relative py-12 sm:py-16 md:py-20 text-center bg-cover bg-center mt-8 sm:mt-12 md:mt-16 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center"
-        style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
-      >
-        {/* Light overlay - very subtle */}
-        <div className="absolute inset-0  bg-opacity-20 z-0"></div>
-        {/* Content - over the image */}
-        <div className="container mx-auto px-4 sm:px-6 relative z-20 w-full">
-          <div className="max-w-3xl mx-auto text-white">
-            {/* Text at top */}
-            <h4 className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-heading text-white relative z-30">
-              Know more about us!
-            </h4>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 font-heading text-white relative z-30 px-4">
-              Check this video presentation to know more about us and our
-              process
-            </h2>
-            {/* Play button below text */}
-            <a
-              href="https://www.youtube.com/watch?v=vQqZIFCab9o"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition mx-auto relative z-30"
-            >
-              <FaPlay className="text-white text-lg sm:text-xl ml-1" />
-            </a>
-          </div>
-        </div>
-      </div>
+      <VideoSection />
 
       {/* Clients Section */}
-      <div className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-            <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
-                Our Clients
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                At Griptronics, we proudly serve a diverse portfolio of clients
-                across multiple industries who rely on high-performance and
-                durable cable solutions. Our commitment to quality, consistency,
-                and timely delivery has made us a trusted partner for businesses
-                of all scales.
-              </p>
-              <div className="mb-4 sm:mb-5 md:mb-6">
-                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 font-semibold">
-                  We work closely with:
-                </p>
-                <ul className="text-sm sm:text-base text-gray-600 space-y-2 sm:space-y-2.5 pl-4 sm:pl-6">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Electrical Contractors & System Integrators</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Industrial & Manufacturing Units</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Infrastructure & Real Estate Developers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>OEMs & Equipment Manufacturers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Renewable Energy & Power Projects</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Telecom & Networking Companies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1">•</span>
-                    <span>Commercial & Residential Projects</span>
-                  </li>
-                </ul>
-              </div>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                From large-scale industrial operations to specialized project
-                requirements, our clients trust Griptronics for reliable
-                products, technical expertise, and long-term value.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-block bg-dark text-white px-4 sm:px-6 py-2 sm:py-3 rounded text-xs sm:text-sm font-semibold hover:opacity-90 transition"
-              >
-                Request a quote
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-              {clients.map((client, index) => (
-                <div
-                  key={index}
-                  className="bg-bg-gray p-4 rounded-lg flex items-center justify-center hover:opacity-80 transition"
-                >
-                  <a href="#">
-                    <img
-                      src={client}
-                      alt={`Client ${index + 1}`}
-                      className="max-w-full h-auto"
-                    />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ClientsSection clients={clients} />
 
       <Footer />
     </div>

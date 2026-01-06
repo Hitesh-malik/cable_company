@@ -879,3 +879,142 @@ i[class*=" flaticon-"]:before {
     transform: translateX(100%);
   }
 }
+
+/* Scroll-triggered Animation Classes */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-scale-up {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered animation delays for multiple items */
+.scroll-fade-in-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-fade-in-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-fade-in-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-fade-in-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* Text Animation Styles */
+.text-animation-wrapper {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.text-animation-item {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-animation-item.text-animation-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line-based text animation */
+.text-animation-wrapper[style*="block"] .text-animation-item {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+/* Enhanced text animation with better readability */
+.text-animation-item.text-animation-visible {
+  animation: textFadeInSlideDown 0.6s ease-out forwards;
+}
+
+@keyframes textFadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section entrance animations */
+.section-entrance {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section-entrance.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image animation */
+.image-fade-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.image-fade-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stats counter animation enhancement */
+.stats-item-entrance {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.stats-item-entrance.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

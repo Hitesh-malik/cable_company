@@ -105,7 +105,7 @@ const About = () => {
         <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-3 sm:mb-4 text-white">
               About Us
             </h1>
             <ul className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-300">

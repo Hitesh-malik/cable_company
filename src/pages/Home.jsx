@@ -1243,7 +1243,7 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="info p-6 sm:p-7 md:p-8 bg-white">
+                      {/* <div className="info p-6 sm:p-7 md:p-8 bg-white">
                         <motion.h4
                           className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight"
                           initial={{ opacity: 0 }}
@@ -1271,7 +1271,7 @@ const Home = () => {
                         >
                           {product.description}
                         </motion.p>
-                      </div>
+                      </div> */}
                     </motion.div>
                   ))}
                 </motion.div>

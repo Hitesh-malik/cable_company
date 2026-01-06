@@ -771,10 +771,10 @@ const Home = () => {
             </div>
 
             {/* Services Carousel */}
-            <div className="services-items services-carousel text-center">
-              <div className="overflow-hidden">
+            <div className="services-items services-carousel text-center w-full">
+              <div className="overflow-hidden w-full">
                 <div
-                  className="flex transition-transform duration-700 ease-in-out items-stretch"
+                  className="flex transition-transform duration-700 ease-in-out items-stretch w-full"
                   style={{
                     transform: `translateX(-${
                       currentService * (100 / servicesPerView)
@@ -784,7 +784,7 @@ const Home = () => {
                   {services.map((service, index) => (
                     <div
                       key={index}
-                      className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3 md:px-4 lg:px-5 flex"
+                      className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-1.5 sm:px-2 md:px-2.5 lg:px-3 xl:px-4 flex"
                     >
                       <div
                         className="relative w-full h-full rounded-lg overflow-hidden services-item bg-cover bg-center bg-no-repeat shadow-lg"
@@ -793,40 +793,74 @@ const Home = () => {
                         }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
-                        <div className="relative h-full flex flex-col items-center justify-center text-white">
-                          <div className="info w-full max-w-full px-4 sm:px-5 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 flex flex-col items-center justify-center h-full">
-                            <i
-                              className={`${service.icon} mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-primary flex-shrink-0`}
-                              style={{
-                                fontSize: "clamp(1.75rem, 3vw, 3rem)",
-                              }}
-                            ></i>
-                            <h4
-                              className="font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 font-heading text-white leading-tight text-center flex-shrink-0"
-                              style={{
-                                fontSize: "clamp(1.25rem, 2.2vw, 2rem)",
-                              }}
+                        <div className="relative h-full w-full flex flex-col items-center justify-center text-white">
+                          <div className="info w-full max-w-full px-3 sm:px-4 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-3.5 flex flex-col items-center justify-center h-full">
+                            {/* Icon */}
+                            <div
+                              className="shrink-0"
+                              style={{ marginBottom: "0.25rem" }}
                             >
-                              {service.title}
-                            </h4>
-                            <p
-                              className="mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-relaxed text-center text-white/95 max-w-md mx-auto flex-grow"
-                              style={{
-                                fontSize: "clamp(0.875rem, 1.3vw, 1rem)",
-                                lineHeight: "1.7",
-                              }}
+                              <i
+                                className={`${service.icon} text-primary`}
+                                style={{
+                                  fontSize:
+                                    "clamp(1.5rem, 2.5vw + 0.5rem, 3rem)",
+                                  display: "block",
+                                  lineHeight: "1",
+                                }}
+                              ></i>
+                            </div>
+
+                            {/* Content Section */}
+                            <div
+                              className="flex flex-col items-center w-full px-2 sm:px-2 md:px-2.5 lg:px-3 overflow-hidden"
+                              style={{ gap: "0.25rem" }}
                             >
-                              {service.description}
-                            </p>
-                            <Link
-                              to="/products"
-                              className="bg-white text-gray-700 border border-gray-700 rounded font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block mt-auto px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 flex-shrink-0"
-                              style={{
-                                fontSize: "clamp(0.75rem, 1.1vw, 0.875rem)",
-                              }}
+                              <h4
+                                className="font-bold font-heading text-white text-center w-full m-0"
+                                style={{
+                                  fontSize: "clamp(1rem, 2vw + 0.25rem, 2rem)",
+                                  lineHeight: "1.1",
+                                  padding: 0,
+                                  margin: 0,
+                                }}
+                              >
+                                {service.title}
+                              </h4>
+                              <p
+                                className="text-center text-white/95 w-full mx-auto overflow-hidden text-ellipsis m-0"
+                                style={{
+                                  fontSize:
+                                    "clamp(0.875rem, 1.5vw + 0.25rem, 1.25rem)",
+                                  lineHeight: "1.3",
+                                  display: "-webkit-box",
+                                  WebkitLineClamp: "3",
+                                  WebkitBoxOrient: "vertical",
+                                  overflow: "hidden",
+                                  padding: 0,
+                                  margin: 0,
+                                }}
+                              >
+                                {service.description}
+                              </p>
+                            </div>
+
+                            {/* Button */}
+                            <div
+                              className="shrink-0"
+                              style={{ marginTop: "0.25rem" }}
                             >
-                              Read More
-                            </Link>
+                              <Link
+                                to="/products"
+                                className="bg-white text-gray-700 border border-gray-700 rounded font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block px-3 sm:px-3.5 md:px-4 lg:px-5 py-1 sm:py-1.5 md:py-2 whitespace-nowrap"
+                                style={{
+                                  fontSize:
+                                    "clamp(0.6875rem, 1vw + 0.125rem, 0.875rem)",
+                                }}
+                              >
+                                Read More
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>

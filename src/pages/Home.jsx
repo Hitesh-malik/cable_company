@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 
@@ -658,102 +659,198 @@ const Home = () => {
         </div>
 
         {/* About Section */}
-        <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <motion.div
+          className="py-12 sm:py-16 md:py-20 bg-white"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
               {/* LEFT SIDE — unchanged */}
-              <div className="w-full lg:w-1/2 relative">
+              <motion.div
+                className="w-full lg:w-1/2 relative"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <div className="relative">
                   {/* Red L-shaped block behind the image */}
-                  <div className="absolute -left-6 sm:-left-8 md:-left-10 -bottom-8 sm:-bottom-10 md:-bottom-12 right-4 sm:right-6 md:right-8 top-4 sm:top-6 md:top-8 bg-primary z-0">
+                  <motion.div
+                    className="absolute -left-6 sm:-left-8 md:-left-10 -bottom-8 sm:-bottom-10 md:-bottom-12 right-4 sm:right-6 md:right-8 top-4 sm:top-6 md:top-8 bg-primary z-0"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
                     {/* Vertical part (left edge) */}
                     <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-20 bg-primary"></div>
                     {/* Horizontal part (bottom edge) */}
                     <div className="absolute left-0 bottom-0 right-0 h-12 sm:h-16 md:h-20 bg-primary"></div>
-                  </div>
+                  </motion.div>
 
                   {/* Image with gap/margin to show the red block behind */}
-                  <div className="relative ml-6 sm:ml-8 md:ml-10 mb-6 sm:mb-8 md:mb-10 z-10">
+                  <motion.div
+                    className="relative ml-6 sm:ml-8 md:ml-10 mb-6 sm:mb-8 md:mb-10 z-10"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.3 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <img
                       src="/assets/img/about/1.jpg"
                       alt="About"
                       className="w-full rounded-lg shadow-lg"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <a
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                      <motion.a
                         href="https://www.youtube.com/watch?v=vQqZIFCab9o"
                         className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition z-20"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
-                      </a>
-                    </div>
-                  </div>
+                      </motion.a>
+                    </motion.div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* RIGHT SIDE — updated content */}
-              <div className="w-full lg:w-1/2">
-                <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
+              <motion.div
+                className="w-full lg:w-1/2"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <motion.h3
+                  className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading"
+                  initial={{ opacity: 0, y: -20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
                   Powering Connections. Building Reliability.
-                </h3>
+                </motion.h3>
 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
+                <motion.h2
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading"
+                  initial={{ opacity: 0, y: -20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
                   Griptronics is a trusted Indian manufacturer of
                   high-performance electrical wires, networking cables, cords,
                   and wire harness solutions engineered for reliability, safety,
                   and innovation.
-                </h2>
+                </motion.h2>
 
-                <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
-                  <p>
-                    <strong>Premium Quality Standards —</strong> Certified and
-                    tested under IS, UL, JIS, JASO & DIN specifications.
-                  </p>
+                <motion.div
+                  className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {[
+                    {
+                      text: "Premium Quality Standards —",
+                      desc: "Certified and tested under IS, UL, JIS, JASO & DIN specifications.",
+                    },
+                    {
+                      text: "Custom Manufacturing —",
+                      desc: "Tailor-made cable and wire solutions built to your specifications.",
+                    },
+                    {
+                      text: "Trusted Across Industries —",
+                      desc: "Supplying to leading telecom, electrical, and networking sectors nationwide.",
+                    },
+                    {
+                      text: "20+ Years of Expertise —",
+                      desc: "Built on precision engineering and customer-first values.",
+                    },
+                  ].map((item, index) => (
+                    <motion.p
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    >
+                      <strong>{item.text}</strong> {item.desc}
+                    </motion.p>
+                  ))}
+                </motion.div>
 
-                  <p>
-                    <strong>Custom Manufacturing —</strong> Tailor-made cable
-                    and wire solutions built to your specifications.
-                  </p>
-
-                  <p>
-                    <strong>Trusted Across Industries —</strong> Supplying to
-                    leading telecom, electrical, and networking sectors
-                    nationwide.
-                  </p>
-
-                  <p>
-                    <strong>20+ Years of Expertise —</strong> Built on precision
-                    engineering and customer-first values.
-                  </p>
-                </div>
-
-                <div className="mt-6 sm:mt-8">
-                  <Link
-                    to="/contact"
-                    className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
+                <motion.div
+                  className="mt-6 sm:mt-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    👉 Explore Our Range | Request a Quote
-                  </Link>
-                </div>
-              </div>
+                    <Link
+                      to="/contact"
+                      className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
+                    >
+                      👉 Explore Our Range | Request a Quote
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Services Section */}
-        <div className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-bg-gray services-area">
+        <motion.div
+          className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-bg-gray services-area"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="container mx-auto px-3 sm:px-5 md:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12 md:mb-14 lg:mb-16">
+            <motion.div
+              className="text-center mb-8 sm:mb-12 md:mb-14 lg:mb-16"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
               <div className="max-w-3xl mx-auto">
-                <h2
+                <motion.h2
                   className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-4 md:mb-5 font-heading"
                   style={{ fontSize: "clamp(1.25rem, 5vw, 3.75rem)" }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   Our Services
-                </h2>
-                <p
+                </motion.h2>
+                <motion.p
                   className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 px-2 sm:px-4 md:px-6 leading-relaxed"
                   style={{ fontSize: "clamp(0.75rem, 2vw, 1.5rem)" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   Griptronics is a leading manufacturer and supplier of
                   high-quality electrical and electronic cables, engineered to
@@ -766,9 +863,9 @@ const Home = () => {
                   solutions, Griptronics provides cables that perform flawlessly
                   even under challenging environments, making us a trusted
                   partner for reliable electrical solutions.
-                </p>
+                </motion.p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Services Carousel */}
             <div className="services-items services-carousel text-center w-full">
@@ -782,9 +879,18 @@ const Home = () => {
                   }}
                 >
                   {services.map((service, index) => (
-                    <div
+                    <motion.div
                       key={index}
                       className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-1.5 sm:px-2 md:px-2.5 lg:px-3 xl:px-4 flex"
+                      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.15,
+                        ease: "easeOut",
+                      }}
+                      whileHover={{ y: -10, scale: 1.02 }}
                     >
                       <div className="relative w-full h-full rounded-lg overflow-hidden services-item shadow-lg">
                         {/* Background Image with Grayscale Filter */}
@@ -799,9 +905,19 @@ const Home = () => {
                         <div className="relative h-full w-full flex flex-col items-center justify-center text-white z-10">
                           <div className="info w-full max-w-full px-3 sm:px-4 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-3.5 flex flex-col items-center justify-center h-full">
                             {/* Icon */}
-                            <div
+                            <motion.div
                               className="shrink-0"
                               style={{ marginBottom: "0.25rem" }}
+                              initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.6,
+                                delay: 0.3,
+                                type: "spring",
+                                stiffness: 200,
+                              }}
+                              whileHover={{ scale: 1.2, rotate: 360 }}
                             >
                               <i
                                 className={`${service.icon} text-primary`}
@@ -812,14 +928,18 @@ const Home = () => {
                                   lineHeight: "1",
                                 }}
                               ></i>
-                            </div>
+                            </motion.div>
 
                             {/* Content Section */}
-                            <div
+                            <motion.div
                               className="flex flex-col items-center w-full px-2 sm:px-2 md:px-2.5 lg:px-3 overflow-hidden"
                               style={{ gap: "0.25rem" }}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5, delay: 0.4 }}
                             >
-                              <h4
+                              <motion.h4
                                 className="font-bold font-heading text-white text-center w-full m-0"
                                 style={{
                                   fontSize: "clamp(1rem, 2vw + 0.25rem, 2rem)",
@@ -827,10 +947,14 @@ const Home = () => {
                                   padding: 0,
                                   margin: 0,
                                 }}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.5 }}
                               >
                                 {service.title}
-                              </h4>
-                              <p
+                              </motion.h4>
+                              <motion.p
                                 className="text-center text-white/95 w-full mx-auto overflow-hidden text-ellipsis m-0"
                                 style={{
                                   fontSize:
@@ -843,31 +967,48 @@ const Home = () => {
                                   padding: 0,
                                   margin: 0,
                                 }}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.6 }}
                               >
                                 {service.description}
-                              </p>
-                            </div>
+                              </motion.p>
+                            </motion.div>
 
                             {/* Button */}
-                            <div
+                            <motion.div
                               className="shrink-0"
                               style={{ marginTop: "0.25rem" }}
+                              initial={{ opacity: 0, scale: 0 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.4,
+                                delay: 0.7,
+                                type: "spring",
+                              }}
                             >
-                              <Link
-                                to="/products"
-                                className="bg-white text-gray-700 border border-gray-700 rounded font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block px-3 sm:px-3.5 md:px-4 lg:px-5 py-1 sm:py-1.5 md:py-2 whitespace-nowrap"
-                                style={{
-                                  fontSize:
-                                    "clamp(0.6875rem, 1vw + 0.125rem, 0.875rem)",
-                                }}
+                              <motion.div
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
                               >
-                                Read More
-                              </Link>
-                            </div>
+                                <Link
+                                  to="/products"
+                                  className="bg-white text-gray-700 border border-gray-700 rounded font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block px-3 sm:px-3.5 md:px-4 lg:px-5 py-1 sm:py-1.5 md:py-2 whitespace-nowrap"
+                                  style={{
+                                    fontSize:
+                                      "clamp(0.6875rem, 1vw + 0.125rem, 0.875rem)",
+                                  }}
+                                >
+                                  Read More
+                                </Link>
+                              </motion.div>
+                            </motion.div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -896,31 +1037,77 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Product Section */}
-        <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <motion.div
+          className="py-12 sm:py-16 md:py-20 bg-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
+            <motion.div
+              className="text-center mb-10 sm:mb-12 md:mb-16"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <motion.h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
+              >
                 Product
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
+              </motion.h2>
+              <motion.p
+                className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 Explore our comprehensive range of high-quality cables and wire
                 solutions. From power systems to networking infrastructure, we
                 deliver reliable products engineered for excellence and
                 performance.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Product Range / Filter Buttons */}
-            <div className="mb-8 sm:mb-10 md:mb-12">
-              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 font-heading">
+            <motion.div
+              className="mb-8 sm:mb-10 md:mb-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.h3
+                className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 font-heading"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 Product Range
-              </h3>
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-2 md:gap-3 mix-item-menu max-w-4xl mx-auto">
-                {filters.map((filter) => (
-                  <button
+              </motion.h3>
+              <motion.div
+                className="flex flex-wrap justify-center gap-2 sm:gap-2 md:gap-3 mix-item-menu max-w-4xl mx-auto"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                {filters.map((filter, index) => (
+                  <motion.button
                     key={filter.id}
                     onClick={() => setActiveFilter(filter.id)}
                     className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
@@ -928,33 +1115,73 @@ const Home = () => {
                         ? "bg-primary text-gray-700"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                     }`}
+                    initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.4 + index * 0.05,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {filter.label}
-                  </button>
+                  </motion.button>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Name of Product */}
-            <div className="mb-8 sm:mb-10 md:mb-12">
-              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-gray-800 font-heading">
+            <motion.div
+              className="mb-8 sm:mb-10 md:mb-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.h3
+                className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-gray-800 font-heading"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 Name of Product
-              </h3>
+              </motion.h3>
               <div className="magnific-mix-gallery text-center">
-                <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <motion.div
+                  className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.6 }}
+                >
                   {filteredProducts.map((product, index) => (
-                    <div
+                    <motion.div
                       key={`${product.title}-${index}`}
                       className={`pf-item ${product.filters.join(
                         " "
                       )} bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden`}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.08,
+                        ease: "easeOut",
+                      }}
+                      whileHover={{ y: -8, scale: 1.02 }}
                     >
                       <div className="thumb relative overflow-hidden bg-gray-50 group w-full">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/2 group-hover:to-black/0 transition-all duration-300 z-10 pointer-events-none"></div>
-                        <img
+                        <motion.img
                           src={product.image}
                           alt={product.title}
-                          className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer transition-all duration-500 ease-out group-hover:scale-110"
+                          className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer"
                           style={{
                             display: "block",
                             width: "100%",
@@ -963,10 +1190,10 @@ const Home = () => {
                             objectPosition: "center",
                           }}
                           loading="lazy"
-                          // onClick={() => {
-                          //   setLightboxImage(product.image);
-                          //   setIsLightboxOpen(true);
-                          // }}
+                          initial={{ scale: 1, opacity: 1 }}
+                          animate={{ opacity: 1 }}
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.3 }}
                           onError={() => {
                             console.error(
                               "Image failed to load:",
@@ -985,63 +1212,145 @@ const Home = () => {
                         />
                       </div>
                       <div className="info p-6 sm:p-7 md:p-8 bg-white">
-                        <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight">
+                        <motion.h4
+                          className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.4,
+                            delay: index * 0.08 + 0.2,
+                          }}
+                          whileHover={{ color: "#dc2626" }}
+                        >
                           {product.title}
-                        </h4>
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        </motion.h4>
+                        <motion.p
+                          className="text-sm sm:text-base text-gray-600 leading-relaxed"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.4,
+                            delay: index * 0.08 + 0.3,
+                          }}
+                        >
                           {product.description}
-                        </p>
+                        </motion.p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Why Choose Griptronics Products */}
-            <div className="mt-16 sm:mt-20 md:mt-24 bg-bg-gray py-12 sm:py-16 md:py-20 rounded-lg">
+            <motion.div
+              className="mt-16 sm:mt-20 md:mt-24 bg-bg-gray py-12 sm:py-16 md:py-20 rounded-lg"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-10 sm:mb-12">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-heading">
+                <motion.div
+                  className="text-center mb-10 sm:mb-12"
+                  initial={{ opacity: 0, y: -30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <motion.h3
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-heading"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
+                  >
                     Why Choose Griptronics Products
-                  </h3>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div className="mb-4">
-                      <i className="fas fa-industry text-4xl text-primary"></i>
-                    </div>
-                    <p className="text-sm sm:text-base font-semibold text-gray-800">
-                      Manufactured under strict supervision
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div className="mb-4">
-                      <i className="fas fa-certificate text-4xl text-primary"></i>
-                    </div>
-                    <p className="text-sm sm:text-base font-semibold text-gray-800">
-                      Tested to meet IS, UL, JIS, JASO & DIN standards
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div className="mb-4">
-                      <i className="fas fa-sliders-h text-4xl text-primary"></i>
-                    </div>
-                    <p className="text-sm sm:text-base font-semibold text-gray-800">
-                      Custom-built as per client requirements
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div className="mb-4">
-                      <i className="fas fa-shield-alt text-4xl text-primary"></i>
-                    </div>
-                    <p className="text-sm sm:text-base font-semibold text-gray-800">
-                      Zero-defect production policy
-                    </p>
-                  </div>
-                </div>
+                  </motion.h3>
+                </motion.div>
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  {[
+                    {
+                      icon: "fas fa-industry",
+                      text: "Manufactured under strict supervision",
+                    },
+                    {
+                      icon: "fas fa-certificate",
+                      text: "Tested to meet IS, UL, JIS, JASO & DIN standards",
+                    },
+                    {
+                      icon: "fas fa-sliders-h",
+                      text: "Custom-built as per client requirements",
+                    },
+                    {
+                      icon: "fas fa-shield-alt",
+                      text: "Zero-defect production policy",
+                    },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-white p-6 rounded-lg shadow-md text-center"
+                      initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.4 + index * 0.15,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
+                      whileHover={{
+                        y: -10,
+                        scale: 1.05,
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                      }}
+                    >
+                      <motion.div
+                        className="mb-4"
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.5 + index * 0.15,
+                          type: "spring",
+                          stiffness: 200,
+                        }}
+                        whileHover={{
+                          scale: 1.2,
+                          rotate: 360,
+                          transition: { duration: 0.6 },
+                        }}
+                      >
+                        <i className={`${item.icon} text-4xl text-primary`}></i>
+                      </motion.div>
+                      <motion.p
+                        className="text-sm sm:text-base font-semibold text-gray-800"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.6 + index * 0.15,
+                        }}
+                      >
+                        {item.text}
+                      </motion.p>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA Section */}
             {/* <div className="mt-10 sm:mt-12 md:mt-16 text-center">
@@ -1061,7 +1370,7 @@ const Home = () => {
             </div>
           </div> */}
           </div>
-        </div>
+        </motion.div>
 
         {/* Popular Work / Tabs Section */}
         {/* <div className="py-20 bg-dark text-white">

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Blog = () => {
@@ -69,7 +68,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Breadcrumb */}
       <div className="bg-dark text-white py-12 sm:py-16 md:py-20">

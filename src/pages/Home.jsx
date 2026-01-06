@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 
@@ -563,407 +562,407 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <div className="pt-16 sm:pt-20 lg:pt-24">
+        {/* Banner Carousel */}
+        <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden banner-area shadow-inner">
+          <div
+            className="relative h-full w-full flex transition-transform duration-700 ease-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div key={index} className="relative h-full w-full flex-shrink-0">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center slider-thumb"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                ></div>
 
-      {/* Banner Carousel */}
-      <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden banner-area shadow-inner">
-        <div
-          className="relative h-full w-full flex transition-transform duration-700 ease-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div key={index} className="relative h-full w-full flex-shrink-0">
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center slider-thumb"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              ></div>
-
-              {/* Content Box with Dark Overlay */}
-              <div className="box-table h-full w-full">
-                <div className="box-cell">
-                  <div className="container mx-auto px-4 sm:px-6">
-                    <div className="max-w-4xl">
-                      <div className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20">
-                        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5 text-white">
-                          {slide.title}
-                          <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-white"></span>
-                        </h3>
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-5 md:mb-6 font-heading uppercase leading-tight">
-                          <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-1 sm:mb-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                            BEST CHOICE
-                          </span>
-                          <br />
-                          <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                            FOR YOU
-                          </span>
-                        </h1>
-                        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-white leading-relaxed max-w-2xl">
-                          {slide.description}
-                        </p>
-                        <a
-                          href="#"
-                          className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
-                        >
-                          Learn more
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Carousel Controls - Left Arrow */}
-        <button
-          onClick={prevSlide}
-          className="carousel-control left"
-          aria-label="Previous slide"
-        >
-          <i className="fas fa-angle-left"></i>
-        </button>
-
-        {/* Carousel Controls - Right Arrow */}
-        <button
-          onClick={nextSlide}
-          className="carousel-control right"
-          aria-label="Next slide"
-        >
-          <i className="fas fa-angle-right"></i>
-        </button>
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 sm:h-2.5 rounded-full transition-all ${
-                index === currentSlide
-                  ? "w-5 sm:w-6 bg-primary shadow-[0_0_0_3px_rgba(0,0,0,0.35)] sm:shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
-                  : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-
-          <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/80 uppercase">
-            {String(currentSlide + 1).padStart(2, "0")}
-            <span className="text-white/50">
-              {" "}
-              / {String(slides.length).padStart(2, "0")}
-            </span>
-          </span>
-        </div>
-      </div>
-
-      {/* About Section */}
-      <div className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
-            {/* LEFT SIDE — unchanged */}
-            <div className="w-full lg:w-1/2 relative">
-              <img
-                src="/assets/img/about/1.jpg"
-                alt="About"
-                className="w-full rounded-lg"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <a
-                  href="https://www.youtube.com/watch?v=vQqZIFCab9o"
-                  className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
-                >
-                  <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
-                </a>
-              </div>
-            </div>
-
-            {/* RIGHT SIDE — updated content */}
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
-                Powering Connections. Building Reliability.
-              </h3>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
-                Griptronics is a trusted Indian manufacturer of high-performance
-                electrical wires, networking cables, cords, and wire harness
-                solutions engineered for reliability, safety, and innovation.
-              </h2>
-
-              <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
-                <p>
-                  <strong>Premium Quality Standards —</strong> Certified and
-                  tested under IS, UL, JIS, JASO & DIN specifications.
-                </p>
-
-                <p>
-                  <strong>Custom Manufacturing —</strong> Tailor-made cable and
-                  wire solutions built to your specifications.
-                </p>
-
-                <p>
-                  <strong>Trusted Across Industries —</strong> Supplying to
-                  leading telecom, electrical, and networking sectors
-                  nationwide.
-                </p>
-
-                <p>
-                  <strong>20+ Years of Expertise —</strong> Built on precision
-                  engineering and customer-first values.
-                </p>
-              </div>
-
-              <div className="mt-6 sm:mt-8">
-                <Link
-                  to="/contact"
-                  className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
-                >
-                  👉 Explore Our Range | Request a Quote
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Services Section */}
-      <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
-                Our Services
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4 leading-relaxed">
-                Griptronics is a leading manufacturer and supplier of
-                high-quality electrical and electronic cables, engineered to
-                deliver superior performance, long-term durability, and
-                consistent reliability. Our product range is designed to meet
-                the evolving demands of modern industries, ensuring safe power
-                transmission, efficient connectivity, and dependable operation
-                across diverse applications. With a strong focus on quality
-                standards, precision manufacturing, and customer-centric
-                solutions, Griptronics provides cables that perform flawlessly
-                even under challenging environments, making us a trusted partner
-                for reliable electrical solutions.
-              </p>
-            </div>
-          </div>
-
-          {/* Services Carousel */}
-          <div className="services-items services-carousel text-center">
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{
-                  transform: `translateX(-${
-                    currentService * (100 / servicesPerView)
-                  }%)`,
-                }}
-              >
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3"
-                  >
-                    <div
-                      className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
-                      style={{ backgroundImage: `url(${service.image})` }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
-                      <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
-                        <div className="info">
-                          <i
-                            className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
-                          ></i>
-                          <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading text-white">
-                            {service.title}
-                          </h4>
-                          <p className="text-sm sm:text-base mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2 text-white">
-                            {service.description}
+                {/* Content Box with Dark Overlay */}
+                <div className="box-table h-full w-full">
+                  <div className="box-cell">
+                    <div className="container mx-auto px-4 sm:px-6">
+                      <div className="max-w-4xl">
+                        <div className="content relative z-10 text-white p-6 sm:p-10 md:p-16 lg:p-20">
+                          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 md:mb-6 font-heading uppercase relative inline-block pb-3 sm:pb-4 md:pb-5 text-white">
+                            {slide.title}
+                            <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-white"></span>
+                          </h3>
+                          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-5 md:mb-6 font-heading uppercase leading-tight">
+                            <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-1 sm:mb-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                              BEST CHOICE
+                            </span>
+                            <br />
+                            <span className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                              FOR YOU
+                            </span>
+                          </h1>
+                          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-white leading-relaxed max-w-2xl">
+                            {slide.description}
                           </p>
-                          <Link
-                            to="/products"
-                            className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block"
+                          <a
+                            href="#"
+                            className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded font-semibold hover:opacity-90 transition text-xs sm:text-sm uppercase"
                           >
-                            Read More
-                          </Link>
+                            Learn more
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Carousel Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
-              {services.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentService(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentService
-                      ? "bg-primary w-8"
-                      : "bg-gray-400 w-2 hover:bg-gray-600"
-                  }`}
-                  aria-label={`Go to service ${index + 1}`}
+          {/* Carousel Controls - Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="carousel-control left"
+            aria-label="Previous slide"
+          >
+            <i className="fas fa-angle-left"></i>
+          </button>
+
+          {/* Carousel Controls - Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="carousel-control right"
+            aria-label="Next slide"
+          >
+            <i className="fas fa-angle-right"></i>
+          </button>
+
+          {/* Slide indicators */}
+          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 sm:h-2.5 rounded-full transition-all ${
+                  index === currentSlide
+                    ? "w-5 sm:w-6 bg-primary shadow-[0_0_0_3px_rgba(0,0,0,0.35)] sm:shadow-[0_0_0_4px_rgba(0,0,0,0.35)]"
+                    : "w-1.5 sm:w-2 bg-white/60 hover:bg-white"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+
+            <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/80 uppercase">
+              {String(currentSlide + 1).padStart(2, "0")}
+              <span className="text-white/50">
+                {" "}
+                / {String(slides.length).padStart(2, "0")}
+              </span>
+            </span>
+          </div>
+        </div>
+
+        {/* About Section */}
+        <div className="py-12 sm:py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
+              {/* LEFT SIDE — unchanged */}
+              <div className="w-full lg:w-1/2 relative">
+                <img
+                  src="/assets/img/about/1.jpg"
+                  alt="About"
+                  className="w-full rounded-lg"
                 />
-              ))}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <a
+                    href="https://www.youtube.com/watch?v=vQqZIFCab9o"
+                    className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
+                  >
+                    <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* RIGHT SIDE — updated content */}
+              <div className="w-full lg:w-1/2">
+                <h3 className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-heading">
+                  Powering Connections. Building Reliability.
+                </h3>
+
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading">
+                  Griptronics is a trusted Indian manufacturer of
+                  high-performance electrical wires, networking cables, cords,
+                  and wire harness solutions engineered for reliability, safety,
+                  and innovation.
+                </h2>
+
+                <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
+                  <p>
+                    <strong>Premium Quality Standards —</strong> Certified and
+                    tested under IS, UL, JIS, JASO & DIN specifications.
+                  </p>
+
+                  <p>
+                    <strong>Custom Manufacturing —</strong> Tailor-made cable
+                    and wire solutions built to your specifications.
+                  </p>
+
+                  <p>
+                    <strong>Trusted Across Industries —</strong> Supplying to
+                    leading telecom, electrical, and networking sectors
+                    nationwide.
+                  </p>
+
+                  <p>
+                    <strong>20+ Years of Expertise —</strong> Built on precision
+                    engineering and customer-first values.
+                  </p>
+                </div>
+
+                <div className="mt-6 sm:mt-8">
+                  <Link
+                    to="/contact"
+                    className="inline-block bg-primary text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:opacity-90 transition"
+                  >
+                    👉 Explore Our Range | Request a Quote
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Product Section */}
-      <div className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
-              Product
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
-              Explore our comprehensive range of high-quality cables and wire
-              solutions. From power systems to networking infrastructure, we
-              deliver reliable products engineered for excellence and
-              performance.
-            </p>
-          </div>
-
-          {/* Product Range / Filter Buttons */}
-          <div className="mb-8 sm:mb-10 md:mb-12">
-            <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 font-heading">
-              Product Range
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-2 md:gap-3 mix-item-menu max-w-4xl mx-auto">
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-                    activeFilter === filter.id
-                      ? "bg-primary text-gray-700"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
+        {/* Services Section */}
+        <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
+                  Our Services
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4 leading-relaxed">
+                  Griptronics is a leading manufacturer and supplier of
+                  high-quality electrical and electronic cables, engineered to
+                  deliver superior performance, long-term durability, and
+                  consistent reliability. Our product range is designed to meet
+                  the evolving demands of modern industries, ensuring safe power
+                  transmission, efficient connectivity, and dependable operation
+                  across diverse applications. With a strong focus on quality
+                  standards, precision manufacturing, and customer-centric
+                  solutions, Griptronics provides cables that perform flawlessly
+                  even under challenging environments, making us a trusted
+                  partner for reliable electrical solutions.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Name of Product */}
-          <div className="mb-8 sm:mb-10 md:mb-12">
-            <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-gray-800 font-heading">
-              Name of Product
-            </h3>
-            <div className="magnific-mix-gallery text-center">
-              <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {filteredProducts.map((product, index) => (
-                  <div
-                    key={`${product.title}-${index}`}
-                    className={`pf-item ${product.filters.join(
-                      " "
-                    )} bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden`}
-                  >
-                    <div className="thumb relative overflow-hidden bg-gray-50 group w-full">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/2 group-hover:to-black/0 transition-all duration-300 z-10 pointer-events-none"></div>
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer transition-all duration-500 ease-out group-hover:scale-110"
-                        style={{
-                          display: "block",
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          objectPosition: "center",
-                        }}
-                        loading="lazy"
-                        // onClick={() => {
-                        //   setLightboxImage(product.image);
-                        //   setIsLightboxOpen(true);
-                        // }}
-                        onError={() => {
-                          console.error(
-                            "Image failed to load:",
-                            product.image,
-                            product.title,
-                            typeof product.image
-                          );
-                        }}
-                        onLoad={() => {
-                          console.log(
-                            "Image loaded successfully:",
-                            product.title,
-                            product.image
-                          );
-                        }}
-                      />
+            {/* Services Carousel */}
+            <div className="services-items services-carousel text-center">
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-700 ease-in-out"
+                  style={{
+                    transform: `translateX(-${
+                      currentService * (100 / servicesPerView)
+                    }%)`,
+                  }}
+                >
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3"
+                    >
+                      <div
+                        className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
+                        style={{ backgroundImage: `url(${service.image})` }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
+                        <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
+                          <div className="info">
+                            <i
+                              className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
+                            ></i>
+                            <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading text-white">
+                              {service.title}
+                            </h4>
+                            <p className="text-sm sm:text-base mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2 text-white">
+                              {service.description}
+                            </p>
+                            <Link
+                              to="/products"
+                              className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block"
+                            >
+                              Read More
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="info p-6 sm:p-7 md:p-8 bg-white">
-                      <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight">
-                        {product.title}
-                      </h4>
-                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        {product.description}
-                      </p>
-                    </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center gap-2 mt-8">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentService(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentService
+                        ? "bg-primary w-8"
+                        : "bg-gray-400 w-2 hover:bg-gray-600"
+                    }`}
+                    aria-label={`Go to service ${index + 1}`}
+                  />
                 ))}
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Why Choose Griptronics Products */}
-          <div className="mt-16 sm:mt-20 md:mt-24 bg-bg-gray py-12 sm:py-16 md:py-20 rounded-lg">
-            <div className="container mx-auto px-4 sm:px-6">
-              <div className="text-center mb-10 sm:mb-12">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-heading">
-                  Why Choose Griptronics Products
-                </h3>
+        {/* Product Section */}
+        <div className="py-12 sm:py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
+                Product
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
+                Explore our comprehensive range of high-quality cables and wire
+                solutions. From power systems to networking infrastructure, we
+                deliver reliable products engineered for excellence and
+                performance.
+              </p>
+            </div>
+
+            {/* Product Range / Filter Buttons */}
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 font-heading">
+                Product Range
+              </h3>
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-2 md:gap-3 mix-item-menu max-w-4xl mx-auto">
+                {filters.map((filter) => (
+                  <button
+                    key={filter.id}
+                    onClick={() => setActiveFilter(filter.id)}
+                    className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
+                      activeFilter === filter.id
+                        ? "bg-primary text-gray-700"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="mb-4">
-                    <i className="fas fa-industry text-4xl text-primary"></i>
-                  </div>
-                  <p className="text-sm sm:text-base font-semibold text-gray-800">
-                    Manufactured under strict supervision
-                  </p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="mb-4">
-                    <i className="fas fa-certificate text-4xl text-primary"></i>
-                  </div>
-                  <p className="text-sm sm:text-base font-semibold text-gray-800">
-                    Tested to meet IS, UL, JIS, JASO & DIN standards
-                  </p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="mb-4">
-                    <i className="fas fa-sliders-h text-4xl text-primary"></i>
-                  </div>
-                  <p className="text-sm sm:text-base font-semibold text-gray-800">
-                    Custom-built as per client requirements
-                  </p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="mb-4">
-                    <i className="fas fa-shield-alt text-4xl text-primary"></i>
-                  </div>
-                  <p className="text-sm sm:text-base font-semibold text-gray-800">
-                    Zero-defect production policy
-                  </p>
+            </div>
+
+            {/* Name of Product */}
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-gray-800 font-heading">
+                Name of Product
+              </h3>
+              <div className="magnific-mix-gallery text-center">
+                <div className="portfolio-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {filteredProducts.map((product, index) => (
+                    <div
+                      key={`${product.title}-${index}`}
+                      className={`pf-item ${product.filters.join(
+                        " "
+                      )} bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden`}
+                    >
+                      <div className="thumb relative overflow-hidden bg-gray-50 group w-full">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/2 group-hover:to-black/0 transition-all duration-300 z-10 pointer-events-none"></div>
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[450px] object-cover object-center cursor-pointer transition-all duration-500 ease-out group-hover:scale-110"
+                          style={{
+                            display: "block",
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            objectPosition: "center",
+                          }}
+                          loading="lazy"
+                          // onClick={() => {
+                          //   setLightboxImage(product.image);
+                          //   setIsLightboxOpen(true);
+                          // }}
+                          onError={() => {
+                            console.error(
+                              "Image failed to load:",
+                              product.image,
+                              product.title,
+                              typeof product.image
+                            );
+                          }}
+                          onLoad={() => {
+                            console.log(
+                              "Image loaded successfully:",
+                              product.title,
+                              product.image
+                            );
+                          }}
+                        />
+                      </div>
+                      <div className="info p-6 sm:p-7 md:p-8 bg-white">
+                        <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-3 sm:mb-4 font-heading text-gray-900 leading-tight">
+                          {product.title}
+                        </h4>
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                          {product.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* CTA Section */}
-          {/* <div className="mt-10 sm:mt-12 md:mt-16 text-center">
+            {/* Why Choose Griptronics Products */}
+            <div className="mt-16 sm:mt-20 md:mt-24 bg-bg-gray py-12 sm:py-16 md:py-20 rounded-lg">
+              <div className="container mx-auto px-4 sm:px-6">
+                <div className="text-center mb-10 sm:mb-12">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-heading">
+                    Why Choose Griptronics Products
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="mb-4">
+                      <i className="fas fa-industry text-4xl text-primary"></i>
+                    </div>
+                    <p className="text-sm sm:text-base font-semibold text-gray-800">
+                      Manufactured under strict supervision
+                    </p>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="mb-4">
+                      <i className="fas fa-certificate text-4xl text-primary"></i>
+                    </div>
+                    <p className="text-sm sm:text-base font-semibold text-gray-800">
+                      Tested to meet IS, UL, JIS, JASO & DIN standards
+                    </p>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="mb-4">
+                      <i className="fas fa-sliders-h text-4xl text-primary"></i>
+                    </div>
+                    <p className="text-sm sm:text-base font-semibold text-gray-800">
+                      Custom-built as per client requirements
+                    </p>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="mb-4">
+                      <i className="fas fa-shield-alt text-4xl text-primary"></i>
+                    </div>
+                    <p className="text-sm sm:text-base font-semibold text-gray-800">
+                      Zero-defect production policy
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            {/* <div className="mt-10 sm:mt-12 md:mt-16 text-center">
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <a
                 href="#"
@@ -979,11 +978,11 @@ const Home = () => {
               </a>
             </div>
           </div> */}
+          </div>
         </div>
-      </div>
 
-      {/* Popular Work / Tabs Section */}
-      {/* <div className="py-20 bg-dark text-white">
+        {/* Popular Work / Tabs Section */}
+        {/* <div className="py-20 bg-dark text-white">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <ul className="flex flex-wrap border-b border-gray-600">
@@ -1050,8 +1049,8 @@ const Home = () => {
         </div>
       </div> */}
 
-      {/* Team Members Section */}
-      {/* <div className="py-20 bg-bg-gray">
+        {/* Team Members Section */}
+        {/* <div className="py-20 bg-bg-gray">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -1118,8 +1117,8 @@ const Home = () => {
         </div>
       </div> */}
 
-      {/* Blog Section */}
-      {/* <div className="py-20 bg-white">
+        {/* Blog Section */}
+        {/* <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 font-heading">
@@ -1174,6 +1173,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
+      </div>
 
       <Footer />
 

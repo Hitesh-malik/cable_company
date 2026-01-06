@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 
@@ -252,10 +251,9 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Page Intro */}
-      <div className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20">
+      <div className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20 pt-28 sm:pt-32 md:pt-36">
         <div className="container mx-auto px-4 sm:px-6">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-white">
             Products

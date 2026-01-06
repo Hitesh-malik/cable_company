@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Team = () => {
@@ -74,7 +73,6 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Breadcrumb */}
       <div

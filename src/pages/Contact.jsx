@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Contact = () => {
@@ -53,10 +52,9 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
 
       {/* Breadcrumb */}
-      <div className="bg-gray-800 text-white py-12 sm:py-16 md:py-20">
+      <div className="bg-gray-800 text-white py-12 sm:py-16 md:py-20 pt-28 sm:pt-32 md:pt-36">
         <div className="container mx-auto px-4 sm:px-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white">
             Contact Us

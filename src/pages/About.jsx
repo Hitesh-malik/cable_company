@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
   FaUser,
@@ -97,11 +96,10 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Breadcrumb */}
       <div
-        className="relative text-white py-12 sm:py-16 md:py-20 bg-fixed bg-cover bg-center"
+        className="relative text-white py-12 sm:py-16 md:py-20 pt-28 sm:pt-32 md:pt-36 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url(/assets/img/banner/10.jpg)" }}
       >
         <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 import {
@@ -85,7 +84,6 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Breadcrumb */}
       <div

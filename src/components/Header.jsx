@@ -39,9 +39,7 @@ const Header = () => {
     <>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 w-full z-[9999] bg-white transition-all duration-300 ${
-          isScrolled ? "shadow-lg" : "shadow-sm"
-        }`}
+        className="fixed top-0 left-0 right-0 w-full z-[9999] transition-all duration-300 glass-navbar"
         style={{
           position: "fixed",
           top: 0,
@@ -49,6 +47,13 @@ const Header = () => {
           right: 0,
           width: "100%",
           zIndex: 9999,
+          backgroundColor: "rgba(255, 255, 255, 0.2)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          borderRadius: isScrolled ? "0 0 16px 16px" : "0",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          borderTop: "none",
         }}
       >
         <nav className="container mx-auto px-4 sm:px-6">

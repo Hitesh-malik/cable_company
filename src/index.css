@@ -946,7 +946,11 @@ i[class*=" flaticon-"]:before {
 .text-animation-wrapper {
   display: block;
   width: 100%;
+  max-width: 100%;
   overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .text-animation-item {
@@ -954,6 +958,9 @@ i[class*=" flaticon-"]:before {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .text-animation-item.text-animation-visible {

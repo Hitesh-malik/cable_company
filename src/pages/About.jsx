@@ -363,9 +363,10 @@ const ClientsSection = React.memo(({ clients }) => {
           {/* Left Side - Text Content */}
           <div
             ref={textRef}
-            className={`scroll-slide-left order-1 lg:order-1 ${textVisible ? "visible" : ""}`}
+            className={`scroll-slide-left order-1 lg:order-1 w-full ${textVisible ? "visible" : ""}`}
+            style={{ overflow: "visible", wordWrap: "break-word", overflowWrap: "break-word" }}
           >
-            <div className="w-full">
+            <div className="w-full max-w-full overflow-visible">
               <TextAnimation
                 text="Our Clients"
                 type="word"
@@ -382,7 +383,7 @@ const ClientsSection = React.memo(({ clients }) => {
                 text="At Griptronics, we proudly serve a diverse portfolio of clients across multiple industries who rely on high-performance and durable cable solutions. Our commitment to quality, consistency, and timely delivery has made us a trusted partner for businesses of all scales."
                 type="word"
                 delay={30}
-                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed break-words"
                 animationOptions={{
                   threshold: 0.1,
                   rootMargin: "0px 0px -100px 0px",
@@ -413,7 +414,7 @@ const ClientsSection = React.memo(({ clients }) => {
                   ].map((item, index) => (
                     <li
                       key={index}
-                      className="flex items-start"
+                      className="flex items-start break-words"
                       style={{
                         opacity: textVisible ? 1 : 0,
                         transform: textVisible ? "translateY(0)" : "translateY(20px)",
@@ -421,7 +422,7 @@ const ClientsSection = React.memo(({ clients }) => {
                       }}
                     >
                       <span className="text-primary mr-2 mt-1 flex-shrink-0">•</span>
-                      <span className="flex-1 leading-relaxed">{item}</span>
+                      <span className="flex-1 leading-relaxed break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -430,7 +431,7 @@ const ClientsSection = React.memo(({ clients }) => {
                 text="From large-scale industrial operations to specialized project requirements, our clients trust Griptronics for reliable products, technical expertise, and long-term value."
                 type="word"
                 delay={30}
-                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed"
+                className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed break-words"
                 animationOptions={{
                   threshold: 0.1,
                   rootMargin: "0px 0px -100px 0px",

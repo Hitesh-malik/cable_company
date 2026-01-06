@@ -648,3 +648,106 @@ i[class*=" flaticon-"]:before {
 .animate-fade-in {
   animation: fade-in 0.5s ease-out forwards;
 }
+
+/* Services Cards Responsive Styles */
+.services-carousel {
+  position: relative;
+}
+
+.services-carousel > div {
+  display: flex;
+  align-items: stretch;
+}
+
+.services-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.services-item-grayscale {
+  filter: grayscale(100%);
+}
+
+.services-item-grayscale > * {
+  filter: grayscale(0%);
+}
+
+.services-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure services cards content is properly aligned and responsive */
+.services-items .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex: 1;
+}
+
+/* Responsive icon sizing */
+.services-items .info i {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 639px) {
+  .services-item {
+    min-height: 400px;
+    height: 400px;
+  }
+  
+  .services-items .info {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .services-item {
+    min-height: 450px;
+    height: 450px;
+  }
+  
+  .services-items .info {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .services-item {
+    min-height: 500px;
+    height: 500px;
+  }
+  
+  .services-items .info {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Large Desktop adjustments */
+@media (min-width: 1280px) {
+  .services-item {
+    min-height: 550px;
+    height: 550px;
+  }
+  
+  .services-items .info {
+    padding: 3rem 2.5rem;
+  }
+}
+}

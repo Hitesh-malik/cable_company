@@ -741,14 +741,20 @@ const Home = () => {
         </div>
 
         {/* Services Section */}
-        <div className="py-12 sm:py-16 md:py-20 bg-bg-gray services-area">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+        <div className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-bg-gray services-area">
+          <div className="container mx-auto px-3 sm:px-5 md:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12 md:mb-14 lg:mb-16">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-heading">
+                <h2
+                  className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-4 md:mb-5 font-heading"
+                  style={{ fontSize: "clamp(1.25rem, 5vw, 3.75rem)" }}
+                >
                   Our Services
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4 leading-relaxed">
+                <p
+                  className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 px-2 sm:px-4 md:px-6 leading-relaxed"
+                  style={{ fontSize: "clamp(0.75rem, 2vw, 1.5rem)" }}
+                >
                   Griptronics is a leading manufacturer and supplier of
                   high-quality electrical and electronic cables, engineered to
                   deliver superior performance, long-term durability, and
@@ -768,7 +774,7 @@ const Home = () => {
             <div className="services-items services-carousel text-center">
               <div className="overflow-hidden">
                 <div
-                  className="flex transition-transform duration-700 ease-in-out"
+                  className="flex transition-transform duration-700 ease-in-out items-stretch"
                   style={{
                     transform: `translateX(-${
                       currentService * (100 / servicesPerView)
@@ -778,27 +784,46 @@ const Home = () => {
                   {services.map((service, index) => (
                     <div
                       key={index}
-                      className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3"
+                      className="w-full sm:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3 md:px-4 lg:px-5 flex"
                     >
                       <div
-                        className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden services-item"
-                        style={{ backgroundImage: `url(${service.image})` }}
+                        className="relative w-full h-full rounded-lg overflow-hidden services-item bg-cover bg-center bg-no-repeat shadow-lg"
+                        style={{
+                          backgroundImage: `url(${service.image})`,
+                        }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-800/90 via-gray-700/70 to-gray-600/50"></div>
-                        <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-white">
-                          <div className="info">
+                        <div className="relative h-full flex flex-col items-center justify-center text-white">
+                          <div className="info w-full max-w-full px-4 sm:px-5 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 flex flex-col items-center justify-center h-full">
                             <i
-                              className={`${service.icon} text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 text-primary`}
+                              className={`${service.icon} mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-primary flex-shrink-0`}
+                              style={{
+                                fontSize: "clamp(1.75rem, 3vw, 3rem)",
+                              }}
                             ></i>
-                            <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 font-heading text-white">
+                            <h4
+                              className="font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 font-heading text-white leading-tight text-center flex-shrink-0"
+                              style={{
+                                fontSize: "clamp(1.25rem, 2.2vw, 2rem)",
+                              }}
+                            >
                               {service.title}
                             </h4>
-                            <p className="text-sm sm:text-base mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2 text-white">
+                            <p
+                              className="mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-relaxed text-center text-white/95 max-w-md mx-auto flex-grow"
+                              style={{
+                                fontSize: "clamp(0.875rem, 1.3vw, 1rem)",
+                                lineHeight: "1.7",
+                              }}
+                            >
                               {service.description}
                             </p>
                             <Link
                               to="/products"
-                              className="bg-white text-gray-700 border border-gray-700 px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block"
+                              className="bg-white text-gray-700 border border-gray-700 rounded font-semibold hover:bg-primary hover:border-primary hover:text-white transition uppercase inline-block mt-auto px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 flex-shrink-0"
+                              style={{
+                                fontSize: "clamp(0.75rem, 1.1vw, 0.875rem)",
+                              }}
                             >
                               Read More
                             </Link>
@@ -811,16 +836,23 @@ const Home = () => {
               </div>
 
               {/* Carousel Indicators */}
-              <div className="flex justify-center gap-2 mt-8">
+              <div className="flex justify-center gap-1.5 sm:gap-2.5 md:gap-3 mt-6 sm:mt-8 md:mt-10">
                 {services.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentService(index)}
-                    className={`h-2 rounded-full transition-all ${
+                    className={`rounded-full transition-all ${
                       index === currentService
-                        ? "bg-primary w-8"
-                        : "bg-gray-400 w-2 hover:bg-gray-600"
+                        ? "bg-primary"
+                        : "bg-gray-400 hover:bg-gray-600"
                     }`}
+                    style={{
+                      height: "clamp(0.375rem, 0.8vw, 0.75rem)",
+                      width:
+                        index === currentService
+                          ? "clamp(1.5rem, 3vw, 3rem)"
+                          : "clamp(0.375rem, 0.8vw, 0.75rem)",
+                    }}
                     aria-label={`Go to service ${index + 1}`}
                   />
                 ))}

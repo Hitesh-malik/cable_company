@@ -663,18 +663,31 @@ const Home = () => {
             <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12">
               {/* LEFT SIDE — unchanged */}
               <div className="w-full lg:w-1/2 relative">
-                <img
-                  src="/assets/img/about/1.jpg"
-                  alt="About"
-                  className="w-full rounded-lg"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <a
-                    href="https://www.youtube.com/watch?v=vQqZIFCab9o"
-                    className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition"
-                  >
-                    <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
-                  </a>
+                <div className="relative">
+                  {/* Red L-shaped block behind the image */}
+                  <div className="absolute -left-6 sm:-left-8 md:-left-10 -bottom-8 sm:-bottom-10 md:-bottom-12 right-4 sm:right-6 md:right-8 top-4 sm:top-6 md:top-8 bg-primary z-0">
+                    {/* Vertical part (left edge) */}
+                    <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-20 bg-primary"></div>
+                    {/* Horizontal part (bottom edge) */}
+                    <div className="absolute left-0 bottom-0 right-0 h-12 sm:h-16 md:h-20 bg-primary"></div>
+                  </div>
+
+                  {/* Image with gap/margin to show the red block behind */}
+                  <div className="relative ml-6 sm:ml-8 md:ml-10 mb-6 sm:mb-8 md:mb-10 z-10">
+                    <img
+                      src="/assets/img/about/1.jpg"
+                      alt="About"
+                      className="w-full rounded-lg shadow-lg"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <a
+                        href="https://www.youtube.com/watch?v=vQqZIFCab9o"
+                        className="bg-primary w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center hover:opacity-90 transition z-20"
+                      >
+                        <i className="fas fa-play text-gray-700 text-base sm:text-lg md:text-xl ml-0.5 sm:ml-1"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 

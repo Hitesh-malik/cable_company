@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -12,12 +17,27 @@ import Contact from "./pages/Contact";
 import FullScreenLoader from "./components/FullScreenLoader";
 import "./App.css";
 
-function App() {
-  const [isAppReady, setIsAppReady] = useState(false); // data/UI ready
-  const [showLoader, setShowLoader] = useState(true); // mounted for exit animation
+// Separate ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const MIN_DURATION = 700; // ms – prevents quick flicker
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
+
+  return null;
+}
+
+function App() {
+  const [isAppReady, setIsAppReady] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const MIN_DURATION = 700;
     const start = performance.now();
 
     const handleLoad = () => {
@@ -43,7 +63,7 @@ function App() {
   useEffect(() => {
     if (!isAppReady) return;
 
-    const EXIT_DURATION = 650; // match CSS fade/scale duration
+    const EXIT_DURATION = 650;
     const timeout = window.setTimeout(() => {
       setShowLoader(false);
     }, EXIT_DURATION);
@@ -65,6 +85,7 @@ function App() {
       )}
 
       <Router>
+        <ScrollToTop />
         <Header />
         <div className={"app-shell-inner" + (isAppReady ? " visible" : "")}>
           <Routes>

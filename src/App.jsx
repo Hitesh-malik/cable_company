@@ -22,10 +22,11 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Instant scroll to top on route change
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: "auto", // Changed from "smooth" to "auto" for instant scroll
     });
   }, [pathname]);
 
@@ -36,7 +37,16 @@ function App() {
   const [isAppReady, setIsAppReady] = useState(false);
   const [showLoader, setShowLoader] = useState(true);
 
+  // Prevent browser scroll restoration and ensure page starts at top
   useEffect(() => {
+    // Disable browser scroll restoration
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // Immediately scroll to top on initial load
+    window.scrollTo(0, 0);
+
     const MIN_DURATION = 700;
     const start = performance.now();
 
@@ -46,6 +56,8 @@ function App() {
 
       window.setTimeout(() => {
         setIsAppReady(true);
+        // Ensure scroll is at top after loader finishes
+        window.scrollTo(0, 0);
       }, remaining);
     };
 

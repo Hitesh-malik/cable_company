@@ -138,16 +138,23 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-opacity-50 z-40 lg:hidden backdrop-blur-sm"
+          className="fixed inset-0  bg-opacity-30 z-[10000] lg:hidden"
           onClick={() => setIsMenuOpen(false)}
+          style={{
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+          }}
         ></div>
       )}
 
       {/* Mobile Menu Slide Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 transform transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-[10001] transform transition-transform duration-300 lg:hidden shadow-2xl ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{
+          boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.15)",
+        }}
       >
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between p-4 sm:p-6 border-b">

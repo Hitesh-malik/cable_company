@@ -76,7 +76,7 @@ const Team = () => {
 
       {/* Breadcrumb */}
       <div
-        className="text-white py-12 sm:py-16 md:py-20 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] flex items-center"
+        className="text-white py-12 sm:py-16 md:py-20 relative min-h-[300px] sm:min-h-[350px] md:min-h-[400px] flex items-center mt-16 sm:mt-20 lg:mt-24"
         style={{
           backgroundImage: `url(/assets/img/banner/1.jpg)`,
           backgroundSize: "cover",

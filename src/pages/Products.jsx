@@ -13,7 +13,7 @@ const Products = () => {
     <div className="min-h-screen bg-white">
       {/* Page Intro with Animation */}
       <motion.div
-        className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20 pt-28 sm:pt-32 md:pt-36"
+        className="bg-[#1E2939] text-white py-12 sm:py-16 md:py-20 mt-16 sm:mt-20 lg:mt-24"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}

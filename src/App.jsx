@@ -86,7 +86,16 @@ function App() {
 
       <Router>
         <ScrollToTop />
-        <Header />
+        {isAppReady && (
+          <div
+            style={{
+              animation: "fadeInDown 0.6s ease-out",
+              animationFillMode: "both",
+            }}
+          >
+            <Header />
+          </div>
+        )}
         <div className={"app-shell-inner" + (isAppReady ? " visible" : "")}>
           <Routes>
             <Route path="/" element={<Home />} />

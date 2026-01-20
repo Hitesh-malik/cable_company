@@ -404,14 +404,13 @@ const ProductSection = ({
                     ? "bg-primary text-gray-700"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
-                initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
-                  delay: 0.4 + index * 0.05,
-                  type: "spring",
-                  stiffness: 200,
+                  delay: 0.3 + index * 0.03,
+                  ease: "easeOut",
                 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}

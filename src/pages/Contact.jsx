@@ -32,8 +32,8 @@ const Contact = () => {
     {
       icon: "fas fa-phone-alt",
       title: "CALL US",
-      content: "+456 456 4443",
-      link: "tel:+4564564443",
+      content: "0120-4271869, 9899000668",
+      link: "tel:+919899000668",
     },
   ];
 
@@ -391,7 +391,7 @@ const Contact = () => {
                     </button>
 
                     <a
-                      href="tel:+4564564443"
+                      href="tel:+919899000668"
                       className="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-3 rounded-lg transition-colors flex items-center justify-center"
                     >
                       <i className="fas fa-phone mr-2"></i>

@@ -772,31 +772,340 @@ const Home = () => {
                 >
                   Our Services
                 </motion.h2>
-                <motion.p
-                  className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 px-2 sm:px-4 md:px-6 leading-relaxed"
-                  style={{ fontSize: "clamp(0.75rem, 2vw, 1.5rem)" }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+              </div>
+            </motion.div>
+
+            {/* Service Categories */}
+            <motion.div
+              className="w-full mt-6 sm:mt-8 md:mt-10 lg:mt-12 mb-8 sm:mb-12 md:mb-16 lg:mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-5 md:gap-x-6 lg:gap-x-5 gap-y-6 sm:gap-y-8 md:gap-y-10 lg:gap-y-12 w-full max-w-[95%] xl:max-w-[1600px] mx-auto">
+                {/* Core Manufacturing Services */}
+                <motion.div
+                  className="bg-white p-6 sm:p-8 md:p-9 lg:p-10 rounded-lg shadow-lg w-full h-full flex flex-col mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.2,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    shadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  style={{
+                    boxShadow:
+                      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  }}
                 >
-                  Griptronics is a leading manufacturer and supplier of
-                  high-quality electrical and electronic cables, engineered to
-                  deliver superior performance, long-term durability, and
-                  consistent reliability. Our product range is designed to meet
-                  the evolving demands of modern industries, ensuring safe power
-                  transmission, efficient connectivity, and dependable operation
-                  across diverse applications. With a strong focus on quality
-                  standards, precision manufacturing, and customer-centric
-                  solutions, Griptronics provides cables that perform flawlessly
-                  even under challenging environments, making us a trusted
-                  partner for reliable electrical solutions.
-                </motion.p>
+                  <motion.h3
+                    className="text-lg sm:text-xl md:text-xl lg:text-xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading text-primary leading-tight"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    whileHover={{ x: 5, color: "#ea580c" }}
+                  >
+                    Core Manufacturing Services
+                  </motion.h3>
+                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 grow">
+                    {[
+                      {
+                        label: "Wire Drawing & Extrusion:",
+                        desc: "High-precision drawing for various gauges and diameters.",
+                      },
+                      {
+                        label: "Annealing & Heat Treatment:",
+                        desc: "Services to adjust the ductility and strength of the wire for specific industrial uses.",
+                      },
+                      {
+                        label: "Custom Coating & Galvanization:",
+                        desc: "Offering PVC coating, zinc galvanizing, or polymer jackets for corrosion resistance.",
+                      },
+                      {
+                        label: "Precision Cutting & Spooling:",
+                        desc: "Custom lengths and specific packaging (spools, coils, or cut-to-length) based on client machinery.",
+                      },
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                        whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                      >
+                        <motion.span
+                          className="text-primary mr-3 shrink-0 text-base sm:text-lg md:text-lg lg:text-lg"
+                          whileHover={{ scale: 1.3, rotate: 180 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          •
+                        </motion.span>
+                        <span className="text-gray-700 text-sm sm:text-base md:text-base lg:text-base">
+                          <strong>{item.label}</strong> {item.desc}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                {/* Supply Chain & Logistics */}
+                <motion.div
+                  className="bg-white p-6 sm:p-8 md:p-9 lg:p-10 rounded-lg shadow-lg w-full h-full flex flex-col mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.3,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    shadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  style={{
+                    boxShadow:
+                      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <motion.h3
+                    className="text-lg sm:text-xl md:text-xl lg:text-xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading text-primary leading-tight"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    whileHover={{ x: 5, color: "#ea580c" }}
+                  >
+                    Supply Chain & Logistics
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-600 mb-4 sm:mb-5 text-sm sm:text-base md:text-base lg:text-base"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    In manufacturing, reliability is often more important than
+                    price.
+                  </motion.p>
+                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 grow">
+                    {[
+                      {
+                        label: "Just-In-Time (JIT) Delivery:",
+                        desc: "Your ability to sync with their production schedule to reduce their inventory costs.",
+                      },
+                      {
+                        label: "Inventory Management (VMI):",
+                        desc: "Offering Vendor Managed Inventory where you monitor their stock levels and replenish automatically.",
+                      },
+                      {
+                        label: "Global Export Logistics:",
+                        desc: "Your expertise in international shipping, customs, and protective packaging for long-transit sea freight.",
+                      },
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                        whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                      >
+                        <motion.span
+                          className="text-primary mr-3 shrink-0 text-base sm:text-lg md:text-lg lg:text-lg"
+                          whileHover={{ scale: 1.3, rotate: 180 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          •
+                        </motion.span>
+                        <span className="text-gray-700 text-sm sm:text-base md:text-base lg:text-base">
+                          <strong>{item.label}</strong> {item.desc}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                {/* Quality Assurance & Compliance */}
+                <motion.div
+                  className="bg-white p-6 sm:p-8 md:p-9 lg:p-10 rounded-lg shadow-lg w-full h-full flex flex-col mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    shadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  style={{
+                    boxShadow:
+                      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <motion.h3
+                    className="text-lg sm:text-xl md:text-xl lg:text-xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading text-primary leading-tight"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    whileHover={{ x: 5, color: "#ea580c" }}
+                  >
+                    Quality Assurance & Compliance
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-600 mb-4 sm:mb-5 text-sm sm:text-base md:text-base lg:text-base"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                  >
+                    This is a "service" in the eyes of a procurement officer
+                    because it reduces their risk.
+                  </motion.p>
+                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 grow">
+                    {[
+                      {
+                        label: "Standard Certifications:",
+                        desc: "ISO 9001, ASTM, or industry-specific standards.",
+                      },
+                      {
+                        label: "Full Traceability:",
+                        desc: "Providing MTRs (Material Test Reports).",
+                      },
+                      { label: "Real time 'In Process' Monitoring.", desc: "" },
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                        whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                      >
+                        <motion.span
+                          className="text-primary mr-3 shrink-0 text-base sm:text-lg md:text-lg lg:text-lg"
+                          whileHover={{ scale: 1.3, rotate: 180 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          •
+                        </motion.span>
+                        <span className="text-gray-700 text-sm sm:text-base md:text-base lg:text-base">
+                          <strong>{item.label}</strong> {item.desc}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                {/* Value-Added Engineering */}
+                <motion.div
+                  className="bg-white p-6 sm:p-8 md:p-9 lg:p-10 rounded-lg shadow-lg w-full h-full flex flex-col mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.5,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    shadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  style={{
+                    boxShadow:
+                      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  }}
+                >
+                  <motion.h3
+                    className="text-lg sm:text-xl md:text-xl lg:text-xl font-bold mb-4 sm:mb-5 md:mb-6 font-heading text-primary leading-tight"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    whileHover={{ x: 5, color: "#ea580c" }}
+                  >
+                    Value-Added Engineering
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-600 mb-4 sm:mb-5 text-sm sm:text-base md:text-base lg:text-base"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
+                    This section differentiates a "vendor" from a "partner."
+                  </motion.p>
+                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 grow">
+                    {[
+                      {
+                        label: "Custom Alloy Development:",
+                        desc: "Working with clients to create specific metal compositions for unique conductivity or strength requirements.",
+                      },
+                      {
+                        label: "Prototyping & R&D:",
+                        desc: "Helping clients test new wire applications before moving to high-volume production.",
+                      },
+                      {
+                        label: "Metallurgical Testing:",
+                        desc: "In-house lab services for tensile strength, conductivity, and durability verification.",
+                      },
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                        whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                      >
+                        <motion.span
+                          className="text-primary mr-3 shrink-0 text-base sm:text-lg md:text-lg lg:text-lg"
+                          whileHover={{ scale: 1.3, rotate: 180 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          •
+                        </motion.span>
+                        <span className="text-gray-700 text-sm sm:text-base md:text-base lg:text-base">
+                          <strong>{item.label}</strong> {item.desc}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
               </div>
             </motion.div>
 
             {/* Services Carousel */}
-            <div className="services-items services-carousel text-center w-full">
+            <div className="services-items services-carousel text-center w-full mt-8 sm:mt-12 md:mt-16 lg:mt-20">
               <div className="overflow-hidden w-full">
                 <div
                   className="flex transition-transform duration-700 ease-in-out items-stretch w-full"

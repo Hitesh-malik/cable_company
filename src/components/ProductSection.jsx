@@ -30,15 +30,17 @@ import MicrowaveWireHarnessImg from "../assets/img/products/WireandHarnesses/Mic
 import RefrigeratorWireHarnessImg from "../assets/img/products/WireandHarnesses/Refrigerator-Wire-Harnesses-300x300.jpg";
 import WashingMachineWireHarnessImg from "../assets/img/products/WireandHarnesses/Washing-Machine-Wire-Harness-300x300.jpg";
 
-const ProductSection = ({ 
-  showTitle = true, 
-  showDescription = true, 
+const ProductSection = ({
+  showTitle = true,
+  showDescription = true,
   showWhyChoose = true,
   initialFilter = "*",
-  showLoadMore = true 
+  showLoadMore = true,
 }) => {
   const [activeFilter, setActiveFilter] = useState(initialFilter);
-  const [visibleProductsCount, setVisibleProductsCount] = useState(showLoadMore ? 3 : 999);
+  const [visibleProductsCount, setVisibleProductsCount] = useState(
+    showLoadMore ? 3 : 999
+  );
 
   const products = [
     {
@@ -500,7 +502,7 @@ const ProductSection = ({
                     {/* Hover Overlay with Product Details */}
                     <div className="product-overlay absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/85 to-primary/75 flex flex-col items-center justify-center p-6 sm:p-8 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
                       <div className="text-center text-white">
-                        <h4 className="product-overlay-title text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 font-heading opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8 transition-all duration-500 delay-150 ease-out">
+                        <h4 className="product-overlay-title text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 font-heading text-white opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8 transition-all duration-500 delay-150 ease-out">
                           {product.title}
                         </h4>
                         <p className="product-overlay-desc text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-md mx-auto opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-6 transition-all duration-500 delay-200 ease-out">
@@ -653,4 +655,3 @@ const ProductSection = ({
 };
 
 export default ProductSection;
-

@@ -26,21 +26,21 @@ const Home = () => {
       title: "We are the",
       heading: "Best Choice for you",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis aliquid sed id saepe. Quasi totam, dolorem repellendus cupiditate! Quos eaque, voluptas doloribus",
+        "Ranked among India's leading electrical cable manufacturers, we deliver bespoke cable solutions that align with elevated industry standards. Our extensive range includes wires and cables for automotive, domestic, and industrial sectors.",
     },
     {
       image: "assets/img/banner/bannerone.png",
       title: "We are the",
       heading: "Best Choice for you",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis aliquid sed id saepe. Quasi totam, dolorem repellendus cupiditate! Quos eaque, voluptas doloribus",
+        "Established in 2000, Griptronics India Wires and Cables Pvt. Ltd. is a leading manufacturer with four manufacturing plants in Noida and Ghaziabad, equipped with advanced technology and a skilled workforce.",
     },
     {
       image: "assets/img/banner/bannertwo.png",
       title: "We are the",
       heading: "Best Choice for you",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nobis aliquid sed id saepe. Quasi totam, dolorem repellendus cupiditate! Quos eaque, voluptas doloribus",
+        "We supply our products across India and export to select countries, adhering to ISO 9001 and ISO 14001 standards. Our large-scale warehouse ensures uninterrupted supply of high-quality products.",
     },
   ];
 

@@ -104,25 +104,27 @@ const AboutSection = React.memo(() => {
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <img
-                  src="/assets/img/ongoing/1.jpg"
-                  alt="About"
+                  src="/assets/img/mandeepphotoimage.jpg"
+                  alt="Mr. Mandeep Singh"
                   className="w-full rounded-lg image-fade-in"
                   style={{
                     opacity: imageVisible ? 1 : 0,
                     transform: imageVisible ? "scale(1)" : "scale(0.95)",
-                    transition: "opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s",
+                    transition:
+                      "opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s",
                   }}
                 />
               </div>
               <div>
                 <img
-                  src="/assets/img/ongoing/2.jpg"
+                  src="/assets/img/mandeepsonimage.jpg"
                   alt="About"
                   className="w-full rounded-lg mt-8 image-fade-in"
                   style={{
                     opacity: imageVisible ? 1 : 0,
                     transform: imageVisible ? "scale(1)" : "scale(0.95)",
-                    transition: "opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s",
+                    transition:
+                      "opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s",
                   }}
                 />
               </div>
@@ -330,7 +332,8 @@ const VideoSection = React.memo(() => {
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "scale(1)" : "scale(0.8)",
-              transition: "opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s",
+              transition:
+                "opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s",
             }}
           >
             <FaPlay className="text-white text-lg sm:text-xl ml-1" />
@@ -363,8 +366,14 @@ const ClientsSection = React.memo(({ clients }) => {
           {/* Left Side - Text Content */}
           <div
             ref={textRef}
-            className={`scroll-slide-left order-1 lg:order-1 w-full ${textVisible ? "visible" : ""}`}
-            style={{ overflow: "visible", wordWrap: "break-word", overflowWrap: "break-word" }}
+            className={`scroll-slide-left order-1 lg:order-1 w-full ${
+              textVisible ? "visible" : ""
+            }`}
+            style={{
+              overflow: "visible",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+            }}
           >
             <div className="w-full max-w-full overflow-visible">
               <TextAnimation
@@ -417,12 +426,20 @@ const ClientsSection = React.memo(({ clients }) => {
                       className="flex items-start break-words"
                       style={{
                         opacity: textVisible ? 1 : 0,
-                        transform: textVisible ? "translateY(0)" : "translateY(20px)",
-                        transition: `opacity 0.6s ease-out ${0.4 + index * 0.1}s, transform 0.6s ease-out ${0.4 + index * 0.1}s`,
+                        transform: textVisible
+                          ? "translateY(0)"
+                          : "translateY(20px)",
+                        transition: `opacity 0.6s ease-out ${
+                          0.4 + index * 0.1
+                        }s, transform 0.6s ease-out ${0.4 + index * 0.1}s`,
                       }}
                     >
-                      <span className="text-primary mr-2 mt-1 flex-shrink-0">•</span>
-                      <span className="flex-1 leading-relaxed break-words">{item}</span>
+                      <span className="text-primary mr-2 mt-1 flex-shrink-0">
+                        •
+                      </span>
+                      <span className="flex-1 leading-relaxed break-words">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -442,7 +459,8 @@ const ClientsSection = React.memo(({ clients }) => {
                 style={{
                   opacity: textVisible ? 1 : 0,
                   transform: textVisible ? "scale(1)" : "scale(0.9)",
-                  transition: "opacity 0.8s ease-out 1.2s, transform 0.8s ease-out 1.2s",
+                  transition:
+                    "opacity 0.8s ease-out 1.2s, transform 0.8s ease-out 1.2s",
                 }}
               >
                 <Link
@@ -469,10 +487,15 @@ const ClientsSection = React.memo(({ clients }) => {
                 style={{
                   opacity: imagesVisible ? 1 : 0,
                   transform: imagesVisible ? "scale(1)" : "scale(0.9)",
-                  transition: `opacity 0.6s ease-out ${0.2 + index * 0.1}s, transform 0.6s ease-out ${0.2 + index * 0.1}s`,
+                  transition: `opacity 0.6s ease-out ${
+                    0.2 + index * 0.1
+                  }s, transform 0.6s ease-out ${0.2 + index * 0.1}s`,
                 }}
               >
-                <a href="#" className="w-full h-full flex items-center justify-center">
+                <a
+                  href="#"
+                  className="w-full h-full flex items-center justify-center"
+                >
                   <img
                     src={client}
                     alt={`Client ${index + 1}`}
